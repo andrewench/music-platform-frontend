@@ -1,21 +1,22 @@
-import { ReactNode } from 'react'
-
-import { TAppRoutes } from '@/components/global/router/router.types'
+import { RouteObject, createBrowserRouter } from 'react-router-dom'
 
 import { Home, Login } from '@/components/screens'
 
-interface IAppRoutes {
+import { TAppRoutes } from '@/providers/router-provider/router.type'
+
+type IRouter = RouteObject & {
   path: TAppRoutes
-  element: ReactNode
 }
 
-export const screenRouteList: IAppRoutes[] = [
+const routes: IRouter[] = [
   {
     path: '/',
     element: <Home />,
   },
   {
-    path: 'login',
+    path: '/login',
     element: <Login />,
   },
 ]
+
+export const screenRouteList = createBrowserRouter(routes)

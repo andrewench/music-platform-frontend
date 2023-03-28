@@ -51,12 +51,7 @@ module.exports = {
 				tsx: 'never',
 			},
 		],
-		'import/no-extraneous-dependencies': [
-			'error',
-			{
-				devDependencies: true,
-			},
-		],
+		'import/no-extraneous-dependencies': 'off',
 
 		// === React ===
 		'react/jsx-filename-extension': 'off',
@@ -68,6 +63,7 @@ module.exports = {
 		'react/react-in-jsx-scope': 'off',
 		'react/prop-types': 'off',
 		'react/no-unused-prop-types': 'warn',
+		'react/button-has-type': "off",
 		'react/function-component-definition': [
 			'error',
 			{
@@ -86,6 +82,7 @@ module.exports = {
 		'@typescript-eslint/consistent-type-definitions': 'off',
 		'@typescript-eslint/consistent-type-imports': 'off',
 		'@typescript-eslint/no-extraneous-class': 'off',
+		"@typescript-eslint/no-empty-function": 'off',
 		'@typescript-eslint/no-misused-promises': [
 			'error',
 			{
@@ -116,4 +113,7 @@ module.exports = {
 		},
 		'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
 	},
+	"ignorePatterns": [
+		"*.config.ts"
+	]
 }

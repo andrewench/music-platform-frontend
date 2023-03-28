@@ -23,13 +23,24 @@
 			"@/components/screens": ["components/screens"],
 			"@/components/views": ["components/views"],
 			"@/data": ["data"],
-			"@/*": ["./*"]
+			"@/types": ["types"],
+			"@/hooks": ["hooks"],
+			"@/schemes": ["schemes"],
+			"@/providers": ["providers"],
+			"@/languages": ["languages"],
+			"@/patterns": ["patterns"],
+			"@/store": ["store"],
+			"@/slices": ["slices"],
+			"@/utils": ["utils"],
+			"@/api": ["api"],
+			"@/*": ["./*"],
+			"@@/*": ["../*"]
 		},
 		"plugins": [
 			{
 				"name": "typescript-plugin-css-modules"
 			}
-		]
+		],
 	},
 	"include": ["app"],
 	"references": [{ "path": "./tsconfig.node.json" }]
