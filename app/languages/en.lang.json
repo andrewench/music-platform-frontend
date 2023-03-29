@@ -1,0 +1,51 @@
+{
+  "common": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "restore": "Restore",
+    "sendCode": "Send code",
+    "required": "The field is required"
+  },
+  "helpers": {
+    "accountNotExists": "Are you haven't an account?",
+    "accountExists": "Already has an account?",
+    "forgotPassword": "Forgot your password?"
+  },
+  "form": {
+    "firstName": {
+      "fieldName": "First Name",
+      "error": {
+        "onlyWords": "The field must contain only letters",
+        "length": "The length of the name must be from 2 to 24 characters"
+      }
+    },
+    "lastName": {
+      "fieldName": "Last Name",
+      "error": {
+        "onlyWords": "The fields must contain only letters",
+        "length": "The length of the name must be from 2 to 30 characters"
+      }
+    },
+    "login": {
+      "fieldName": "Login",
+      "error": {
+        "incorrect": "The login field is incorrect",
+        "length": "The login length must be at least 5"
+      }
+    },
+    "email": {
+      "fieldName": "Email",
+      "error": "The email field is not valid"
+    },
+    "password": {
+      "fieldName": "Password",
+      "error": {
+        "incorrect": "The password must contain special characters: #?!@$%^&* - and it have a length of at least 8 characters",
+        "match": "Password must match"
+      }
+    },
+    "confirm": {
+      "fieldName": "Confirm password"
+    }
+  }
+}

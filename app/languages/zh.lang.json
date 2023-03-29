@@ -1,0 +1,51 @@
+{
+  "common": {
+    "signIn": "登入",
+    "signUp": "报名",
+    "restore": "恢复",
+    "sendCode": "发送代码",
+    "required": "需要该字段"
+  },
+  "helpers": {
+    "accountNotExists": "您没有帐户吗？",
+    "accountExists": "已经有一个帐户了吗？",
+    "forgotPassword": "忘记密码了吗？"
+  },
+  "form": {
+    "firstName": {
+      "fieldName": "名",
+      "error": {
+        "onlyWords": "该字段必须仅包含字母",
+        "length": "名称的长度必须为2到24个字符"
+      }
+    },
+    "lastName": {
+      "fieldName": "姓",
+      "error": {
+        "onlyWords": "字段必须只包含字母",
+        "length": "名称的长度必须从2到30个字符"
+      }
+    },
+    "login": {
+      "fieldName": "登录",
+      "error": {
+        "incorrect": "登录字段不正确",
+        "length": "登录长度必须至少为5"
+      }
+    },
+    "email": {
+      "fieldName": "电子邮件",
+      "error": "电子邮件字段无效"
+    },
+    "password": {
+      "fieldName": "密码",
+      "error": {
+        "incorrect": "密码必须包含特殊字符：＃？！@$％^＆*  - 它的长度至少为8个字符",
+        "match": "密码必须匹配"
+      }
+    },
+    "confirm": {
+      "fieldName": "确认密码"
+    }
+  }
+}
