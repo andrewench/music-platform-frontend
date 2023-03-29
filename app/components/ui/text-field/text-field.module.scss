@@ -1,0 +1,49 @@
+$padding_x: 20px;
+
+.box {
+  @apply relative mb-5;
+}
+
+.input {
+  @apply block w-full px-5 py-3 text-mpl-grey-4 rounded-[10px] text-base border-[1px] border-mpl-bd;
+
+  &:focus,
+  &.filled {
+    @apply outline-2 outline outline-mpl-accent-color border-transparent;
+
+    & ~ .label {
+      @apply -top-[11px] text-sm px-2 text-mpl-white bg-mpl-accent-color rounded-[4px];
+    }
+  }
+
+  &.error {
+    @apply outline outline-2 outline-mpl-red border-transparent;
+
+    &:focus,
+    &.filled {
+      & ~ .label {
+        @apply bg-mpl-red;
+      }
+    }
+  }
+}
+
+.label {
+  @apply absolute top-[13px] pointer-events-none text-mpl-grey-2 text-base transition-all duration-200 z-10 inline-block;
+
+  html[dir='ltr'] & {
+    @apply left-[#{$padding_x}];
+  }
+
+  html[dir='rtl'] & {
+    @apply right-[#{$padding_x}];
+  }
+}
+
+.errorHelper {
+  @apply text-mpl-red mt-2 leading-4 text-sm mb-5;
+}
+
+.symbolCounter {
+  @apply absolute -right-10 top-[14px] w-[26px] h-6 rounded-mpl text-sm text-mpl-grey-3 border-[1px] border-mpl-bd text-center pt-[1px] px-1;
+}

@@ -113,5 +113,5 @@ module.exports = {
     },
     'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
   },
-  ignorePatterns: ['*.config.ts'],
+  ignorePatterns: ['*.config.ts', '*.config.cjs'],
 }
