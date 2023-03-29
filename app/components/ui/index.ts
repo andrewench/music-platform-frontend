@@ -1,5 +1,8 @@
+export { FormHelper } from './form-helper/form-helper.component'
+export { FormSubmit } from './form-submit/form-submit.component'
 export { PasswordField } from './password-field/password-field.component'
 export { PrimaryButton } from './primary-button/primary-button.component'
 export { SecondaryButton } from './secondary-button/secondary-button.component'
+export { Spinner } from './spinner/spinner.component'
 export { StyledButton } from './styled-button/styled-button.component'
 export { TextField } from './text-field/text-field.component'

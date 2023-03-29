@@ -1,0 +1,15 @@
+.box {
+  @apply rounded-full border-2 border-mpl-grey-2 border-r-transparent animate-spin;
+
+  &.small {
+    @apply w-5 h-5;
+  }
+
+  &.medium {
+    @apply w-7 h-7;
+  }
+
+  &.large {
+    @apply w-9 h-9;
+  }
+}

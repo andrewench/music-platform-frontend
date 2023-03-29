@@ -1,0 +1,7 @@
+.text {
+  @apply text-mpl-grey-4 text-sm mb-1;
+}
+
+.link {
+  @apply transition-colors duration-200 ml-[6px] hover:text-mpl-accent-color underline focus-visible:outline-1 focus-visible:outline-mpl-accent-color;
+}

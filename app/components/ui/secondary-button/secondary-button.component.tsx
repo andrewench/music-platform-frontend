@@ -2,9 +2,8 @@ import { FC } from 'react'
 
 import cn from 'clsx'
 
-import { StyledButton } from '../styled-button/styled-button.component'
-
-import { IMiniStyledButton } from '../styled-button/styled-button.interface'
+import { StyledButton } from '@/components/ui/styled-button/styled-button.component'
+import { IMiniStyledButton } from '@/components/ui/styled-button/styled-button.interface'
 
 export const SecondaryButton: FC<IMiniStyledButton> = ({
   type,
