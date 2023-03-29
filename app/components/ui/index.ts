@@ -1,2 +1,5 @@
 export { PasswordField } from './password-field/password-field.component'
+export { PrimaryButton } from './primary-button/primary-button.component'
+export { SecondaryButton } from './secondary-button/secondary-button.component'
+export { StyledButton } from './styled-button/styled-button.component'
 export { TextField } from './text-field/text-field.component'

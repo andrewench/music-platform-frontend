@@ -1,0 +1,23 @@
+.button {
+  @apply block px-5 py-2 text-base border-none rounded-mpl;
+
+  &.filled {
+    @apply bg-mpl-accent-color text-mpl-white;
+
+    &:focus-visible {
+      @apply outline outline-2 outline-mpl-accent-color/30;
+    }
+  }
+
+  &.outlined {
+    @apply border-[1px] border-solid border-mpl-grey-2 text-mpl-grey-3;
+
+    &:focus-visible {
+      @apply outline outline-2 outline-mpl-accent-color border-transparent;
+    }
+  }
+
+  &.disabled {
+    @apply pointer-events-none bg-mpl-grey-1 text-mpl-grey-2;
+  }
+}
