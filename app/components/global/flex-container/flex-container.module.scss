@@ -1,0 +1,55 @@
+.box {
+  @apply flex;
+}
+
+html[dir='rtl'] .mainReverseAxis {
+  @apply flex-row-reverse;
+}
+
+.centered {
+  @apply items-center justify-center;
+}
+
+.column {
+  @apply flex-col;
+}
+
+.grid {
+  @apply flex-wrap;
+}
+
+.alignStart {
+  @apply items-start;
+}
+
+.alignEnd {
+  @apply items-end;
+}
+
+.alignCenter {
+  @apply items-center;
+}
+
+.contentStart {
+  @apply justify-start;
+}
+
+.contentEnd {
+  @apply justify-end;
+}
+
+.contentCenter {
+  @apply justify-center;
+}
+
+.contentBetween {
+  @apply justify-between;
+}
+
+.contentAround {
+  @apply justify-around;
+}
+
+.contentEvenly {
+  @apply justify-evenly;
+}

@@ -6,15 +6,16 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "preinstall": "husky install",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint ./app -c .eslintrc.cjs",
+    "lint": "eslint ./app -c .eslintrc.cjs --color",
     "lint:fix": "yarn lint --fix",
     "test": "jest"
   },
   "dependencies": {
-    "classnames": "^2.3.2",
+    "clsx": "^1.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.9.0",
@@ -22,6 +23,8 @@
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.3",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
