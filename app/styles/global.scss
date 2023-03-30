@@ -3,3 +3,17 @@
 @tailwind utilities;
 
 @import 'reset';
+
+.simplebar-content-wrapper {
+  &:focus {
+    @apply outline-none;
+  }
+}
+
+.simplebar-scrollbar {
+  @apply will-change-transform before:bg-mpl-grey-2;
+}
+
+.simplebar-track.simplebar-vertical {
+  width: 10px;
+}

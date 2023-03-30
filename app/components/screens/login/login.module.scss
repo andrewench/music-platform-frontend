@@ -1,0 +1,15 @@
+.poster {
+  @apply bg-[url('/images/poster.jpg')] bg-no-repeat bg-cover w-1/2 h-screen;
+}
+
+.heading {
+  @apply relative mb-8 text-mpl-grey-4 font-medium text-2xl after:content-[attr(data-version)] after:absolute after:top-[7px] after:-right-16 after:px-3 after:rounded-full after:bg-mpl-red after:text-sm after:text-mpl-white after:font-thin;
+}
+
+.scrollBar {
+  @apply min-h-screen h-screen w-1/2;
+}
+
+.box {
+  @apply min-h-screen h-full py-10;
+}
