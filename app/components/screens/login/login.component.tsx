@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 import SimpleBar from 'simplebar-react'
 
 import cn from 'clsx'
+import isElectron from 'is-electron'
 
 import { version as appVersion } from '@@/package.json'
 
@@ -55,7 +56,12 @@ export const Login: FC = () => {
   }, [loginQuery, searchParams, navigate])
 
   return (
-    <FlexContainer isRtlDetect>
+    <FlexContainer
+      isRtlDetect
+      className={cn({
+        [styles.rounded]: isElectron(),
+      })}
+    >
       <div className={cn(styles.poster)} />
 
       <SimpleBar className={styles.scrollBar}>

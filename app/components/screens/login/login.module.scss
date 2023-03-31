@@ -11,5 +11,11 @@
 }
 
 .box {
-  @apply min-h-screen h-full py-10;
+  @apply min-h-screen h-full py-10 bg-[#fafafa];
+}
+
+.rounded {
+  overflow: hidden;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }

@@ -19,6 +19,7 @@
     "@reduxjs/toolkit": "^1.9.3",
     "clsx": "^1.2.1",
     "i18next": "^22.4.12",
+    "is-electron": "^2.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.7",
