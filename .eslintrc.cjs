@@ -23,7 +23,6 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
-    // === JavaScript ===
     semi: 'off',
     'no-extra-semi': 'off',
     'jsx-quotes': 'off',
@@ -53,7 +52,6 @@ module.exports = {
     ],
     'import/no-extraneous-dependencies': 'off',
 
-    // === React ===
     'react/jsx-filename-extension': 'off',
     'react/no-array-index-key': 'off',
     'react/require-default-props': 'off',
@@ -72,7 +70,6 @@ module.exports = {
       },
     ],
 
-    // === Typescript ===
     '@typescript-eslint/comma-dangle': 'off',
     '@typescript-eslint/semi': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',

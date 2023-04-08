@@ -1,9 +1,9 @@
 import { ITextField } from '@/components/ui/text-field/text-field.interface'
 
-import { TSignUpFields } from '@/types'
+import { TSignUpFormFields } from '@/types'
 
 type TSignUpFieldsList = Omit<
-  ITextField<TSignUpFields>,
+  ITextField<TSignUpFormFields>,
   'register' | 'isDebounced' | 'onChange' | 'className'
 >
 

@@ -1,6 +1,6 @@
 import { ObjectSchema, object, ref, string } from 'yup'
 
-import { TSignUpFields } from '@/types'
+import { TSignUpFormFields } from '@/types'
 
 import {
   emailPattern,
@@ -9,7 +9,7 @@ import {
   passwordPattern,
 } from '@/patterns'
 
-export const SignUpFieldsSchema: ObjectSchema<TSignUpFields> = object({
+export const SignUpFieldsSchema: ObjectSchema<TSignUpFormFields> = object({
   firstName: string()
     .required('common.required')
     .min(2, 'form.firstName.error.length')
