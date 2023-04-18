@@ -2,9 +2,9 @@ import { FC } from 'react'
 
 import cn from 'clsx'
 
-import { FlexContainer } from '@/components/global'
-
 import { PrimaryButton, Spinner } from '@/components/ui'
+
+import { FlexContainer } from '@/components/shared'
 
 import { IFormSubmit } from './form-submit.interface'
 

@@ -1,8 +1,8 @@
 import { ObjectSchema, object, string } from 'yup'
 
-import { TRestoreField } from '@/types'
+import { emailPattern } from '@/shared/patterns'
 
-import { emailPattern } from '@/patterns'
+import { TRestoreField } from '@/types'
 
 export const RestoreFieldsSchema: ObjectSchema<TRestoreField> = object({
   email: string().required('common.required').matches(emailPattern, {

@@ -1,10 +1,12 @@
 import { ChangeEvent, useCallback, useMemo, useState } from 'react'
 import { FieldValues, useFormContext } from 'react-hook-form'
-import { useTranslation } from 'react-i18next'
 
 import cn from 'clsx'
 
 import { useDebounce, useRTL } from '@/hooks'
+
+import { ErrorHelper } from './error-helper/error-helper.component'
+import { LengthCounter } from './length-counter/length-counter.component'
 
 import { ITextField } from './text-field.interface'
 
@@ -24,7 +26,6 @@ export const TextField = <T extends FieldValues>({
 }: ITextField<T>) => {
   const [value, setValue] = useState<string>('')
   const direction = useRTL()
-  const { t } = useTranslation()
 
   const {
     formState: { errors },
@@ -74,15 +75,11 @@ export const TextField = <T extends FieldValues>({
       />
       <p className={styles.label}>{label}</p>
 
-      {errors[fieldState] && (
-        <p className={styles.errorHelper}>
-          {errors[fieldState] ? t(String(errors[fieldState]?.message)) : ''}
-        </p>
-      )}
+      <ErrorHelper
+        message={errors[fieldState]?.message as string | undefined}
+      />
 
-      {isCount && value.length > 0 && (
-        <div className={styles.symbolCounter}>{value.length}</div>
-      )}
+      <LengthCounter length={isCount ? value.length : 0} />
     </div>
   )
 }

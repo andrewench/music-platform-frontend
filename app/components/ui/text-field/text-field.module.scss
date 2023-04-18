@@ -39,11 +39,3 @@ $padding_x: 20px;
     @apply right-[#{$padding_x}];
   }
 }
-
-.errorHelper {
-  @apply text-mpl-red mt-2 leading-4 text-sm mb-5;
-}
-
-.symbolCounter {
-  @apply absolute -right-10 top-[14px] w-[26px] h-6 rounded-mpl text-sm text-mpl-grey-3 border-[1px] border-mpl-bd text-center pt-[1px] px-1;
-}

@@ -2,13 +2,13 @@ import { RouteObject, createBrowserRouter } from 'react-router-dom'
 
 import { Home, Login } from '@/components/screens'
 
-import { TAppRoutes } from '@/providers/router-provider/router.type'
+import { TAppRoutes } from './router.type'
 
-type IRouter = RouteObject & {
+type TRouter = RouteObject & {
   path: TAppRoutes
 }
 
-const routes: IRouter[] = [
+const routes: TRouter[] = [
   {
     path: '/',
     element: <Home />,

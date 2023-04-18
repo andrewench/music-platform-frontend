@@ -1,47 +1,48 @@
 {
-	"compilerOptions": {
-		"baseUrl": "app",
-		"target": "ESNext",
-		"useDefineForClassFields": true,
-		"lib": ["DOM", "DOM.Iterable", "ESNext"],
-		"allowJs": false,
-		"skipLibCheck": true,
-		"esModuleInterop": false,
-		"allowSyntheticDefaultImports": true,
-		"strict": true,
-		"forceConsistentCasingInFileNames": true,
-		"module": "ESNext",
-		"moduleResolution": "Node",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"noEmit": true,
-		"jsx": "react-jsx",
-		"paths": {
-			"@/components/global": ["components/global"],
-			"@/components/layout": ["components/layout"],
-			"@/components/ui": ["components/ui"],
-			"@/components/screens": ["components/screens"],
-			"@/components/views": ["components/views"],
-			"@/data": ["data"],
-			"@/types": ["types"],
-			"@/hooks": ["hooks"],
-			"@/schemes": ["schemes"],
-			"@/providers": ["providers"],
-			"@/languages": ["languages"],
-			"@/patterns": ["patterns"],
-			"@/store": ["store"],
-			"@/slices": ["slices"],
-			"@/utils": ["utils"],
-			"@/api": ["api"],
-			"@/*": ["./*"],
-			"@@/*": ["../*"]
-		},
-		"plugins": [
-			{
-				"name": "typescript-plugin-css-modules"
-			}
-		],
-	},
-	"include": ["app"],
-	"references": [{ "path": "./tsconfig.node.json" }]
+  "compilerOptions": {
+    "baseUrl": "app",
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "paths": {
+      "@/components/global": ["components/global"],
+      "@/components/layout": ["components/layout"],
+      "@/components/ui": ["components/ui"],
+      "@/components/screens": ["components/screens"],
+      "@/components/shared": ["components/shared"],
+      "@/components/views": ["components/views"],
+      "@/data": ["data"],
+      "@/hooks": ["hooks"],
+      "@/providers": ["providers"],
+      "@/store": ["store"],
+      "@/store/slices": ["store/slices"],
+      "@/shared/api": ["shared/api"],
+      "@/shared/languages": ["shared/languages"],
+      "@/shared/patterns": ["shared/patterns"],
+      "@/shared/schemes": ["shared/schemes"],
+      "@/utils": ["utils"],
+      "@/types": ["types"],
+      "@/*": ["./*"],
+      "@@/*": ["../*"]
+    },
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ]
+  },
+  "include": ["app"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

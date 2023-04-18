@@ -2,25 +2,20 @@ import { FC } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 
-import { FormContainer } from '@/components/global'
+import { SignUpFieldsList } from './signup-form.data'
 
-import {
-  FormHelper,
-  FormSubmit,
-  PasswordField,
-  TextField,
-} from '@/components/ui'
+import { FormSubmit, PasswordField, TextField } from '@/components/ui'
 
-import { SignUpFieldsList } from '@/data'
-
-import { TLoginRoutes, TSignUpFields } from '@/types'
+import { FormContainer, FormHelper } from '@/components/shared'
 
 import { useConfiguredForm } from '@/hooks'
 
-import { SignUpFieldsSchema } from '@/schemes'
+import { SignUpFieldsSchema } from '@/shared/schemes'
+
+import { TLoginRoutes, TSignUpFields, TSignUpFormFields } from '@/types'
 
 export const SignUpForm: FC = () => {
-  const methods = useConfiguredForm<TSignUpFields>(SignUpFieldsSchema)
+  const methods = useConfiguredForm<TSignUpFormFields>(SignUpFieldsSchema)
   const { t } = useTranslation()
 
   const onSubmit: SubmitHandler<TSignUpFields> = data => {

@@ -13,18 +13,18 @@ module.exports = {
 
       'mpl-bd': '#d1d1d1',
 
-      'mpl-red': '#ff3d3d'
+      'mpl-red': '#ff3d3d',
     },
     extend: {
       fontFamily: {
         inter: '"Inter", sans-serif',
       },
       borderColor: {
-        'transparent': 'transparent'
+        transparent: 'transparent',
       },
       borderRadius: {
-        'mpl': '6px'
-      }
+        mpl: '6px',
+      },
     },
   },
   plugins: [],

@@ -2,20 +2,15 @@ import { FC } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 
-import { FormContainer } from '@/components/global'
+import { FormSubmit, PasswordField, TextField } from '@/components/ui'
 
-import {
-  FormHelper,
-  FormSubmit,
-  PasswordField,
-  TextField,
-} from '@/components/ui'
-
-import { TLoginRoutes, TSignInFields } from '@/types'
+import { FormContainer, FormHelper } from '@/components/shared'
 
 import { useConfiguredForm } from '@/hooks'
 
-import { SignInFieldsSchema } from '@/schemes'
+import { SignInFieldsSchema } from '@/shared/schemes'
+
+import { TLoginRoutes, TSignInFields } from '@/types'
 
 import styles from './login-form.module.scss'
 

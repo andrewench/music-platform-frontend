@@ -1,13 +1,13 @@
 import { ObjectSchema, object, ref, string } from 'yup'
 
-import { TSignUpFormFields } from '@/types'
-
 import {
   emailPattern,
   loginPattern,
   namePattern,
   passwordPattern,
-} from '@/patterns'
+} from '@/shared/patterns'
+
+import { TSignUpFormFields } from '@/types'
 
 export const SignUpFieldsSchema: ObjectSchema<TSignUpFormFields> = object({
   firstName: string()

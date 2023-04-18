@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { RouterProvider } from 'react-router-dom'
 
-import { screenRouteList } from '@/data'
+import { screenRouteList } from './router.data'
 
 export const Router: FC = () => <RouterProvider router={screenRouteList} />

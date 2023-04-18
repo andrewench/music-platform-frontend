@@ -1,18 +1,9 @@
-import { StrictMode } from 'react'
-import ReactDOM from 'react-dom/client'
+import { createRoot } from 'react-dom/client'
 
-import { Router, TranslateProvider, initTranslateConfig } from '@/providers'
+import { MainProvider } from '@/providers'
 
-import { StoreProvider } from '@/store'
+import '@/assets/styles/global.scss'
 
-import '@/styles/global.scss'
+const root = document.getElementById('root') as HTMLElement
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <StrictMode>
-    <StoreProvider>
-      <TranslateProvider config={await initTranslateConfig()}>
-        <Router />
-      </TranslateProvider>
-    </StoreProvider>
-  </StrictMode>
-)
+createRoot(root).render(<MainProvider />)

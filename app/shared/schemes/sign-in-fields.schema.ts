@@ -1,8 +1,8 @@
 import { ObjectSchema, object, string } from 'yup'
 
-import { TSignInFields } from '@/types'
+import { emailPattern, passwordPattern } from '@/shared/patterns'
 
-import { emailPattern, passwordPattern } from '@/patterns'
+import { TSignInFields } from '@/types'
 
 export const SignInFieldsSchema: ObjectSchema<TSignInFields> = object({
   email: string().required('common.required').matches(emailPattern, {

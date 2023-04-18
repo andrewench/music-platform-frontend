@@ -1,9 +1,9 @@
 import { FC, PropsWithChildren } from 'react'
 import { I18nextProvider, initReactI18next } from 'react-i18next'
 
-import i18next, { i18n } from 'i18next'
+import i18next from 'i18next'
 
-import languageList from '@/languages'
+import languageList from '@/shared/languages'
 
 type TLanguageItem = Record<
   string,
@@ -24,7 +24,7 @@ const generateLanguages = (langList: typeof languageList): TLanguageItem => {
   return resources
 }
 
-export const initTranslateConfig = async () => {
+const initTranslateConfig = async () => {
   await i18next.use(initReactI18next).init({
     lng: 'en',
     resources: {
@@ -35,8 +35,10 @@ export const initTranslateConfig = async () => {
   return i18next
 }
 
-export const TranslateProvider: FC<
-  { config: i18n } & Required<PropsWithChildren>
-> = ({ config, children }) => {
+const config = await initTranslateConfig()
+
+export const TranslateProvider: FC<Required<PropsWithChildren>> = ({
+  children,
+}) => {
   return <I18nextProvider i18n={config}>{children}</I18nextProvider>
 }

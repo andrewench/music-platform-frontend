@@ -7,26 +7,13 @@ import isElectron from 'is-electron'
 
 import { version as appVersion } from '@@/package.json'
 
-import { FlexContainer } from '@/components/global'
-
-import { LoginForm, RestoreForm, SignUpForm } from '@/components/layout'
+import { FlexContainer } from '@/components/shared'
 
 import { TLoginQueries } from '@/types'
 
+import { FormRenderer } from './form-renderer.component'
+
 import styles from './login.module.scss'
-
-export const RenderedAuthForm: FC<{ query: TLoginQueries }> = ({ query }) => {
-  switch (query) {
-    case 'sign_in':
-      return <LoginForm />
-
-    case 'sign_up':
-      return <SignUpForm />
-
-    case 'restore':
-      return <RestoreForm />
-  }
-}
 
 export const Login: FC = () => {
   const [loginQuery, setLoginQuery] = useState<TLoginQueries>('sign_in')
@@ -72,7 +59,7 @@ export const Login: FC = () => {
                 Music Platform
               </h1>
 
-              <RenderedAuthForm query={loginQuery} />
+              <FormRenderer query={loginQuery} />
             </>
           </FlexContainer>
         </FlexContainer>

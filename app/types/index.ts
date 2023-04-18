@@ -3,13 +3,13 @@ export type {
   TApiMainEndpoint,
   TApiRoutes,
 } from './api-endpoints.type'
-export type { TLoginQueries, TLoginRoutes } from './login-routes.type'
 export type {
   TRestoreField,
   TSignInFields,
   TSignUpFields,
   TSignUpFormFields,
-} from './login.type'
+} from './form-fields.type'
+export type { TLoginQueries, TLoginRoutes } from './login-routes.type'
 export type {
   PropsWithChildrenAndClassName,
   PropsWithClassName,

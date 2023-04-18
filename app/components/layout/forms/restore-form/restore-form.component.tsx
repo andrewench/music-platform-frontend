@@ -2,15 +2,15 @@ import { FC } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 
-import { FormContainer } from '@/components/global'
+import { FormSubmit, TextField } from '@/components/ui'
 
-import { FormHelper, FormSubmit, TextField } from '@/components/ui'
-
-import { TLoginRoutes, TRestoreField } from '@/types'
+import { FormContainer, FormHelper } from '@/components/shared'
 
 import { useConfiguredForm } from '@/hooks'
 
-import { RestoreFieldsSchema } from '@/schemes'
+import { RestoreFieldsSchema } from '@/shared/schemes'
+
+import { TLoginRoutes, TRestoreField } from '@/types'
 
 export const RestoreForm: FC = () => {
   const methods = useConfiguredForm<TRestoreField>(RestoreFieldsSchema)

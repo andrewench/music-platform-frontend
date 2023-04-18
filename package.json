@@ -3,7 +3,7 @@
   "description": "The music platform for listening to music",
   "author": "andrewench",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "husky": "husky install",
@@ -12,7 +12,8 @@
     "preview": "vite preview",
     "lint": "eslint ./app -c .eslintrc.cjs --color",
     "lint:fix": "yarn lint --fix",
-    "test": "jest"
+    "test": "jest",
+    "prettify": "prettier --write ."
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.11",
