@@ -62,9 +62,9 @@ export const Login: FC = () => {
         [styles.rounded]: isElectron(),
       })}
     >
-      <div className={cn(styles.poster)} />
+      <div className={cn(styles.poster, styles.block)} />
 
-      <SimpleBar className={styles.scrollBar}>
+      <SimpleBar className={cn(styles.scrollBar, styles.block)}>
         <FlexContainer isCentered className={styles.box}>
           <FlexContainer isCentered direction="column">
             <>

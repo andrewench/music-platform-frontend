@@ -1,5 +1,5 @@
 .poster {
-  @apply bg-[url('/images/poster.jpg')] bg-no-repeat bg-cover w-1/2 h-screen;
+  @apply bg-[url('/images/poster.jpg')] bg-no-repeat bg-cover w-1/2;
 }
 
 .heading {
@@ -7,15 +7,17 @@
 }
 
 .scrollBar {
-  @apply min-h-screen h-screen w-1/2;
+  @apply min-h-screen w-1/2;
 }
 
 .box {
-  @apply min-h-screen h-full py-10 bg-[#fafafa];
+  @apply min-h-screen py-10 bg-[#fafafa];
 }
 
 .rounded {
-  overflow: hidden;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  @apply overflow-hidden rounded-bl-[10px] rounded-br-[10px];
+}
+
+.block {
+  @apply min-h-[600px] h-screen;
 }

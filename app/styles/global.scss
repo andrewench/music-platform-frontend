@@ -4,6 +4,11 @@
 
 @import 'reset';
 
+body {
+  min-width: 1024px;
+  min-height: 600px;
+}
+
 .simplebar-content-wrapper {
   &:focus {
     @apply outline-none;
