@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "app",
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
@@ -14,29 +13,9 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "removeComments": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "paths": {
-      "@/components/global": ["components/global"],
-      "@/components/layout": ["components/layout"],
-      "@/components/ui": ["components/ui"],
-      "@/components/screens": ["components/screens"],
-      "@/components/shared": ["components/shared"],
-      "@/components/views": ["components/views"],
-      "@/data": ["data"],
-      "@/hooks": ["hooks"],
-      "@/providers": ["providers"],
-      "@/store": ["store"],
-      "@/store/slices": ["store/slices"],
-      "@/shared/api": ["shared/api"],
-      "@/shared/languages": ["shared/languages"],
-      "@/shared/patterns": ["shared/patterns"],
-      "@/shared/schemes": ["shared/schemes"],
-      "@/utils": ["utils"],
-      "@/types": ["types"],
-      "@/*": ["./*"],
-      "@@/*": ["../*"]
-    },
     "plugins": [
       {
         "name": "typescript-plugin-css-modules"
@@ -44,5 +23,6 @@
     ]
   },
   "include": ["app"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "extends": "./tsconfig.paths.json"
 }

@@ -1,25 +1,24 @@
 import { FC } from 'react'
-import { SubmitHandler } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 
 import { FormSubmit, TextField } from '@/components/ui'
 
 import { FormContainer, FormHelper } from '@/components/shared'
 
-import { useConfiguredForm } from '@/hooks'
-
 import { RestoreFieldsSchema } from '@/shared/schemes'
 
-import { TLoginRoutes, TRestoreField } from '@/types'
+import { useConfiguratedForm, useSubmitHandler } from '@/shared/hooks'
+
+import { TLoginRoutes, TRestoreField } from '@/shared/types'
 
 export const RestoreForm: FC = () => {
-  const methods = useConfiguredForm<TRestoreField>(RestoreFieldsSchema)
+  const methods = useConfiguratedForm<TRestoreField>(RestoreFieldsSchema)
   const { t } = useTranslation()
 
-  const onSubmit: SubmitHandler<TRestoreField> = data => {
+  const onSubmit = useSubmitHandler<TRestoreField>(data => {
     // eslint-disable-next-line no-console
     console.log(data)
-  }
+  })
 
   return (
     <>

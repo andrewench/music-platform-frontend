@@ -9,7 +9,7 @@ import { version as appVersion } from '@@/package.json'
 
 import { FlexContainer } from '@/components/shared'
 
-import { TLoginQueries } from '@/types'
+import { TLoginQueries } from '@/shared/types'
 
 import { FormRenderer } from './form-renderer.component'
 

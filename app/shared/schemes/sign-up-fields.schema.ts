@@ -7,7 +7,7 @@ import {
   passwordPattern,
 } from '@/shared/patterns'
 
-import { TSignUpFormFields } from '@/types'
+import { TSignUpFormFields } from '@/shared/types'
 
 export const SignUpFieldsSchema: ObjectSchema<TSignUpFormFields> = object({
   firstName: string()

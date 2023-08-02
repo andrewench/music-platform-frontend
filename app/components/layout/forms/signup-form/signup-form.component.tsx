@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import { SubmitHandler } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 
 import { SignUpFieldsList } from './signup-form.data'
@@ -8,20 +7,20 @@ import { FormSubmit, PasswordField, TextField } from '@/components/ui'
 
 import { FormContainer, FormHelper } from '@/components/shared'
 
-import { useConfiguredForm } from '@/hooks'
-
 import { SignUpFieldsSchema } from '@/shared/schemes'
 
-import { TLoginRoutes, TSignUpFields, TSignUpFormFields } from '@/types'
+import { useConfiguratedForm, useSubmitHandler } from '@/shared/hooks'
+
+import { TLoginRoutes, TSignUpFields, TSignUpFormFields } from '@/shared/types'
 
 export const SignUpForm: FC = () => {
-  const methods = useConfiguredForm<TSignUpFormFields>(SignUpFieldsSchema)
+  const methods = useConfiguratedForm<TSignUpFormFields>(SignUpFieldsSchema)
   const { t } = useTranslation()
 
-  const onSubmit: SubmitHandler<TSignUpFields> = data => {
+  const onSubmit = useSubmitHandler<TSignUpFields>(data => {
     // eslint-disable-next-line no-console
     console.log(data)
-  }
+  })
 
   return (
     <>

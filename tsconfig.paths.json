@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "baseUrl": "app",
+    "paths": {
+      "@/components/global": ["components/global"],
+      "@/components/layout": ["components/layout"],
+      "@/components/ui": ["components/ui"],
+      "@/components/screens": ["components/screens"],
+      "@/components/shared": ["components/shared"],
+      "@/components/views": ["components/views"],
+      "@/components/providers": ["components/providers"],
+      "@/store": ["store"],
+      "@/shared/data": ["shared/data"],
+      "@/store/slices": ["store/slices"],
+      "@/shared/api": ["shared/api"],
+      "@/shared/languages": ["shared/languages"],
+      "@/shared/patterns": ["shared/patterns"],
+      "@/shared/hooks": ["shared/hooks"],
+      "@/shared/schemes": ["shared/schemes"],
+      "@/shared/utils": ["shared/utils"],
+      "@/shared/types": ["shared/types"],
+      "@/*": ["./*"],
+      "@@/*": ["../*"]
+    }
+  }
+}

@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import cn from 'clsx'
 
-import { PropsWithClassName } from '@/types'
+import { PropsWithClassName } from '@/shared/types'
 
 import styles from './spinner.module.scss'
 

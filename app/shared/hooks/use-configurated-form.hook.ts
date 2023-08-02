@@ -3,7 +3,7 @@ import { FieldValues, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { ObjectSchema } from 'yup'
 
-export const useConfiguredForm = <T extends FieldValues>(
+export const useConfiguratedForm = <T extends FieldValues>(
   schema: ObjectSchema<T>
 ) => {
   return useForm<T>({

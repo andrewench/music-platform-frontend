@@ -1,4 +1,4 @@
-import { PropsWithChildrenAndClassName } from '@/types'
+import { PropsWithChildrenAndClassName } from '@/shared/types'
 
 export type TButtonRole = 'button' | 'submit'
 export type TButtonVariant = 'filled' | 'outlined' | 'disabled'

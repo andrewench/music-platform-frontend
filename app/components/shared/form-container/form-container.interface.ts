@@ -1,6 +1,6 @@
 import { FieldValues, SubmitHandler, UseFormReturn } from 'react-hook-form'
 
-import { PropsWithChildrenAndClassName } from '@/types'
+import { PropsWithChildrenAndClassName } from '@/shared/types'
 
 export interface IFormContainer<T extends FieldValues>
   extends PropsWithChildrenAndClassName {

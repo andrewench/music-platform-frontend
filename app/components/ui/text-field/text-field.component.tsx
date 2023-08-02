@@ -3,7 +3,7 @@ import { FieldValues, useFormContext } from 'react-hook-form'
 
 import cn from 'clsx'
 
-import { useDebounce, useRTL } from '@/hooks'
+import { useDebounce, useRTL } from '@/shared/hooks'
 
 import { ErrorHelper } from './error-helper/error-helper.component'
 import { LengthCounter } from './length-counter/length-counter.component'

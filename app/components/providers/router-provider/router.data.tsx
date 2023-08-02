@@ -1,6 +1,6 @@
 import { RouteObject, createBrowserRouter } from 'react-router-dom'
 
-import { Home, Login } from '@/components/screens'
+import { Login } from '@/components/screens'
 
 import { TAppRoutes } from './router.type'
 
@@ -11,7 +11,7 @@ type TRouter = RouteObject & {
 const routes: TRouter[] = [
   {
     path: '/',
-    element: <Home />,
+    element: <Login />,
   },
   {
     path: '/login',

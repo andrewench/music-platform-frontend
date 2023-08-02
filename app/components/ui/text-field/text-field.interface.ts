@@ -1,7 +1,7 @@
 import { ChangeEvent } from 'react'
 import { FieldValues, Path, UseFormRegister } from 'react-hook-form'
 
-import { PropsWithClassName } from '@/types'
+import { PropsWithClassName } from '@/shared/types'
 
 export type TTextFieldRole = 'text' | 'email' | 'password' | 'search'
 

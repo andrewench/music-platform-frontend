@@ -1,4 +1,4 @@
-import { TApiEndpoints, TRestApiMethod } from '@/types'
+import { TApiEndpoints, TRestApiMethod } from '@/shared/types'
 
 export const createRequestApi = <TPayload, TEndpoint = TApiEndpoints>(
   url: TEndpoint,

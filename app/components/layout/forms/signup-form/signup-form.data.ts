@@ -1,6 +1,6 @@
 import { ITextField } from '@/components/ui/text-field/text-field.interface'
 
-import { TSignUpFormFields } from '@/types'
+import { TSignUpFormFields } from '@/shared/types'
 
 type TSignUpFieldsList = Omit<
   ITextField<TSignUpFormFields>,

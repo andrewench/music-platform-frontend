@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react'
 
-import { PropsWithClassName } from '@/types'
+import { PropsWithClassName } from '@/shared/types'
 
 type TDirection = 'row' | 'row-reverse' | 'column' | 'column-reverse'
 type TAlignOnMainAxis = 'start' | 'end' | 'center'

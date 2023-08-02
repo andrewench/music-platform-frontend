@@ -1,27 +1,26 @@
 import { FC } from 'react'
-import { SubmitHandler } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 
 import { FormSubmit, PasswordField, TextField } from '@/components/ui'
 
 import { FormContainer, FormHelper } from '@/components/shared'
 
-import { useConfiguredForm } from '@/hooks'
-
 import { SignInFieldsSchema } from '@/shared/schemes'
 
-import { TLoginRoutes, TSignInFields } from '@/types'
+import { useConfiguratedForm, useSubmitHandler } from '@/shared/hooks'
+
+import { TLoginRoutes, TSignInFields } from '@/shared/types'
 
 import styles from './login-form.module.scss'
 
 export const LoginForm: FC = () => {
-  const methods = useConfiguredForm<TSignInFields>(SignInFieldsSchema)
+  const methods = useConfiguratedForm<TSignInFields>(SignInFieldsSchema)
   const { t } = useTranslation()
 
-  const onSubmit: SubmitHandler<TSignInFields> = data => {
+  const onSubmit = useSubmitHandler<TSignInFields>(data => {
     // eslint-disable-next-line no-console
     console.log(data)
-  }
+  })
 
   return (
     <>
@@ -33,6 +32,7 @@ export const LoginForm: FC = () => {
           register={methods.register}
           isDebounced
         />
+
         <PasswordField
           label={t('form.password.fieldName')}
           fieldState="password"
@@ -51,6 +51,7 @@ export const LoginForm: FC = () => {
           href: '/login?act=sign_up',
         }}
       />
+
       <FormHelper<TLoginRoutes>
         label={t('helpers.forgotPassword')}
         link={{

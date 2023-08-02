@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-import { createRequestApi } from '@/utils'
+import { createRequestApi } from '@/shared/utils'
 
-import { TApiMainEndpoint } from '@/types'
+import { TApiMainEndpoint } from '@/shared/types'
 
 export const userApi = createApi({
   reducerPath: 'userApi',
