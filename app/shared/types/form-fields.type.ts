@@ -5,9 +5,10 @@ type TSignUpAllFields =
   | 'email'
   | 'password'
   | 'confirm'
+
 export type TSignUpFormFields = Record<TSignUpAllFields, string>
 export type TSignInFields = Record<
-  Extract<TSignUpAllFields, 'email' | 'password'>,
+  Extract<TSignUpAllFields, 'login' | 'password'>,
   string
 >
 export type TSignUpFields = Record<Exclude<TSignUpAllFields, 'confirm'>, string>

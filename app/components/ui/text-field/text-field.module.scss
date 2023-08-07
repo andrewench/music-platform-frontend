@@ -5,19 +5,19 @@ $padding_x: 20px;
 }
 
 .input {
-  @apply block w-full px-5 py-3 text-mpl-grey-4 rounded-[10px] text-base border-[1px] border-mpl-bd;
+  @apply block w-full rounded-[10px] border-[1px] border-mpl-bd px-5 py-3 text-base text-mpl-grey-4;
 
   &:focus,
   &.filled {
-    @apply outline-2 outline outline-mpl-accent-color border-transparent;
+    @apply border-transparent outline outline-2 outline-mpl-accent-color;
 
     & ~ .label {
-      @apply -top-[11px] text-sm px-2 text-mpl-white bg-mpl-accent-color rounded-[4px];
+      @apply -top-[11px] rounded-[4px] bg-mpl-accent-color px-2 text-sm text-mpl-white;
     }
   }
 
   &.error {
-    @apply outline outline-2 outline-mpl-red border-transparent;
+    @apply border-transparent outline outline-2 outline-mpl-red;
 
     &:focus,
     &.filled {
@@ -29,7 +29,7 @@ $padding_x: 20px;
 }
 
 .label {
-  @apply absolute top-[13px] pointer-events-none text-mpl-grey-2 text-base transition-all duration-200 z-10 inline-block;
+  @apply pointer-events-none absolute top-[13px] z-10 inline-block text-base text-mpl-grey-2 transition-all duration-200;
 
   html[dir='ltr'] & {
     @apply left-[#{$padding_x}];

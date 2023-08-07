@@ -1,0 +1,11 @@
+.normal {
+  @apply border-[2px] border-mpl-accent-color/90 shadow-none;
+}
+
+.success {
+  @apply min-w-[200px] border-[2px] border-mpl-accent-color/90 shadow-none;
+}
+
+.error {
+  @apply min-w-[200px] border-[2px] border-mpl-red/90 shadow-none;
+}

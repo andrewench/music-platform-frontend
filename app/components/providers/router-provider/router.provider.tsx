@@ -3,4 +3,8 @@ import { RouterProvider } from 'react-router-dom'
 
 import { screenRouteList } from './router.data'
 
-export const Router: FC = () => <RouterProvider router={screenRouteList} />
+import { Fallback } from '@/components/layout'
+
+export const Router: FC = () => (
+  <RouterProvider fallbackElement={<Fallback />} router={screenRouteList} />
+)

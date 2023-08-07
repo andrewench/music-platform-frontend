@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
 * {
-  @apply p-0 box-border font-inter;
+  @apply box-border p-0 font-inter;
+
+  -webkit-font-smoothing: antialiased;
 }

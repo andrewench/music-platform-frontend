@@ -1,1 +1,2 @@
-export { userApi } from './user.api'
+export * from './user.api'
+export * from './auth.api'

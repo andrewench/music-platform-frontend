@@ -1,4 +1,5 @@
 import { FC, useLayoutEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import SimpleBar from 'simplebar-react'
 
@@ -7,63 +8,61 @@ import isElectron from 'is-electron'
 
 import { version as appVersion } from '@@/package.json'
 
+import { PageLayout } from '@/components/layout'
+
 import { FlexContainer } from '@/components/shared'
 
-import { TLoginQueries } from '@/shared/types'
+import { LoginService } from '@/services'
+
+import { AppConstant } from '@/shared/constants'
 
 import { FormRenderer } from './form-renderer.component'
 
 import styles from './login.module.scss'
 
 export const Login: FC = () => {
-  const [loginQuery, setLoginQuery] = useState<TLoginQueries>('sign_in')
+  const [loginQuery, setLoginQuery] = useState(
+    AppConstant.AUTH.QUERY_PARAMS.signIn
+  )
+
   const [searchParams] = useSearchParams()
   const navigate = useNavigate()
 
+  const { t } = useTranslation()
+
   useLayoutEffect(() => {
-    const actQuery = searchParams.get('act') as TLoginQueries
+    const resolvedUrl = LoginService.setRenderedFormStep(
+      searchParams,
+      setLoginQuery
+    )
 
-    if (!actQuery) {
-      navigate('/login?act=sign_in')
-    }
-
-    switch (actQuery) {
-      case 'sign_in':
-        setLoginQuery('sign_in')
-        break
-
-      case 'sign_up':
-        setLoginQuery('sign_up')
-        break
-
-      case 'restore':
-        setLoginQuery('restore')
-        break
-    }
-  }, [loginQuery, searchParams, navigate])
+    if (resolvedUrl?.redirect) navigate(resolvedUrl?.redirect)
+  }, [searchParams, navigate])
 
   return (
-    <FlexContainer
-      isRtlDetect
-      className={cn({
-        [styles.rounded]: isElectron(),
-      })}
-    >
-      <div className={cn(styles.poster, styles.block)} />
+    <PageLayout title={t('common.signIn')}>
+      <FlexContainer
+        isRtlDetect
+        className={cn({
+          [styles.rounded]: isElectron(),
+        })}
+      >
+        <div className={cn(styles.poster, styles.block)} />
 
-      <SimpleBar className={cn(styles.scrollBar, styles.block)}>
-        <FlexContainer isCentered className={styles.box}>
-          <FlexContainer isCentered direction="column">
-            <>
-              <h1 className={styles.heading} data-version={appVersion}>
-                Music Platform
-              </h1>
+        <SimpleBar className={cn(styles.scrollBar, styles.block)}>
+          <FlexContainer isCentered className={styles.box}>
+            <FlexContainer isCentered direction="column">
+              <>
+                <h1 className={styles.heading} data-version={appVersion}>
+                  {AppConstant.APP_NAME}
+                </h1>
 
-              <FormRenderer query={loginQuery} />
-            </>
+                <FormRenderer query={loginQuery} />
+              </>
+            </FlexContainer>
           </FlexContainer>
-        </FlexContainer>
-      </SimpleBar>
-    </FlexContainer>
+        </SimpleBar>
+      </FlexContainer>
+    </PageLayout>
   )
 }

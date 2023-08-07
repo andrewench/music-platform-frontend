@@ -80,6 +80,7 @@ module.exports = {
     '@typescript-eslint/consistent-type-imports': 'off',
     '@typescript-eslint/no-extraneous-class': 'off',
     '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/no-misused-promises': [
       'error',
       {

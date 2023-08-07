@@ -1,15 +1,23 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
+import { toast } from 'react-hot-toast'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
 
 import { FormSubmit, PasswordField, TextField } from '@/components/ui'
 
 import { FormContainer, FormHelper } from '@/components/shared'
 
+import { LoginService } from '@/services'
+
+import { useLoginMutation } from '@/shared/api'
+
 import { SignInFieldsSchema } from '@/shared/schemes'
+
+import { AppConstant } from '@/shared/constants'
 
 import { useConfiguratedForm, useSubmitHandler } from '@/shared/hooks'
 
-import { TLoginRoutes, TSignInFields } from '@/shared/types'
+import { TErrorResponse, TLoginRoutes, TSignInFields } from '@/shared/types'
 
 import styles from './login-form.module.scss'
 
@@ -17,18 +25,43 @@ export const LoginForm: FC = () => {
   const methods = useConfiguratedForm<TSignInFields>(SignInFieldsSchema)
   const { t } = useTranslation()
 
-  const onSubmit = useSubmitHandler<TSignInFields>(data => {
-    // eslint-disable-next-line no-console
-    console.log(data)
+  const navigate = useNavigate()
+
+  const [loginUser, { data, error, isLoading }] = useLoginMutation()
+
+  const onSubmit = useSubmitHandler<TSignInFields>(credentials => {
+    loginUser(credentials)
   })
+
+  useEffect(() => {
+    LoginService.authSuccess(
+      data,
+      {
+        logged: t('server.success.logged'),
+        redirect: t('server.success.redirect'),
+        unknown: t('server.error.unknown'),
+      },
+      () => {
+        navigate('/recent')
+      }
+    )
+  }, [data, navigate, t])
+
+  useEffect(() => {
+    if (!error) return
+
+    const { data } = error as TErrorResponse
+
+    if (data.error) toast.error(t(`server.error.${data.error}`))
+  }, [error, t])
 
   return (
     <>
       <FormContainer methods={methods} onSubmit={onSubmit}>
         <TextField
-          label={t('form.email.fieldName')}
+          label={t('form.login.fieldName')}
           type="text"
-          fieldState="email"
+          fieldState="login"
           register={methods.register}
           isDebounced
         />
@@ -39,7 +72,7 @@ export const LoginForm: FC = () => {
           register={methods.register}
         />
 
-        <FormSubmit isFetching={false} className={styles.submit}>
+        <FormSubmit isFetching={isLoading} className={styles.submit}>
           {t('common.signIn')}
         </FormSubmit>
       </FormContainer>
@@ -48,7 +81,7 @@ export const LoginForm: FC = () => {
         label={t('helpers.accountNotExists')}
         link={{
           label: `${t('common.signUp')}.`,
-          href: '/login?act=sign_up',
+          href: `/login?act=${AppConstant.AUTH.QUERY_PARAMS.signUp}`,
         }}
       />
 
@@ -56,7 +89,7 @@ export const LoginForm: FC = () => {
         label={t('helpers.forgotPassword')}
         link={{
           label: `${t('common.restore')}.`,
-          href: '/login?act=restore',
+          href: `/login?act=${AppConstant.AUTH.QUERY_PARAMS.restore}`,
         }}
       />
     </>

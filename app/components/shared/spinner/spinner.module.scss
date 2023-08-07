@@ -1,15 +1,15 @@
 .box {
-  @apply rounded-full border-2 border-mpl-grey-2 border-r-transparent animate-spin;
+  @apply animate-spin rounded-full border-2 border-mpl-grey-2 border-r-transparent;
 
   &.small {
-    @apply w-5 h-5;
+    @apply h-5 w-5;
   }
 
   &.medium {
-    @apply w-7 h-7;
+    @apply h-7 w-7;
   }
 
   &.large {
-    @apply w-9 h-9;
+    @apply h-9 w-9;
   }
 }

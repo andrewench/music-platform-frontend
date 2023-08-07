@@ -47,5 +47,18 @@
     "confirm": {
       "fieldName": "Confirm password"
     }
+  },
+  "server": {
+    "success": {
+      "registered": "You have successfully registered",
+      "logged": "You are successfully logged in",
+      "redirect": "Redirecting to profile"
+    },
+    "error": {
+      "invalidCredentials": "Invalid login or password",
+      "userNoExists": "User doesn't exists",
+      "userExists": "User already exists",
+      "unknown": "Unknown error"
+    }
   }
 }

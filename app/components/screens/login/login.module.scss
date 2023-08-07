@@ -1,9 +1,9 @@
 .poster {
-  @apply bg-[url('/images/poster.jpg')] bg-no-repeat bg-cover w-1/2;
+  @apply w-1/2 bg-[url('/images/poster.jpg')] bg-cover bg-no-repeat;
 }
 
 .heading {
-  @apply relative mb-8 text-mpl-grey-4 font-medium text-2xl after:content-[attr(data-version)] after:absolute after:top-[7px] after:-right-16 after:px-3 after:rounded-full after:bg-mpl-red after:text-sm after:text-mpl-white after:font-thin;
+  @apply relative mb-8 text-2xl font-medium text-mpl-grey-4 after:absolute after:top-[7px] after:-right-16 after:rounded-full after:bg-mpl-red after:px-3 after:text-sm after:font-thin after:text-mpl-white after:content-[attr(data-version)];
 }
 
 .scrollBar {
@@ -11,7 +11,7 @@
 }
 
 .box {
-  @apply min-h-screen py-10 bg-[#fafafa];
+  @apply min-h-screen bg-[#fafafa] py-10;
 }
 
 .rounded {
@@ -19,5 +19,5 @@
 }
 
 .block {
-  @apply min-h-[600px] h-screen;
+  @apply h-screen min-h-[600px];
 }

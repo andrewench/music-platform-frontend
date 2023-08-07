@@ -47,5 +47,18 @@
     "confirm": {
       "fieldName": "确认密码"
     }
+  },
+  "server": {
+    "success": {
+      "registered": "您已经成功注册了",
+      "logged": "您已成功登录",
+      "redirect": "重定向到配置文件"
+    },
+    "error": {
+      "invalidCredentials": "无效的登录名或密码",
+      "userNoExists": "用户不存在",
+      "userExists": "用户已存在",
+      "unknown": "未知错误"
+    }
   }
 }
