@@ -6,7 +6,7 @@ import cn from 'clsx'
 
 import { SideBarItem } from '@/components/ui'
 
-import { FlexContainer } from '@/components/shared'
+import { Flex, Image } from '@/components/shared'
 
 import { sideBarItemsList } from '@/shared/data'
 
@@ -18,24 +18,19 @@ export const SideBar: FC = () => {
   return (
     <div className={cn(styles.box)}>
       <div className={styles.avatar}>
-        <img
-          src="/images/avatar.jpg"
-          alt="Avatar"
-          className={styles.image}
-          draggable={false}
-        />
+        <Image src="/images/avatar.jpg" alt="Avatar" className={styles.image} />
       </div>
 
       <div className={styles.list}>
         <div className={styles.username}>Jessie Carrillo</div>
 
-        <FlexContainer align="center" className={styles.nickname}>
+        <Flex align="center" className={styles.nickname}>
           <p>@jessie_carrillo</p>
 
           <button>
             <IoCopyOutline size={14} className={styles.icon} />
           </button>
-        </FlexContainer>
+        </Flex>
 
         <ul className={styles.menu}>
           {sideBarItemsList.map(({ labelKey, ...props }, idx) => (

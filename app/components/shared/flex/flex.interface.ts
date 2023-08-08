@@ -12,8 +12,7 @@ type TAlignOnCrossAxis =
   | 'around'
   | 'evenly'
 
-export interface IFlexContainer
-  extends PropsWithChildren<PropsWithClassName<unknown>> {
+export interface IFlex extends PropsWithChildren<PropsWithClassName<unknown>> {
   isCentered?: boolean
   direction?: TDirection
   align?: TAlignOnMainAxis

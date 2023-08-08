@@ -9,7 +9,7 @@ import { version as appVersion } from '@@/package.json'
 
 import { PageLayout } from '@/components/layout'
 
-import { FlexContainer } from '@/components/shared'
+import { Flex } from '@/components/shared'
 
 import { LoginService } from '@/services'
 
@@ -48,21 +48,21 @@ export const Login: FC = () => {
 
   return (
     <PageLayout title={t('common.signIn')}>
-      <FlexContainer isRtlDetect>
+      <Flex isRtlDetect>
         <div className={cn(styles.poster, styles.block)} />
 
         <SimpleBar className={cn(styles.scrollBar, styles.block)}>
-          <FlexContainer isCentered className={styles.box}>
-            <FlexContainer isCentered direction="column">
+          <Flex isCentered className={styles.box}>
+            <Flex isCentered direction="column">
               <h1 className={styles.heading} data-version={appVersion}>
                 {AppConstant.APP_NAME}
               </h1>
 
               <FormRenderer query={loginQuery} />
-            </FlexContainer>
-          </FlexContainer>
+            </Flex>
+          </Flex>
         </SimpleBar>
-      </FlexContainer>
+      </Flex>
     </PageLayout>
   )
 }

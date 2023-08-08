@@ -2,11 +2,11 @@ import { FC } from 'react'
 
 import cn from 'clsx'
 
-import { IFlexContainer } from './flex-container.interface'
+import { IFlex } from './flex.interface'
 
-import styles from './flex-container.module.scss'
+import styles from './flex.module.scss'
 
-export const FlexContainer: FC<IFlexContainer> = ({
+export const Flex: FC<IFlex> = ({
   isCentered = false,
   direction = 'row',
   align,

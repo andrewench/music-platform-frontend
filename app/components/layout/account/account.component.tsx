@@ -2,24 +2,24 @@ import { FC, PropsWithChildren } from 'react'
 
 import { Footer, Header, SideBar } from '@/components/layout'
 
-import { FlexContainer } from '@/components/shared'
+import { Flex } from '@/components/shared'
 
 import styles from './account.module.scss'
 
 export const AccountLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <FlexContainer direction="column">
-      <FlexContainer className={styles.box}>
+    <Flex direction="column">
+      <Flex className={styles.box}>
         <SideBar />
 
-        <FlexContainer direction="column" className={styles.content}>
+        <Flex direction="column" className={styles.content}>
           <Header />
 
           {children}
-        </FlexContainer>
-      </FlexContainer>
+        </Flex>
+      </Flex>
 
       <Footer />
-    </FlexContainer>
+    </Flex>
   )
 }

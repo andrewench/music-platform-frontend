@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 import { HeaderLink } from '@/components/ui'
 
-import { FlexContainer } from '@/components/shared'
+import { Flex } from '@/components/shared'
 
 import { headerLinksList } from '@/shared/data'
 
@@ -14,11 +14,11 @@ export const Header: FC = () => {
 
   return (
     <div className={styles.box}>
-      <FlexContainer align="center" className={styles.links}>
+      <Flex align="center" className={styles.links}>
         {headerLinksList.map((link, idx) => (
           <HeaderLink to={link.to} label={t(link.labelKey)} key={idx} />
         ))}
-      </FlexContainer>
+      </Flex>
     </div>
   )
 }

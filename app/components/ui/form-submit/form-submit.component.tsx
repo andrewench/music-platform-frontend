@@ -4,7 +4,7 @@ import cn from 'clsx'
 
 import { PrimaryButton, Spinner } from '@/components/ui'
 
-import { FlexContainer } from '@/components/shared'
+import { Flex } from '@/components/shared'
 
 import { IFormSubmit } from './form-submit.interface'
 
@@ -16,12 +16,12 @@ export const FormSubmit: FC<IFormSubmit> = ({
   children,
 }) => {
   return (
-    <FlexContainer>
+    <Flex>
       <div className={cn(styles.box, className)}>
         <PrimaryButton type="submit">{children}</PrimaryButton>
 
         {isFetching && <Spinner className={styles.spinner} />}
       </div>
-    </FlexContainer>
+    </Flex>
   )
 }
