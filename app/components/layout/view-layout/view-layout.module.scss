@@ -3,5 +3,5 @@
 }
 
 .box {
-  @apply w-full bg-[#f3f3f3] p-7;
+  @apply min-h-[calc(100vh-70px-100px)] w-full bg-[#f3f3f3] p-7;
 }

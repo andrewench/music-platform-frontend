@@ -3,15 +3,15 @@ import { useTranslation } from 'react-i18next'
 
 import { AccountLayout, PageLayout } from '@/components/layout'
 
-import { PlaylistsView } from '@/components/views'
+import { ChartView } from '@/components/views'
 
-export const Playlists: FC = () => {
+export const Chart: FC = () => {
   const { t } = useTranslation()
 
   return (
-    <PageLayout title={t('sections.header.links.playlists')}>
+    <PageLayout title={t('sections.header.links.chart')}>
       <AccountLayout>
-        <PlaylistsView />
+        <ChartView />
       </AccountLayout>
     </PageLayout>
   )

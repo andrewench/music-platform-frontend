@@ -2,7 +2,18 @@ import { RouteObject, createBrowserRouter } from 'react-router-dom'
 
 import { AuthProvider } from '../auth.provider'
 
-import { Login, Playlists } from '@/components/screens'
+import {
+  Account,
+  Artists,
+  Chart,
+  LikedSongs,
+  Login,
+  Messenger,
+  Playlists,
+  Podcasts,
+  Settings,
+  Subscriptions,
+} from '@/components/screens'
 
 import { TAppRoutes } from './router.type'
 
@@ -24,8 +35,40 @@ const routes: TRouter[] = [
         element: <Login />,
       },
       {
+        path: '/podcasts',
+        element: <Podcasts />,
+      },
+      {
         path: '/playlists',
         element: <Playlists />,
+      },
+      {
+        path: '/artists',
+        element: <Artists />,
+      },
+      {
+        path: '/chart',
+        element: <Chart />,
+      },
+      {
+        path: '/account',
+        element: <Account />,
+      },
+      {
+        path: '/messenger',
+        element: <Messenger />,
+      },
+      {
+        path: '/subscriptions',
+        element: <Subscriptions />,
+      },
+      {
+        path: '/liked',
+        element: <LikedSongs />,
+      },
+      {
+        path: '/settings',
+        element: <Settings />,
       },
     ],
   },
