@@ -14,10 +14,6 @@
   @apply min-h-screen bg-[#fafafa] py-10;
 }
 
-.rounded {
-  @apply overflow-hidden rounded-bl-[10px] rounded-br-[10px];
-}
-
 .block {
   @apply h-screen min-h-[600px];
 }

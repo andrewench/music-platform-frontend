@@ -1,0 +1,7 @@
+.link {
+  @apply flex h-[50px] w-full items-center gap-x-[10px] rounded-[4px] px-5 text-mpl-grey-4;
+
+  &:hover {
+    @apply bg-mpl-accent-color text-mpl-white transition-colors duration-300;
+  }
+}

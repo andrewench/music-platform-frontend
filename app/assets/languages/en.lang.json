@@ -60,5 +60,24 @@
       "userExists": "User already exists",
       "unknown": "Unknown error"
     }
+  },
+  "sections": {
+    "header": {
+      "links": {
+        "podcasts": "Podcasts",
+        "playlists": "Playlists",
+        "artists": "Artists",
+        "chart": "Chart"
+      }
+    },
+    "sidebar": {
+      "items": {
+        "account": "Account",
+        "messenger": "Messenger",
+        "subscriptions": "Subscriptions",
+        "liked": "Liked songs",
+        "settings": "Settings"
+      }
+    }
   }
 }

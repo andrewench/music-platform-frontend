@@ -60,5 +60,24 @@
       "userExists": "用户已存在",
       "unknown": "未知错误"
     }
+  },
+  "sections": {
+    "header": {
+      "links": {
+        "podcasts": "播客",
+        "playlists": "播放列表",
+        "artists": "艺术家",
+        "chart": "图表"
+      }
+    },
+    "sidebar": {
+      "items": {
+        "account": "帐户",
+        "messenger": "信使",
+        "subscriptions": "订阅",
+        "liked": "喜欢歌曲",
+        "settings": "设置"
+      }
+    }
   }
 }

@@ -47,7 +47,7 @@ export const SignUpForm: FC = () => {
         unknown: t('server.error.unknown'),
       },
       () => {
-        navigate('/recent')
+        navigate('/playlists')
       }
     )
   }, [data, navigate, t])

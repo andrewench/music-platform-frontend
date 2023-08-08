@@ -1,10 +1,9 @@
-import { FC, useLayoutEffect, useState } from 'react'
+import { FC, useEffect, useLayoutEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import SimpleBar from 'simplebar-react'
 
 import cn from 'clsx'
-import isElectron from 'is-electron'
 
 import { version as appVersion } from '@@/package.json'
 
@@ -21,6 +20,7 @@ import { FormRenderer } from './form-renderer.component'
 import styles from './login.module.scss'
 
 export const Login: FC = () => {
+  const [redirectedUrl, setRedirectedUrl] = useState<string>('')
   const [loginQuery, setLoginQuery] = useState(
     AppConstant.AUTH.QUERY_PARAMS.signIn
   )
@@ -36,29 +36,29 @@ export const Login: FC = () => {
       setLoginQuery
     )
 
-    if (resolvedUrl?.redirect) navigate(resolvedUrl?.redirect)
-  }, [searchParams, navigate])
+    if (resolvedUrl?.redirect && !redirectedUrl.length)
+      setRedirectedUrl(resolvedUrl?.redirect)
+  }, [searchParams, navigate, redirectedUrl])
+
+  useEffect(() => {
+    if (!redirectedUrl.length) return
+
+    navigate(redirectedUrl)
+  }, [navigate, redirectedUrl])
 
   return (
     <PageLayout title={t('common.signIn')}>
-      <FlexContainer
-        isRtlDetect
-        className={cn({
-          [styles.rounded]: isElectron(),
-        })}
-      >
+      <FlexContainer isRtlDetect>
         <div className={cn(styles.poster, styles.block)} />
 
         <SimpleBar className={cn(styles.scrollBar, styles.block)}>
           <FlexContainer isCentered className={styles.box}>
             <FlexContainer isCentered direction="column">
-              <>
-                <h1 className={styles.heading} data-version={appVersion}>
-                  {AppConstant.APP_NAME}
-                </h1>
+              <h1 className={styles.heading} data-version={appVersion}>
+                {AppConstant.APP_NAME}
+              </h1>
 
-                <FormRenderer query={loginQuery} />
-              </>
+              <FormRenderer query={loginQuery} />
             </FlexContainer>
           </FlexContainer>
         </SimpleBar>

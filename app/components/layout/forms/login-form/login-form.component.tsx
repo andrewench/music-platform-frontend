@@ -42,7 +42,7 @@ export const LoginForm: FC = () => {
         unknown: t('server.error.unknown'),
       },
       () => {
-        navigate('/recent')
+        navigate('/playlists')
       }
     )
   }, [data, navigate, t])
