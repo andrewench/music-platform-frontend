@@ -1,0 +1,31 @@
+.box {
+  @apply relative after:absolute after:left-0 after:top-0 after:h-full after:w-full after:rounded-[14px] after:transition-colors after:duration-200 after:content-[''];
+
+  &:hover {
+    @apply after:bg-mpl-white/10;
+
+    .coverWrap {
+      @apply after:border-l-[30px] after:border-t-[20px] after:border-r-[20px] after:border-b-[20px] after:border-l-mpl-white/90 after:border-t-transparent after:border-r-transparent after:border-b-transparent;
+    }
+  }
+}
+
+.coverWrap {
+  @apply relative after:absolute after:left-[calc(50%-15px)] after:top-[calc(50%-20px)] after:content-[''];
+}
+
+.cover {
+  @apply relative mb-2 rounded-[14px];
+}
+
+.meta {
+  @apply absolute bottom-2 w-full gap-1 text-sm text-mpl-grey-1;
+}
+
+.icon {
+  @apply mr-1;
+}
+
+.label {
+  @apply text-center text-base text-mpl-grey-4;
+}
