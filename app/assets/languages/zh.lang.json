@@ -78,6 +78,9 @@
         "liked": "喜欢歌曲",
         "settings": "设置"
       }
+    },
+    "listeners": {
+      "listeningNow": "现在听"
     }
   }
 }

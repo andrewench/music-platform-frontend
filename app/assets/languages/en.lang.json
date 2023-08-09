@@ -78,6 +78,9 @@
         "liked": "Liked songs",
         "settings": "Settings"
       }
+    },
+    "listeners": {
+      "listeningNow": "Listening now"
     }
   }
 }

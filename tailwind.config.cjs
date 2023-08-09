@@ -10,10 +10,14 @@ module.exports = {
       'mpl-grey-2': '#909090',
       'mpl-grey-3': '#626262',
       'mpl-grey-4': '#3c3c3c',
+      'mpl-grey-5': '#d9d9d9',
 
       'mpl-bd': '#d1d1d1',
 
       'mpl-red': '#ff3d3d',
+
+      'mpl-online': '#00c5f0',
+      'mpl-offline': '#9cedff',
     },
     extend: {
       fontFamily: {

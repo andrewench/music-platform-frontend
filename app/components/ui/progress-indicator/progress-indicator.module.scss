@@ -1,0 +1,11 @@
+.box {
+  @apply relative h-1;
+}
+
+.track {
+  @apply absolute z-0 h-full w-full rounded-full bg-mpl-grey-5;
+}
+
+.drag {
+  @apply relative z-10 h-full rounded-full bg-mpl-accent-color;
+}

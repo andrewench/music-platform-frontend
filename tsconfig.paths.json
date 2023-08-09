@@ -5,6 +5,7 @@
       "@/components/global": ["components/global"],
       "@/components/layout": ["components/layout"],
       "@/components/ui": ["components/ui"],
+      "@/components/icons": ["components/icons"],
       "@/components/screens": ["components/screens"],
       "@/components/shared": ["components/shared"],
       "@/components/views": ["components/views"],

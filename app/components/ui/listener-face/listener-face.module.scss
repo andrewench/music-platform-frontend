@@ -1,0 +1,11 @@
+.box {
+  @apply relative -ml-2 h-10 w-10 rounded-full border-[2px] border-mpl-white first:ml-0 hover:cursor-pointer;
+}
+
+.image {
+  @apply rounded-full;
+}
+
+.status {
+  @apply absolute right-0 -bottom-[2px] z-20 h-[11px] w-[11px] rounded-full border-[2px] border-mpl-white bg-mpl-online;
+}
