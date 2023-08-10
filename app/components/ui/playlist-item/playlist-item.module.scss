@@ -19,11 +19,7 @@
 }
 
 .meta {
-  @apply absolute bottom-2 w-full gap-1 text-sm text-mpl-grey-1;
-}
-
-.icon {
-  @apply mr-1;
+  @apply absolute bottom-2 w-full justify-center gap-1 text-sm text-mpl-grey-1;
 }
 
 .label {

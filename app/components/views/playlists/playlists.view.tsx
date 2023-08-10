@@ -19,7 +19,7 @@ export const PlaylistsView: FC = () => {
 
         <Flex isGrid className={styles.grid}>
           <PlaylistItem
-            to="/"
+            to="/playlists?id=303931"
             imageSrc="/images/instrumental.jpg"
             label="Instrumental music"
           />

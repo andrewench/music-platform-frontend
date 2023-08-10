@@ -1,0 +1,35 @@
+.cover {
+  @apply rounded-[14px];
+}
+
+.box {
+  @apply mt-5 items-start gap-4;
+}
+
+.heading {
+  @apply mt-3 text-xl text-mpl-grey-4;
+}
+
+.description {
+  @apply mt-2 max-w-xl text-base leading-5 text-mpl-grey-3;
+}
+
+.table {
+  @apply mt-5;
+}
+
+.author {
+  @apply mt-2 text-base text-mpl-grey-4;
+}
+
+.profileLink {
+  @apply hover:underline;
+}
+
+.stat {
+  @apply mt-1 text-mpl-grey-4;
+}
+
+.actions {
+  @apply mt-3 gap-3;
+}

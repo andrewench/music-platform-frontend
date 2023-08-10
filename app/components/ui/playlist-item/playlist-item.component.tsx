@@ -1,23 +1,22 @@
 import { FC } from 'react'
-import { IoHeadsetOutline, IoHeartOutline } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 
-import { Flex, Image } from '@/components/shared'
+import { Image, PlaylistStat } from '@/components/shared'
 
 import styles from './playlist-item.module.scss'
 
 interface IPlaylistItem {
   to: string
+  label: string
   imageSrc: string
   imageAlt?: string
-  label: string
 }
 
 export const PlaylistItem: FC<IPlaylistItem> = ({
   to,
+  label,
   imageSrc,
   imageAlt,
-  label,
 }) => {
   return (
     <Link to={to} draggable={false} className={styles.box}>
@@ -28,17 +27,7 @@ export const PlaylistItem: FC<IPlaylistItem> = ({
           className={styles.cover}
         />
 
-        <Flex align="center" content="center" className={styles.meta}>
-          <Flex align="center">
-            <IoHeadsetOutline size={16} className={styles.icon} />
-            <span>120</span>
-          </Flex>
-
-          <Flex align="center">
-            <IoHeartOutline size={18} className={styles.icon} />
-            <span>11k</span>
-          </Flex>
-        </Flex>
+        <PlaylistStat listeners={120} likes={11} className={styles.meta} />
       </div>
 
       <p className={styles.label}>{label}</p>

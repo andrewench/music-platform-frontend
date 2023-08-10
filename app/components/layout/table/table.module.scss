@@ -1,0 +1,15 @@
+.table {
+  @apply w-full bg-mpl-grey-1/10 text-mpl-grey-4;
+}
+
+.cell {
+  @apply p-2 text-center;
+}
+
+.headCell {
+  @apply text-base font-normal;
+}
+
+.row {
+  @apply text-base  transition-colors duration-150 odd:bg-mpl-offline/10 hover:cursor-pointer hover:bg-mpl-accent-color/20;
+}
