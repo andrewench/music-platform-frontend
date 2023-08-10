@@ -17,6 +17,10 @@ export const AppConstant = {
     LIFE_TIME: 5 * 1000,
   },
 
+  TOKENS: {
+    AT_LIFE_TIME: 10 * 1000,
+  },
+
   COOKIE: {
     AT_PREFIX: 'accessToken',
   },

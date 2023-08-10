@@ -70,6 +70,10 @@ const routes: TRouter[] = [
         path: '/settings',
         element: <Settings />,
       },
+      {
+        path: '/*',
+        element: <Login />,
+      },
     ],
   },
 ]

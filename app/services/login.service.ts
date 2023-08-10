@@ -50,7 +50,9 @@ export const LoginService = {
 
     const { accessToken } = data
 
-    Cookies.set(AppConstant.COOKIE.AT_PREFIX, accessToken)
+    Cookies.set(AppConstant.COOKIE.AT_PREFIX, accessToken, {
+      expires: AppConstant.TOKENS.AT_LIFE_TIME,
+    })
 
     toast.success(toastLabelKey.logged)
 
