@@ -10,6 +10,7 @@
       "@/components/shared": ["components/shared"],
       "@/components/views": ["components/views"],
       "@/components/providers": ["components/providers"],
+      "@/components/guards": ["components/guards"],
       "@/store": ["store"],
       "@/services": ["services"],
       "@/shared/data": ["shared/data"],

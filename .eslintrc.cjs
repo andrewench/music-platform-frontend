@@ -87,6 +87,7 @@ module.exports = {
         checksVoidReturn: false,
       },
     ],
+    '@typescript-eslint/promise-function-async': 'off',
     '@typescript-eslint/triple-slash-reference': [
       'warn',
       {

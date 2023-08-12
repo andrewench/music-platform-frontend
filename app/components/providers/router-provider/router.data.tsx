@@ -1,8 +1,12 @@
+import { Suspense } from 'react'
+import { lazily } from 'react-lazily'
 import { RouteObject, createBrowserRouter } from 'react-router-dom'
 
-import { AuthProvider } from '../auth.provider'
+import { AuthGuard } from '@/components/guards'
 
-import {
+import { TAppRoutes } from './router.type'
+
+const {
   Account,
   Artists,
   Chart,
@@ -13,9 +17,7 @@ import {
   Podcasts,
   Settings,
   Subscriptions,
-} from '@/components/screens'
-
-import { TAppRoutes } from './router.type'
+} = lazily(() => import('@/components/screens'))
 
 type TRouter = RouteObject & {
   path: TAppRoutes
@@ -24,7 +26,7 @@ type TRouter = RouteObject & {
 const routes: TRouter[] = [
   {
     path: '/',
-    element: <AuthProvider />,
+    element: <AuthGuard />,
     children: [
       {
         path: '/',
@@ -36,43 +38,83 @@ const routes: TRouter[] = [
       },
       {
         path: '/podcasts',
-        element: <Podcasts />,
+        element: (
+          <Suspense>
+            <Podcasts />
+          </Suspense>
+        ),
       },
       {
         path: '/playlists',
-        element: <Playlists />,
+        element: (
+          <Suspense>
+            <Playlists />
+          </Suspense>
+        ),
       },
       {
         path: '/artists',
-        element: <Artists />,
+        element: (
+          <Suspense>
+            <Artists />
+          </Suspense>
+        ),
       },
       {
         path: '/chart',
-        element: <Chart />,
+        element: (
+          <Suspense>
+            <Chart />
+          </Suspense>
+        ),
       },
       {
         path: '/account',
-        element: <Account />,
+        element: (
+          <Suspense>
+            <Account />
+          </Suspense>
+        ),
       },
       {
         path: '/messenger',
-        element: <Messenger />,
+        element: (
+          <Suspense>
+            <Messenger />
+          </Suspense>
+        ),
       },
       {
         path: '/subscriptions',
-        element: <Subscriptions />,
+        element: (
+          <Suspense>
+            <Subscriptions />
+          </Suspense>
+        ),
       },
       {
         path: '/liked',
-        element: <LikedSongs />,
+        element: (
+          <Suspense>
+            <LikedSongs />
+          </Suspense>
+        ),
       },
       {
         path: '/settings',
-        element: <Settings />,
+        element: (
+          <Suspense>
+            <Settings />
+          </Suspense>
+        ),
       },
       {
         path: '/*',
-        element: <Login />,
+        element: (
+          <Suspense>
+            <AuthGuard />
+          </Suspense>
+        ),
       },
     ],
   },

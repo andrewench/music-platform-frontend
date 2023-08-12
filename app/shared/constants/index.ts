@@ -2,8 +2,8 @@ import { TLoginQueries } from '../types'
 
 export const AppConstant = {
   BASE_API_PREFIX: '/api',
-
   APP_NAME: 'Music Platform',
+  FAKE_LOADER_DELAY: 1000,
 
   AUTH: {
     QUERY_PARAMS: {

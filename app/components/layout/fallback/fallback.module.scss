@@ -1,3 +1,15 @@
-.spinner {
+/* .spinner {
   @apply absolute z-[9999] flex h-screen w-screen items-center justify-center bg-mpl-white after:block after:h-9 after:w-9 after:animate-spin after:rounded-full after:border-[1px] after:border-mpl-grey-4 after:border-b-transparent after:content-[''];
+} */
+
+.spinner {
+  @apply absolute flex items-center justify-center after:block after:h-9 after:w-9 after:animate-spin after:rounded-full after:border-[1px] after:border-mpl-grey-4 after:border-b-transparent after:content-[''];
+}
+
+.screen {
+  @apply z-[9999] h-screen w-screen bg-mpl-white;
+}
+
+.view {
+  @apply h-full w-full;
 }
