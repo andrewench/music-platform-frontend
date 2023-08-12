@@ -1,17 +1,18 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { createApi } from '@reduxjs/toolkit/query/react'
 
-import { AppConstant } from '@/shared/constants'
-
-import { createRequestApi } from '@/shared/utils'
+import { customFetcher } from '@/shared/utils'
 
 export const userApi = createApi({
   reducerPath: 'userApi',
-  baseQuery: fetchBaseQuery({
-    baseUrl: AppConstant.BASE_API_PREFIX,
-  }),
+  baseQuery: customFetcher,
   endpoints: ({ query }) => ({
-    checkStatus: query(createRequestApi<{ message: string }>('/auth', 'POST')),
+    getMe: query({
+      query: () => ({
+        url: '/user/me',
+        method: 'GET',
+      }),
+    }),
   }),
 })
 
-export const { useCheckStatusQuery } = userApi
+export const { useGetMeQuery } = userApi

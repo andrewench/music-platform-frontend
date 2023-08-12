@@ -8,12 +8,18 @@ import { SideBarItem } from '@/components/ui'
 
 import { Flex, Image } from '@/components/shared'
 
+import { user } from '@/store/slices'
+
 import { sideBarItemsList } from '@/shared/data'
+
+import { useAppSelector } from '@/shared/hooks'
 
 import styles from './sidebar.module.scss'
 
 export const SideBar: FC = () => {
   const { t } = useTranslation()
+
+  const { data } = useAppSelector(user)
 
   return (
     <div className={cn(styles.box)}>
@@ -22,15 +28,19 @@ export const SideBar: FC = () => {
       </div>
 
       <div className={styles.list}>
-        <div className={styles.username}>Jessie Carrillo</div>
+        <div
+          className={styles.username}
+        >{`${data.firstName} ${data.lastName}`}</div>
 
-        <Flex align="center" className={styles.nickname}>
-          <p>@jessie_carrillo</p>
+        {data.nickname && (
+          <Flex align="center" className={styles.nickname}>
+            <p>@{data.nickname}</p>
 
-          <button>
-            <IoCopyOutline size={14} className={styles.icon} />
-          </button>
-        </Flex>
+            <button>
+              <IoCopyOutline size={14} className={styles.icon} />
+            </button>
+          </Flex>
+        )}
 
         <ul className={styles.menu}>
           {sideBarItemsList.map(({ labelKey, ...props }, idx) => (

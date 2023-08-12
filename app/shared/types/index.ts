@@ -6,6 +6,7 @@ export type {
   PropsWithClassName,
 } from './props-with-classname.type'
 export type { TRestApiMethod } from './rest-api-method.type'
-export type { AppDispatch, RootState } from './typed-default-hooks.type'
+export type * from './typed-default-hooks.type'
 export type { StateAction } from './state-action.type'
 export type * from './response.type'
+export * from './users.type'

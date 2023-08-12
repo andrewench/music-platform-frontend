@@ -108,14 +108,6 @@ const routes: TRouter[] = [
           </Suspense>
         ),
       },
-      {
-        path: '/*',
-        element: (
-          <Suspense>
-            <AuthGuard />
-          </Suspense>
-        ),
-      },
     ],
   },
 ]

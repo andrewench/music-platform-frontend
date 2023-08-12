@@ -1,11 +1,25 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
-const initialState = {}
+import { IUser, TRootState } from '@/shared/types'
+
+interface IInitialState {
+  data: IUser
+}
+
+const initialState: IInitialState = {
+  data: {} as IUser,
+}
 
 const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    setUserData: (state, action: PayloadAction<IUser>) => {
+      state.data = action.payload
+    },
+  },
 })
 
-export const userReducer = userSlice.reducer
+export const { reducer: userReducer, actions: userActions } = userSlice
+
+export const user = (state: TRootState) => state.user
