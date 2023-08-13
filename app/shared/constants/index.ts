@@ -4,6 +4,7 @@ export const AppConstant = {
   BASE_API_PREFIX: '/api',
   APP_NAME: 'Music Platform',
   FAKE_LOADER_DELAY: 1000,
+  DEFAULT_AVATAR_PATH: '/images/default_avatar.png',
 
   AUTH: {
     QUERY_PARAMS: {

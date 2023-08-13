@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { ObjectSchema } from 'yup'
 
 export const useConfiguratedForm = <T extends FieldValues>(
-  schema: ObjectSchema<T>
+  schema?: ObjectSchema<T>
 ) => {
   return useForm<T>({
     mode: 'onChange',

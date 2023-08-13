@@ -8,6 +8,7 @@ export interface IUser {
   nickname: string | null
   email: string
   role: TRoles
+  avatar: string | null
   createdAt: string
   updatedAt: string[]
 }

@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { IoCopyOutline } from 'react-icons/io5'
+import { IoCopyOutline, IoImageOutline } from 'react-icons/io5'
 
 import cn from 'clsx'
 
@@ -11,6 +11,8 @@ import { Flex, Image } from '@/components/shared'
 import { user } from '@/store/slices'
 
 import { sideBarItemsList } from '@/shared/data'
+
+import { AppConstant } from '@/shared/constants'
 
 import { useAppSelector } from '@/shared/hooks'
 
@@ -24,7 +26,19 @@ export const SideBar: FC = () => {
   return (
     <div className={cn(styles.box)}>
       <div className={styles.avatar}>
-        <Image src="/images/avatar.jpg" alt="Avatar" className={styles.image} />
+        <Image
+          src={data.avatar ?? AppConstant.DEFAULT_AVATAR_PATH}
+          alt="Avatar"
+          className={styles.image}
+        />
+
+        <button
+          className={cn(styles.upload, {
+            [styles.autoHide]: data.avatar,
+          })}
+        >
+          <IoImageOutline size={18} className={styles.uploadIcon} />
+        </button>
       </div>
 
       <div className={styles.list}>

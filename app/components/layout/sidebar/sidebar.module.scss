@@ -1,14 +1,38 @@
 .box {
-  @apply z-40 h-[calc(100vh-100px)] w-[300px] min-w-[300px] overflow-hidden bg-mpl-white;
+  @apply z-[60] h-[calc(100vh-100px)] w-[300px] min-w-[300px] overflow-hidden bg-mpl-white;
   box-shadow: 1px 1px 0px #00000008;
 }
 
 .avatar {
   @apply relative h-60 overflow-hidden rounded-bl-[80px] rounded-br-[14px];
+
+  &:hover {
+    .upload.autoHide {
+      @apply visible opacity-100;
+    }
+  }
 }
 
 .image {
   @apply block h-full;
+}
+
+.upload {
+  @apply absolute right-5 top-5 h-9 w-9 rounded-full bg-mpl-white text-xl shadow-box transition-opacity;
+
+  &:hover {
+    .uploadIcon {
+      @apply text-mpl-accent-color transition-colors duration-150;
+    }
+  }
+}
+
+.autoHide {
+  @apply invisible opacity-0;
+}
+
+.uploadIcon {
+  @apply mx-auto text-mpl-grey-2;
 }
 
 .list {
@@ -21,8 +45,7 @@
 }
 
 .username {
-  @apply inline-block -translate-y-6 rounded-full bg-mpl-white px-5 py-2 text-lg font-medium text-mpl-grey-4;
-  box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.03);
+  @apply inline-block -translate-y-6 rounded-full bg-mpl-white px-5 py-2 text-lg font-medium text-mpl-grey-4 shadow-box;
 }
 
 .nickname {

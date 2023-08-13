@@ -29,6 +29,9 @@ module.exports = {
       borderRadius: {
         mpl: '6px',
       },
+      boxShadow: {
+        box: '0 10px 30px rgba(0, 0, 0, 0.03)'
+      }
     },
   },
   plugins: [],
