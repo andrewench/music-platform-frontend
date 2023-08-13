@@ -9,6 +9,7 @@ import styles from './styled-button.module.scss'
 export const StyledButton: FC<IStyledButton> = ({
   type,
   variant,
+  onClick,
   className,
   children,
 }) => {
@@ -25,6 +26,7 @@ export const StyledButton: FC<IStyledButton> = ({
         className
       )}
       disabled={variant === 'disabled'}
+      onClick={onClick}
     >
       {children}
     </button>

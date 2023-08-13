@@ -1,10 +1,10 @@
-export const SoundtracksListCaption = [
+export const SoundtracksListCaptionKeys = [
   '№',
-  'Soundtrack',
-  'Time',
-  'Album',
-  'Genre',
-  'Author',
+  'sections.playlist.caption.soundtrack',
+  'sections.playlist.caption.time',
+  'sections.playlist.caption.album',
+  'sections.playlist.caption.genre',
+  'sections.playlist.caption.author',
 ]
 
 export const SoundtracksList = [

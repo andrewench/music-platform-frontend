@@ -1,10 +1,10 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { IoCopyOutline, IoImageOutline } from 'react-icons/io5'
+import { IoCopyOutline } from 'react-icons/io5'
 
 import cn from 'clsx'
 
-import { SideBarItem } from '@/components/ui'
+import { AvatarUploader, SideBarItem } from '@/components/ui'
 
 import { Flex, Image } from '@/components/shared'
 
@@ -32,13 +32,7 @@ export const SideBar: FC = () => {
           className={styles.image}
         />
 
-        <button
-          className={cn(styles.upload, {
-            [styles.autoHide]: data.avatar,
-          })}
-        >
-          <IoImageOutline size={18} className={styles.uploadIcon} />
-        </button>
+        <AvatarUploader />
       </div>
 
       <div className={styles.list}>

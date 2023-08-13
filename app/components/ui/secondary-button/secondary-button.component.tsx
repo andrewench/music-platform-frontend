@@ -7,11 +7,17 @@ import { IMiniStyledButton } from '@/components/ui/styled-button/styled-button.i
 
 export const SecondaryButton: FC<IMiniStyledButton> = ({
   type,
+  onClick,
   className,
   children,
 }) => {
   return (
-    <StyledButton type={type} variant="outlined" className={cn(className)}>
+    <StyledButton
+      type={type}
+      variant="outlined"
+      onClick={onClick}
+      className={cn(className)}
+    >
       {children}
     </StyledButton>
   )

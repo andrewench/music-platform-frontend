@@ -1,4 +1,5 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { IoEllipsisHorizontalOutline } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 
@@ -8,15 +9,32 @@ import { BackLink, PrimaryButton, SecondaryButton } from '@/components/ui'
 
 import { Flex, Image, PlaylistStat } from '@/components/shared'
 
-import { SoundtracksList, SoundtracksListCaption } from '@/shared/data'
+import { SoundtracksList, SoundtracksListCaptionKeys } from '@/shared/data'
 
 import styles from './single-playlist.module.scss'
 
 export const SinglePlaylistView: FC = () => {
+  const { t } = useTranslation()
+
+  const [translatedTableCaptionKeys, setTranslatedTableCaptionKeys] = useState<
+    string[]
+  >([])
+
+  useEffect(() => {
+    const list = SoundtracksListCaptionKeys.map(item => t(item))
+
+    setTranslatedTableCaptionKeys(list)
+  }, [t])
+
   return (
     <ViewLayout>
       <SectionBlock>
-        <BackLink to="/playlists" label="Back to playlists" />
+        <BackLink
+          to="/playlists"
+          label={`${t('common.back')} ${t(
+            'sections.header.links.playlists'
+          ).toLowerCase()}`}
+        />
 
         <Flex className={styles.box}>
           <Image
@@ -54,7 +72,7 @@ export const SinglePlaylistView: FC = () => {
         </Flex>
 
         <Table
-          head={SoundtracksListCaption}
+          head={translatedTableCaptionKeys}
           content={SoundtracksList}
           className={styles.table}
         />

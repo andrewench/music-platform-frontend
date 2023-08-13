@@ -4,7 +4,8 @@
     "signUp": "Sign Up",
     "restore": "Restore",
     "sendCode": "Send code",
-    "required": "The field is required"
+    "required": "The field is required",
+    "back": "Back to"
   },
   "helpers": {
     "accountNotExists": "Are you haven't an account?",
@@ -81,6 +82,24 @@
     },
     "listeners": {
       "listeningNow": "Listening now"
+    },
+    "playlist": {
+      "caption": {
+        "soundtrack": "Soundtrack",
+        "time": "Time",
+        "album": "Album",
+        "genre": "Genre",
+        "author": "Author"
+      }
+    }
+  },
+  "modals": {
+    "avatar": {
+      "title": "Upload an image",
+      "file": "Select an image",
+      "format": "The image must be in PNG, JPG format and not exceed 5 MB.",
+      "positive": "Upload",
+      "negative": "Cancel"
     }
   }
 }

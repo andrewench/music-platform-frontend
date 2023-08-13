@@ -3,13 +3,21 @@ import { Toaster } from 'react-hot-toast'
 
 import cn from 'clsx'
 
+import { AvatarUploaderModal } from '@/components/layout'
+
+import { modals } from '@/store/slices'
+
 import { AppConstant } from '@/shared/constants'
+
+import { useAppSelector } from '@/shared/hooks'
 
 import { TPageLayout } from './page.interface'
 
 import styles from './page.module.scss'
 
 export const PageLayout: FC<TPageLayout> = ({ title, children, className }) => {
+  const { avatarUploader } = useAppSelector(modals)
+
   useEffect(() => {
     const titleElement = document.getElementsByTagName('title')[0]
 
@@ -34,6 +42,8 @@ export const PageLayout: FC<TPageLayout> = ({ title, children, className }) => {
         }}
         reverseOrder
       />
+
+      {avatarUploader.isOpen && <AvatarUploaderModal />}
     </div>
   )
 }

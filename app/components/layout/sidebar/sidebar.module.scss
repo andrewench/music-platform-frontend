@@ -5,34 +5,10 @@
 
 .avatar {
   @apply relative h-60 overflow-hidden rounded-bl-[80px] rounded-br-[14px];
-
-  &:hover {
-    .upload.autoHide {
-      @apply visible opacity-100;
-    }
-  }
 }
 
 .image {
   @apply block h-full;
-}
-
-.upload {
-  @apply absolute right-5 top-5 h-9 w-9 rounded-full bg-mpl-white text-xl shadow-box transition-opacity;
-
-  &:hover {
-    .uploadIcon {
-      @apply text-mpl-accent-color transition-colors duration-150;
-    }
-  }
-}
-
-.autoHide {
-  @apply invisible opacity-0;
-}
-
-.uploadIcon {
-  @apply mx-auto text-mpl-grey-2;
 }
 
 .list {

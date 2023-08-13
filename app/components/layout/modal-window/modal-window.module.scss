@@ -1,0 +1,11 @@
+.box {
+  @apply absolute left-0 top-0 z-[9999] h-full w-full bg-mpl-grey-4/60 backdrop-blur-sm;
+}
+
+.window {
+  @apply min-h-[140px] w-96 rounded-md bg-mpl-white p-7 text-mpl-grey-3 shadow-box;
+}
+
+.heading {
+  @apply text-xl;
+}

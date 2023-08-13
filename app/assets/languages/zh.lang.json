@@ -4,7 +4,8 @@
     "signUp": "报名",
     "restore": "恢复",
     "sendCode": "发送代码",
-    "required": "需要该字段"
+    "required": "需要该字段",
+    "back": "回到"
   },
   "helpers": {
     "accountNotExists": "您没有帐户吗？",
@@ -81,6 +82,24 @@
     },
     "listeners": {
       "listeningNow": "现在听"
+    },
+    "playlist": {
+      "caption": {
+        "soundtrack": "配乐",
+        "time": "时间",
+        "album": "专辑",
+        "genre": "类型",
+        "author": "作者"
+      }
+    }
+  },
+  "modals": {
+    "avatar": {
+      "title": "上传图像",
+      "file": "选择图像",
+      "format": "该图像必须采用PNG，JPG格式，并且不超过5 MB。",
+      "positive": "上传",
+      "negative": "取消"
     }
   }
 }
