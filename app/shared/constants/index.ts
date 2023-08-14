@@ -15,14 +15,16 @@ export const AppConstant = {
   },
 
   TOAST: {
-    LIFE_TIME: 5 * 1000,
+    LIFE_TIME: 1000 * 5,
   },
 
   TOKENS: {
-    AT_LIFE_TIME: 10 * 1000,
+    AT_LIFE_TIME: 1000 * 60 * 15,
+    RT_LIFE_TIME: 1000 * 60 * 60 * 24,
   },
 
   COOKIE: {
-    AT_PREFIX: 'accessToken',
+    AT_PREFIX: 'at',
+    RT_PREFIX: 'rt',
   },
 }

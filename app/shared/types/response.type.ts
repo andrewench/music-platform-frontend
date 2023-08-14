@@ -1,4 +1,7 @@
-export type TAuthSuccessResponse = Record<'accessToken', string>
+export type TAuthSuccessResponse = Record<
+  'accessToken' | 'refreshToken',
+  string
+>
 
 export type TErrorResponse = {
   data: {

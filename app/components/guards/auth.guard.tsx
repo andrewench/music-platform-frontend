@@ -33,9 +33,9 @@ export const AuthGuard: FC = () => {
   }, [data, setUserData])
 
   useEffect(() => {
-    const accessToken = Cookies.get(AppConstant.COOKIE.AT_PREFIX)
+    const refreshToken = Cookies.get(AppConstant.COOKIE.RT_PREFIX)
 
-    if (!accessToken) {
+    if (!refreshToken) {
       navigate('/login?act=sign_in')
     } else {
       if (skip) setSkip(false)
