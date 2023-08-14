@@ -2,6 +2,7 @@ import { FC, useEffect } from 'react'
 import { Toaster } from 'react-hot-toast'
 
 import cn from 'clsx'
+import { AnimatePresence } from 'framer-motion'
 
 import { AvatarUploaderModal } from '@/components/layout'
 
@@ -43,7 +44,9 @@ export const PageLayout: FC<TPageLayout> = ({ title, children, className }) => {
         reverseOrder
       />
 
-      {avatarUploader.isOpen && <AvatarUploaderModal />}
+      <AnimatePresence>
+        {avatarUploader.isOpen && <AvatarUploaderModal />}
+      </AnimatePresence>
     </div>
   )
 }

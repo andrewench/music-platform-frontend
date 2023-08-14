@@ -1,5 +1,5 @@
 .box {
-  @apply absolute left-0 top-0 z-[9999] h-full w-full bg-mpl-grey-4/60 backdrop-blur-sm;
+  @apply absolute left-0 top-0 z-[9999] flex h-full w-full items-center justify-center bg-mpl-grey-4/60 backdrop-blur-sm;
 }
 
 .window {

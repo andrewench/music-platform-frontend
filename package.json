@@ -20,6 +20,7 @@
     "@reduxjs/toolkit": "^1.9.3",
     "@types/js-cookie": "^3.0.3",
     "clsx": "^1.2.1",
+    "framer-motion": "^10.15.1",
     "i18next": "^22.4.12",
     "is-electron": "^2.2.2",
     "js-cookie": "^3.0.5",

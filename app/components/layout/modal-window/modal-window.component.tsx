@@ -1,8 +1,9 @@
 import { FC, useRef } from 'react'
 
 import cn from 'clsx'
+import { motion } from 'framer-motion'
 
-import { Flex, Heading } from '@/components/shared'
+import { Heading } from '@/components/shared'
 
 import { useActions, useOutside } from '@/shared/hooks'
 
@@ -29,17 +30,29 @@ export const ModalWindow: FC<PropsWithChildrenAndClassName<IModalWindow>> = ({
   })
 
   return (
-    <Flex
-      align="center"
-      content="center"
+    <motion.div
       ref={wrapModalRef}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3, delay: 0 }}
+      exit={{ opacity: 0 }}
       className={styles.box}
     >
-      <div ref={modalRef} className={cn(styles.window, className)}>
+      <motion.div
+        initial={{ translateY: -100 }}
+        animate={{ translateY: 0 }}
+        transition={{ duration: 0.3, delay: 0 }}
+        exit={{
+          translateY: -100,
+          opacity: 0,
+        }}
+        ref={modalRef}
+        className={cn(styles.window, className)}
+      >
         <Heading as="h1" label={title} className={styles.heading} />
 
         {children}
-      </div>
-    </Flex>
+      </motion.div>
+    </motion.div>
   )
 }
