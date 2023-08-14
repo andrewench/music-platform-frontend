@@ -52,7 +52,8 @@
   "server": {
     "success": {
       "registered": "您已经成功注册了",
-      "logged": "您已成功登录",
+      "loggedIn": "您已成功登录",
+      "loggedOut": "您已经成功登记了",
       "redirect": "重定向到配置文件"
     },
     "error": {

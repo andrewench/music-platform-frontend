@@ -30,11 +30,19 @@ const routes: TRouter[] = [
     children: [
       {
         path: '/',
-        element: <Login />,
+        element: (
+          <Suspense>
+            <Login />
+          </Suspense>
+        ),
       },
       {
         path: '/login',
-        element: <Login />,
+        element: (
+          <Suspense>
+            <Login />
+          </Suspense>
+        ),
       },
       {
         path: '/podcasts',

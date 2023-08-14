@@ -11,4 +11,5 @@ export type TAuthRoutes =
   | '/auth/login'
   | '/auth/signup'
   | '/auth/restore'
+  | '/auth/logout'
   | '/user/me'

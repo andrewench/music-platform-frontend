@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { HeaderLink } from '@/components/ui'
+import { HeaderLink, LogoutButton } from '@/components/ui'
 
 import { Flex } from '@/components/shared'
 
@@ -14,10 +14,16 @@ export const Header: FC = () => {
 
   return (
     <div className={styles.box}>
-      <Flex align="center" className={styles.links}>
-        {headerLinksList.map((link, idx) => (
-          <HeaderLink to={link.to} label={t(link.labelKey)} key={idx} />
-        ))}
+      <Flex align="center" content="between" className={styles.wrap}>
+        <Flex align="center" className={styles.links}>
+          {headerLinksList.map((link, idx) => (
+            <HeaderLink to={link.to} label={t(link.labelKey)} key={idx} />
+          ))}
+        </Flex>
+
+        <div>
+          <LogoutButton />
+        </div>
       </Flex>
     </div>
   )

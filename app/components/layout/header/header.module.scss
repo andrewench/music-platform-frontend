@@ -1,8 +1,12 @@
 .box {
-  @apply z-50 h-[70px] min-h-[70px] w-full bg-[#fafafa];
+  @apply z-50 h-[70px] min-h-[70px] w-full bg-[#fafafa] px-4;
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.03);
 }
 
+.wrap {
+  @apply h-full;
+}
+
 .links {
-  @apply h-full gap-2 px-4;
+  @apply h-full gap-2;
 }

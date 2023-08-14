@@ -52,7 +52,8 @@
   "server": {
     "success": {
       "registered": "You have successfully registered",
-      "logged": "You are successfully logged in",
+      "loggedIn": "You are successfully logged in",
+      "loggedOut": "You are have successfully logged out",
       "redirect": "Redirecting to profile"
     },
     "error": {

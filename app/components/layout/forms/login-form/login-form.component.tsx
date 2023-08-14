@@ -37,7 +37,7 @@ export const LoginForm: FC = () => {
     LoginService.authSuccess(
       data,
       {
-        logged: t('server.success.logged'),
+        logged: t('server.success.loggedIn'),
         redirect: t('server.success.redirect'),
         unknown: t('server.error.unknown'),
       },

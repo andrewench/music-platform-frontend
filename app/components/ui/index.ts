@@ -13,3 +13,4 @@ export { ProgressIndicator } from './progress-indicator/progress-indicator.compo
 export { PlaylistItem } from './playlist-item/playlist-item.component'
 export { BackLink } from './back-link/back-link.component'
 export { AvatarUploader } from './avatar-uploader/avatar-uploader.component'
+export { LogoutButton } from './logout-button/logout-button.component'
