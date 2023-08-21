@@ -11,6 +11,8 @@ import { useLogoutMutation } from '@/shared/api'
 
 import { AppConstant } from '@/shared/constants'
 
+import { useActions } from '@/shared/hooks'
+
 import styles from './logout-button.module.scss'
 
 export const LogoutButton: FC = () => {
@@ -18,16 +20,20 @@ export const LogoutButton: FC = () => {
 
   const navigate = useNavigate()
 
+  const { clearUserData } = useActions()
+
   const [logoutUser, { data }] = useLogoutMutation()
 
   useEffect(() => {
     if (!data) return
 
+    clearUserData()
+
     Cookies.remove(AppConstant.COOKIE.AT_PREFIX)
     Cookies.remove(AppConstant.COOKIE.RT_PREFIX)
 
     navigate('/login?act=sign_in')
-  }, [data, navigate, t])
+  }, [data, navigate, clearUserData, t])
 
   return (
     <StyledButton

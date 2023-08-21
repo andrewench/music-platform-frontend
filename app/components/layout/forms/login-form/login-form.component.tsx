@@ -3,9 +3,11 @@ import { toast } from 'react-hot-toast'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 
+import { FormLayout } from '@/components/layout'
+
 import { FormSubmit, PasswordField, TextField } from '@/components/ui'
 
-import { FormContainer, FormHelper } from '@/components/shared'
+import { FormHelper } from '@/components/shared'
 
 import { LoginService } from '@/services'
 
@@ -57,7 +59,7 @@ export const LoginForm: FC = () => {
 
   return (
     <>
-      <FormContainer methods={methods} onSubmit={onSubmit}>
+      <FormLayout methods={methods} onSubmit={onSubmit} className={styles.form}>
         <TextField
           label={t('form.login.fieldName')}
           type="text"
@@ -75,7 +77,7 @@ export const LoginForm: FC = () => {
         <FormSubmit isFetching={isLoading} className={styles.submit}>
           {t('common.signIn')}
         </FormSubmit>
-      </FormContainer>
+      </FormLayout>
 
       <FormHelper<TLoginRoutes>
         label={t('helpers.accountNotExists')}

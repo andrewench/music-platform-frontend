@@ -100,7 +100,8 @@
       "file": "选择图像",
       "format": "该图像必须采用PNG，JPG格式，并且不超过5 MB。",
       "positive": "上传",
-      "negative": "取消"
+      "negative": "取消",
+      "successUpload": "该配置文件已成功更新"
     }
   }
 }

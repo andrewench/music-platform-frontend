@@ -14,6 +14,12 @@ export const AppConstant = {
     } as Record<string, TLoginQueries>,
   },
 
+  FILES: {
+    IMAGE: {
+      MAX_SIZE: 5242880,
+    },
+  },
+
   TOAST: {
     LIFE_TIME: 1000 * 5,
   },

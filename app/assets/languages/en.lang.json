@@ -100,7 +100,8 @@
       "file": "Select an image",
       "format": "The image must be in PNG, JPG format and not exceed 5 MB.",
       "positive": "Upload",
-      "negative": "Cancel"
+      "negative": "Cancel",
+      "successUpload": "The profile has been successfully updated"
     }
   }
 }

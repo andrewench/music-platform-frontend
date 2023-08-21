@@ -29,7 +29,11 @@ export const AuthGuard: FC = () => {
   useEffect(() => {
     if (!data) return
 
-    setUserData(data)
+    const refreshToken = Cookies.get(AppConstant.COOKIE.RT_PREFIX)
+
+    if (refreshToken) {
+      setUserData(data)
+    }
   }, [data, setUserData])
 
   useEffect(() => {

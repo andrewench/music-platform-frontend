@@ -13,6 +13,7 @@ export { Listeners } from './listeners/listeners.component'
 export { AudioPlayer } from './audio-player/audio-player.component'
 export { VolumeIndicator } from './volume-indicator/volume-indicator.component'
 export { Table } from './table/table.component'
+export { FormLayout } from './form-layout/form-layout.component'
 
 // modal windows
 export { ModalWindow } from './modal-window/modal-window.component'

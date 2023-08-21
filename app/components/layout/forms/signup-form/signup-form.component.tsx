@@ -5,9 +5,11 @@ import { useNavigate } from 'react-router-dom'
 
 import { SignUpFieldsList } from './signup-form.data'
 
+import { FormLayout } from '@/components/layout'
+
 import { FormSubmit, PasswordField, TextField } from '@/components/ui'
 
-import { FormContainer, FormHelper } from '@/components/shared'
+import { FormHelper } from '@/components/shared'
 
 import { LoginService } from '@/services'
 
@@ -25,6 +27,8 @@ import {
   TSignUpFields,
   TSignUpFormFields,
 } from '@/shared/types'
+
+import styles from './signup-form.module.scss'
 
 export const SignUpForm: FC = () => {
   const methods = useConfiguratedForm<TSignUpFormFields>(SignUpFieldsSchema)
@@ -62,7 +66,7 @@ export const SignUpForm: FC = () => {
 
   return (
     <>
-      <FormContainer methods={methods} onSubmit={onSubmit}>
+      <FormLayout methods={methods} onSubmit={onSubmit} className={styles.form}>
         {SignUpFieldsList.map(({ type, label, isCount, ...props }, idx) => {
           return type !== 'password' ? (
             <TextField
@@ -85,7 +89,7 @@ export const SignUpForm: FC = () => {
         })}
 
         <FormSubmit isFetching={isLoading}>{t('common.signUp')}</FormSubmit>
-      </FormContainer>
+      </FormLayout>
 
       <FormHelper<TLoginRoutes>
         label={t('helpers.accountExists')}

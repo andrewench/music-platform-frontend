@@ -103,6 +103,7 @@ module.exports = {
         objectLiteralTypeAssertions: 'allow',
       },
     ],
+    '@typescript-eslint/ban-types': 'off',
   },
   settings: {
     'import/resolver': {

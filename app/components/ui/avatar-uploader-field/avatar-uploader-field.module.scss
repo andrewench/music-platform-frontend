@@ -1,0 +1,15 @@
+.file {
+  @apply pointer-events-none invisible hidden h-0 w-0;
+}
+
+.label {
+  @apply my-3 block rounded-md bg-mpl-grey-1/30 p-3 text-center text-mpl-grey-3 transition-colors duration-150 hover:cursor-pointer hover:bg-mpl-grey-2/30;
+}
+
+.error {
+  @apply mb-3 text-mpl-red;
+}
+
+.fileName {
+  @apply mb-2 border-[3px] border-dotted border-mpl-accent-color/30 p-3 text-mpl-accent-color;
+}

@@ -5,14 +5,25 @@ import { customFetcher } from '@/shared/utils'
 export const userApi = createApi({
   reducerPath: 'userApi',
   baseQuery: customFetcher,
-  endpoints: ({ query }) => ({
+  tagTypes: ['User'],
+  endpoints: ({ query, mutation }) => ({
     getMe: query({
       query: () => ({
         url: '/user/me',
         method: 'GET',
       }),
+      providesTags: () => ['User'],
+    }),
+
+    uploadAvatar: mutation<{ isUploaded: boolean }, FormData>({
+      query: body => ({
+        url: '/user/avatar',
+        method: 'POST',
+        body,
+      }),
+      invalidatesTags: ['User'],
     }),
   }),
 })
 
-export const { useGetMeQuery } = userApi
+export const { useGetMeQuery, useUploadAvatarMutation } = userApi

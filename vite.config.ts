@@ -14,6 +14,10 @@ export default defineConfig({
         target: 'http://localhost:5183',
         changeOrigin: true,
       },
+      '/uploads/images': {
+        target: 'http://localhost:5183',
+        changeOrigin: true,
+      },
     },
     watch: {
       usePolling: true,

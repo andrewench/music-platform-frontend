@@ -24,5 +24,6 @@
   },
   "include": ["app"],
   "references": [{ "path": "./tsconfig.node.json" }],
-  "extends": "./tsconfig.paths.json"
+  "extends": "./tsconfig.paths.json",
+  "files": ["app/global.d.ts"]
 }

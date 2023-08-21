@@ -1,9 +1,11 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import { FormLayout } from '@/components/layout'
+
 import { FormSubmit, TextField } from '@/components/ui'
 
-import { FormContainer, FormHelper } from '@/components/shared'
+import { FormHelper } from '@/components/shared'
 
 import { RestoreFieldsSchema } from '@/shared/schemes'
 
@@ -12,6 +14,8 @@ import { AppConstant } from '@/shared/constants'
 import { useConfiguratedForm, useSubmitHandler } from '@/shared/hooks'
 
 import { TLoginRoutes, TRestoreField } from '@/shared/types'
+
+import styles from './restore-form.module.scss'
 
 export const RestoreForm: FC = () => {
   const methods = useConfiguratedForm<TRestoreField>(RestoreFieldsSchema)
@@ -24,7 +28,7 @@ export const RestoreForm: FC = () => {
 
   return (
     <>
-      <FormContainer methods={methods} onSubmit={onSubmit}>
+      <FormLayout methods={methods} onSubmit={onSubmit} className={styles.form}>
         <TextField
           type="email"
           label={t('form.email.fieldName')}
@@ -32,7 +36,7 @@ export const RestoreForm: FC = () => {
           fieldState="email"
         />
         <FormSubmit isFetching={false}>{t('common.sendCode')}</FormSubmit>
-      </FormContainer>
+      </FormLayout>
 
       <FormHelper<TLoginRoutes>
         label={t('helpers.accountExists')}
