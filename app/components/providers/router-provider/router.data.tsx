@@ -1,6 +1,7 @@
-import { Suspense } from 'react'
 import { lazily } from 'react-lazily'
 import { RouteObject, createBrowserRouter } from 'react-router-dom'
+
+import { LazyComponent } from '@/components/layout'
 
 import { AuthGuard } from '@/components/guards'
 
@@ -30,91 +31,47 @@ const routes: TRouter[] = [
     children: [
       {
         path: '/',
-        element: (
-          <Suspense>
-            <Login />
-          </Suspense>
-        ),
+        element: <LazyComponent render={<Login />} />,
       },
       {
         path: '/login',
-        element: (
-          <Suspense>
-            <Login />
-          </Suspense>
-        ),
+        element: <LazyComponent render={<Login />} />,
       },
       {
         path: '/podcasts',
-        element: (
-          <Suspense>
-            <Podcasts />
-          </Suspense>
-        ),
+        element: <LazyComponent render={<Podcasts />} />,
       },
       {
         path: '/playlists',
-        element: (
-          <Suspense>
-            <Playlists />
-          </Suspense>
-        ),
+        element: <LazyComponent render={<Playlists />} />,
       },
       {
         path: '/artists',
-        element: (
-          <Suspense>
-            <Artists />
-          </Suspense>
-        ),
+        element: <LazyComponent render={<Artists />} />,
       },
       {
         path: '/chart',
-        element: (
-          <Suspense>
-            <Chart />
-          </Suspense>
-        ),
+        element: <LazyComponent render={<Chart />} />,
       },
       {
         path: '/account',
-        element: (
-          <Suspense>
-            <Account />
-          </Suspense>
-        ),
+        element: <LazyComponent render={<Account />} />,
       },
       {
         path: '/messenger',
-        element: (
-          <Suspense>
-            <Messenger />
-          </Suspense>
-        ),
+        element: <LazyComponent render={<Messenger />} />,
       },
       {
         path: '/subscriptions',
-        element: (
-          <Suspense>
-            <Subscriptions />
-          </Suspense>
-        ),
+        element: <LazyComponent render={<Subscriptions />} />,
       },
       {
         path: '/liked',
-        element: (
-          <Suspense>
-            <LikedSongs />
-          </Suspense>
-        ),
+        element: <LazyComponent render={<LikedSongs />} />,
       },
       {
         path: '/settings',
-        element: (
-          <Suspense>
-            <Settings />
-          </Suspense>
-        ),
+        element: <LazyComponent render={<Settings />} />,
       },
     ],
   },

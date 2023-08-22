@@ -14,6 +14,7 @@ export { AudioPlayer } from './audio-player/audio-player.component'
 export { VolumeIndicator } from './volume-indicator/volume-indicator.component'
 export { Table } from './table/table.component'
 export { FormLayout } from './form-layout/form-layout.component'
+export { LazyComponent } from './lazy-component/lazy.component'
 
 // modal windows
 export { ModalWindow } from './modal-window/modal-window.component'
