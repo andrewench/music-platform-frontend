@@ -1,11 +1,25 @@
 .box {
-  @apply relative h-1;
+  @apply relative h-3 pt-[3px] hover:cursor-pointer;
+
+  &:hover {
+    .dragger {
+      @apply opacity-100;
+    }
+  }
 }
 
 .track {
-  @apply absolute z-0 h-full w-full rounded-full bg-mpl-grey-5;
+  @apply absolute z-0 h-1 w-full rounded-full bg-mpl-grey-5;
 }
 
 .drag {
-  @apply relative z-10 h-full rounded-full bg-mpl-accent-color;
+  @apply relative z-10 h-1 rounded-full bg-mpl-accent-color;
+}
+
+.dragger {
+  @apply absolute -top-1 h-3 w-3 rounded-full border-[2px] border-mpl-accent-color bg-mpl-white opacity-0 transition-opacity duration-150;
+}
+
+.draggerShow {
+  @apply opacity-100;
 }
