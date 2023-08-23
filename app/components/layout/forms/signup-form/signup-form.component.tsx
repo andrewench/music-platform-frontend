@@ -19,7 +19,7 @@ import { SignUpFieldsSchema } from '@/shared/schemes'
 
 import { AppConstant } from '@/shared/constants'
 
-import { useConfiguratedForm, useSubmitHandler } from '@/shared/hooks'
+import { useConfiguredForm, useSubmitHandler } from '@/shared/hooks'
 
 import {
   TErrorResponse,
@@ -31,7 +31,7 @@ import {
 import styles from './signup-form.module.scss'
 
 export const SignUpForm: FC = () => {
-  const methods = useConfiguratedForm<TSignUpFormFields>(SignUpFieldsSchema)
+  const methods = useConfiguredForm<TSignUpFormFields>(SignUpFieldsSchema)
   const { t } = useTranslation()
 
   const navigate = useNavigate()

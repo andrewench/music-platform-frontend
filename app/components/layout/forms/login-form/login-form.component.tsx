@@ -17,14 +17,14 @@ import { SignInFieldsSchema } from '@/shared/schemes'
 
 import { AppConstant } from '@/shared/constants'
 
-import { useConfiguratedForm, useSubmitHandler } from '@/shared/hooks'
+import { useConfiguredForm, useSubmitHandler } from '@/shared/hooks'
 
 import { TErrorResponse, TLoginRoutes, TSignInFields } from '@/shared/types'
 
 import styles from './login-form.module.scss'
 
 export const LoginForm: FC = () => {
-  const methods = useConfiguratedForm<TSignInFields>(SignInFieldsSchema)
+  const methods = useConfiguredForm<TSignInFields>(SignInFieldsSchema)
   const { t } = useTranslation()
 
   const navigate = useNavigate()

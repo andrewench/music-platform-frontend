@@ -14,15 +14,14 @@ import { SectionTitle } from '@/components/shared'
 
 import { CreatePlaylistSchema } from '@/shared/schemes'
 
-import { useConfiguratedForm, useSubmitHandler } from '@/shared/hooks'
+import { useConfiguredForm, useSubmitHandler } from '@/shared/hooks'
 
 import { ICreatePlaylistFields } from '@/shared/types'
 
 import styles from './create-playlist.module.scss'
 
 export const CreatePlaylistView: FC = () => {
-  const methods =
-    useConfiguratedForm<ICreatePlaylistFields>(CreatePlaylistSchema)
+  const methods = useConfiguredForm<ICreatePlaylistFields>(CreatePlaylistSchema)
 
   const { t } = useTranslation()
 

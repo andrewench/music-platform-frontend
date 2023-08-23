@@ -11,14 +11,14 @@ import { RestoreFieldsSchema } from '@/shared/schemes'
 
 import { AppConstant } from '@/shared/constants'
 
-import { useConfiguratedForm, useSubmitHandler } from '@/shared/hooks'
+import { useConfiguredForm, useSubmitHandler } from '@/shared/hooks'
 
 import { TLoginRoutes, TRestoreField } from '@/shared/types'
 
 import styles from './restore-form.module.scss'
 
 export const RestoreForm: FC = () => {
-  const methods = useConfiguratedForm<TRestoreField>(RestoreFieldsSchema)
+  const methods = useConfiguredForm<TRestoreField>(RestoreFieldsSchema)
   const { t } = useTranslation()
 
   const onSubmit = useSubmitHandler<TRestoreField>(data => {
