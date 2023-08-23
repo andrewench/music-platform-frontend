@@ -13,3 +13,9 @@ export type TSignInFields = Record<
 >
 export type TSignUpFields = Record<Exclude<TSignUpAllFields, 'confirm'>, string>
 export type TRestoreField = Record<Extract<TSignUpAllFields, 'email'>, string>
+
+export interface ICreatePlaylistFields {
+  name: string
+  description: string
+  genre: string
+}

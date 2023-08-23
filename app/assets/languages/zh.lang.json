@@ -5,7 +5,8 @@
     "restore": "恢复",
     "sendCode": "发送代码",
     "required": "需要该字段",
-    "back": "回到"
+    "back": "回到",
+    "save": "节省"
   },
   "helpers": {
     "accountNotExists": "您没有帐户吗？",
@@ -91,7 +92,15 @@
         "album": "专辑",
         "genre": "类型",
         "author": "作者"
-      }
+      },
+      "create": {
+        "title": "创建播放列表",
+        "name": "播放列表名称",
+        "description": "描述",
+        "genre": "类型",
+        "private": "将播放列表私有"
+      },
+      "manage": "管理播放列表"
     }
   },
   "modals": {

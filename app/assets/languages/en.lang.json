@@ -5,7 +5,8 @@
     "restore": "Restore",
     "sendCode": "Send code",
     "required": "The field is required",
-    "back": "Back to"
+    "back": "Back to",
+    "save": "Save"
   },
   "helpers": {
     "accountNotExists": "Are you haven't an account?",
@@ -91,7 +92,15 @@
         "album": "Album",
         "genre": "Genre",
         "author": "Author"
-      }
+      },
+      "create": {
+        "title": "Create playlist",
+        "name": "Playlist name",
+        "description": "Description",
+        "genre": "Genre",
+        "private": "Make the playlist private"
+      },
+      "manage": "Manage playlists"
     }
   },
   "modals": {

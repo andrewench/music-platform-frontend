@@ -21,6 +21,7 @@ export const TextField = <T extends FieldValues>({
   maxLength,
   isDebounced = false,
   isCount = false,
+  multiLine = false,
   onChange,
   className,
 }: ITextField<T>) => {
@@ -31,9 +32,12 @@ export const TextField = <T extends FieldValues>({
     formState: { errors },
   } = useFormContext<T>()
 
-  const changeHandler = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value)
-  }, [])
+  const changeHandler = useCallback(
+    (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setValue(e.target.value)
+    },
+    []
+  )
 
   const changeDebounceHandler = useDebounce(
     onChange ?? (() => {}),
@@ -45,7 +49,7 @@ export const TextField = <T extends FieldValues>({
       ...register(fieldState, {
         required: true,
       }),
-      onChange: (e: ChangeEvent<HTMLInputElement>) => {
+      onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         changeHandler(e)
 
         changeDebounceHandler(e)
@@ -55,24 +59,27 @@ export const TextField = <T extends FieldValues>({
     [fieldState, register]
   )
 
+  const fieldProps = {
+    className: cn(
+      styles.input,
+      {
+        [styles.filled]: value.length,
+        [styles.error]: errors[fieldState],
+      },
+      className
+    ),
+    minLength,
+    maxLength,
+    type,
+    dir: direction,
+    autoComplete: 'on',
+    ...overrideRegister,
+  }
+
   return (
     <div className={styles.box}>
-      <input
-        className={cn(
-          styles.input,
-          {
-            [styles.filled]: value.length,
-            [styles.error]: errors[fieldState],
-          },
-          className
-        )}
-        minLength={minLength}
-        maxLength={maxLength}
-        type={type}
-        dir={direction}
-        autoComplete="on"
-        {...overrideRegister}
-      />
+      {multiLine ? <textarea {...fieldProps} /> : <input {...fieldProps} />}
+
       <p className={styles.label}>{label}</p>
 
       <ErrorHelper

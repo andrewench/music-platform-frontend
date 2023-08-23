@@ -1,9 +1,11 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
+import { IoAddOutline } from 'react-icons/io5'
+import { Link } from 'react-router-dom'
 
 import { SectionBlock, ViewLayout } from '@/components/layout'
 
-import { PlaylistItem } from '@/components/ui'
+import { PlaylistItem, SecondaryButton } from '@/components/ui'
 
 import { Flex, SectionTitle } from '@/components/shared'
 
@@ -14,6 +16,23 @@ export const PlaylistsView: FC = () => {
 
   return (
     <ViewLayout>
+      <SectionBlock>
+        <Flex align="center">
+          <SectionTitle className={styles.title}>
+            {t('sections.playlist.manage')}
+          </SectionTitle>
+
+          <SecondaryButton type="button" className={styles.createPlaylist}>
+            <Flex align="center" className={styles.box}>
+              <IoAddOutline size={21} />
+              <Link to="/playlists?act=create">
+                {t('sections.playlist.create.title')}
+              </Link>
+            </Flex>
+          </SecondaryButton>
+        </Flex>
+      </SectionBlock>
+
       <SectionBlock>
         <SectionTitle>{t('sections.header.links.playlists')}</SectionTitle>
 

@@ -16,3 +16,4 @@ export { LogoutButton } from './logout-button/logout-button.component'
 
 export { AvatarUploader } from './avatar-uploader/avatar-uploader.component'
 export { AvatarUploaderField } from './avatar-uploader-field/avatar-uploader-field.component'
+export { CheckboxField } from './checkbox-field/checkbox-field.component'

@@ -15,5 +15,6 @@ export interface ITextField<T extends FieldValues>
   register: UseFormRegister<T>
   isDebounced?: boolean
   isCount?: boolean
+  multiLine?: boolean
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
