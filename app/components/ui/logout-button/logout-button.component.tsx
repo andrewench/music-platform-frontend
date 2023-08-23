@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router'
 
 import Cookies from 'js-cookie'
 
-import { StyledButton } from '@/components/ui'
+import { Flex } from '@/components/shared'
 
 import { useLogoutMutation } from '@/shared/api'
 
@@ -36,13 +36,15 @@ export const LogoutButton: FC = () => {
   }, [data, navigate, clearUserData, t])
 
   return (
-    <StyledButton
+    <button
       type="button"
-      variant="outlined"
       onClick={() => logoutUser(null)}
       className={styles.button}
     >
-      <IoLogOutOutline size={20} className={styles.icon} />
-    </StyledButton>
+      <Flex align="center" className={styles.box}>
+        <IoLogOutOutline size={22} />
+        <span>{t('sections.header.dropList.logout')}</span>
+      </Flex>
+    </button>
   )
 }

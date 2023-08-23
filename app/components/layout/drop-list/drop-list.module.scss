@@ -1,0 +1,12 @@
+.box {
+  @apply absolute min-w-[240px] rounded-md border-[1px] border-mpl-grey-1/70 bg-mpl-white p-5;
+  box-shadow: 7px 15px 50px rgba(0, 0, 0, 0.08);
+}
+
+.left {
+  @apply left-0;
+}
+
+.right {
+  @apply -right-3;
+}

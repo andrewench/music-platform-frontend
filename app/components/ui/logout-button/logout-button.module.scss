@@ -1,7 +1,11 @@
 .button {
-  @apply rounded-full p-2;
+  @apply w-full items-center gap-3 pt-1;
 }
 
 .icon {
   @apply translate-x-[2px] text-mpl-grey-4;
+}
+
+.box {
+  @apply gap-2;
 }

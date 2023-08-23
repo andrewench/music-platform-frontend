@@ -17,3 +17,8 @@ export { LogoutButton } from './logout-button/logout-button.component'
 export { AvatarUploader } from './avatar-uploader/avatar-uploader.component'
 export { AvatarUploaderField } from './avatar-uploader-field/avatar-uploader-field.component'
 export { CheckboxField } from './checkbox-field/checkbox-field.component'
+
+export { DropListItem } from './drop-list-item/drop-list-item.component'
+
+export { LanguageButton } from './language-button/language-button.component'
+export { ThemeButton } from './theme-button/theme-button.component'

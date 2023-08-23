@@ -19,3 +19,5 @@ export { LazyComponent } from './lazy-component/lazy.component'
 // modal windows
 export { ModalWindow } from './modal-window/modal-window.component'
 export { AvatarUploaderModal } from './avatar-uploader-modal/avatar-uploader-modal.component'
+
+export { DropList } from './drop-list/drop-list.component'

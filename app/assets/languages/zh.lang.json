@@ -71,6 +71,11 @@
         "playlists": "播放列表",
         "artists": "艺术家",
         "chart": "图表"
+      },
+      "dropList": {
+        "language": "选择语言",
+        "theme": "切换主题",
+        "logout": "登出"
       }
     },
     "sidebar": {

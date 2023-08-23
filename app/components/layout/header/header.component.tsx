@@ -1,11 +1,13 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { HeaderLink, LogoutButton } from '@/components/ui'
+import { HeaderLink } from '@/components/ui'
 
 import { Flex } from '@/components/shared'
 
 import { headerLinksList } from '@/shared/data'
+
+import { HeaderDropList } from './header-drop-list/header-drop-list.component'
 
 import styles from './header.module.scss'
 
@@ -21,9 +23,7 @@ export const Header: FC = () => {
           ))}
         </Flex>
 
-        <div>
-          <LogoutButton />
-        </div>
+        <HeaderDropList />
       </Flex>
     </div>
   )

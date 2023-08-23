@@ -71,6 +71,11 @@
         "playlists": "Playlists",
         "artists": "Artists",
         "chart": "Chart"
+      },
+      "dropList": {
+        "language": "Select language",
+        "theme": "Toggle theme",
+        "logout": "Log out"
       }
     },
     "sidebar": {
