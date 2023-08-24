@@ -6,10 +6,16 @@ interface IInitialState {
   avatarUploader: {
     isOpen: boolean
   }
+  languageSelector: {
+    isOpen: boolean
+  }
 }
 
 const initialState: IInitialState = {
   avatarUploader: {
+    isOpen: false,
+  },
+  languageSelector: {
     isOpen: false,
   },
 }
@@ -18,8 +24,21 @@ const modalsSlice = createSlice({
   name: 'modals',
   initialState,
   reducers: {
-    toggleAvatarUploader: state => {
-      state.avatarUploader.isOpen = !state.avatarUploader.isOpen
+    toggleModal: (
+      state,
+      action: PayloadAction<{
+        name: keyof IInitialState
+        value: boolean
+        mode?: 'toggle'
+      }>
+    ) => {
+      const { name, value, mode } = action.payload
+
+      if (mode === 'toggle') {
+        state[name].isOpen = !state[name].isOpen
+      } else {
+        state[name].isOpen = value
+      }
     },
     closeModalWindow: (
       state,

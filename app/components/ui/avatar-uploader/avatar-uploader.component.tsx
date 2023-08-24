@@ -12,12 +12,17 @@ import styles from './avatar-uploader.module.scss'
 export const AvatarUploader: FC = () => {
   const { data } = useAppSelector(user)
 
-  const { toggleAvatarUploader } = useActions()
+  const { toggleModal } = useActions()
 
   return (
     <div className={styles.box}>
       <button
-        onClick={() => toggleAvatarUploader()}
+        onClick={() =>
+          toggleModal({
+            name: 'avatarUploader',
+            value: true,
+          })
+        }
         className={cn(styles.upload, {
           [styles.autoHide]: Boolean(data.avatar),
         })}

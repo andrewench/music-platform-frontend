@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": "app",
     "paths": {
-      "@/components/global": ["components/global"],
       "@/components/layout": ["components/layout"],
+      "@/components/interface": ["components/interface"],
       "@/components/ui": ["components/ui"],
       "@/components/icons": ["components/icons"],
       "@/components/screens": ["components/screens"],
