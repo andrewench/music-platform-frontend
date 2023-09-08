@@ -3,7 +3,8 @@ import {
   FetchArgs,
   FetchBaseQueryError,
 } from '@reduxjs/toolkit/dist/query'
-import Cookies from 'js-cookie'
+
+import { TokenService } from '@/services'
 
 import { AppConstant } from '@/shared/constants'
 
@@ -19,7 +20,7 @@ export const customFetcher: BaseQueryFn<
   let response = await baseQuery(args, api, extraOptions)
 
   if (response.error && response.error.status === 401) {
-    const refreshToken = Cookies.get(AppConstant.COOKIE.RT_PREFIX)
+    const { refreshToken } = TokenService.getTokens()
 
     const refreshResponse = await baseQuery(
       {
@@ -37,16 +38,14 @@ export const customFetcher: BaseQueryFn<
       const { accessToken, refreshToken } =
         refreshResponse.data as TAuthSuccessResponse
 
-      Cookies.set(AppConstant.COOKIE.AT_PREFIX, accessToken, {
-        expires: new Date(
-          new Date().getTime() + AppConstant.TOKENS.AT_LIFE_TIME
-        ),
+      const { AT_LIFE_TIME, RT_LIFE_TIME } = AppConstant.TOKENS
+
+      TokenService.setToken('accessToken', accessToken, {
+        expires: new Date(new Date().getTime() + AT_LIFE_TIME),
       })
 
-      Cookies.set(AppConstant.COOKIE.RT_PREFIX, refreshToken, {
-        expires: new Date(
-          new Date().getTime() + AppConstant.TOKENS.RT_LIFE_TIME
-        ),
+      TokenService.setToken('refreshToken', refreshToken, {
+        expires: new Date(new Date().getTime() + RT_LIFE_TIME),
       })
 
       response = await baseQuery(args, api, extraOptions)

@@ -1,7 +1,8 @@
 import { toast } from 'react-hot-toast'
 
-import Cookies from 'js-cookie'
 import { URLSearchParams } from 'url'
+
+import { TokenService } from '@/services'
 
 import { AppConstant } from '@/shared/constants'
 
@@ -20,23 +21,25 @@ export const LoginService = {
   ) => {
     const actQuery = query.get('act') as TLoginQueries
 
+    const { signIn, signUp, restore } = AppConstant.AUTH.QUERY_PARAMS
+
     if (!actQuery) {
       return {
-        redirect: `/login?act=${AppConstant.AUTH.QUERY_PARAMS.signIn}`,
+        redirect: `/login?act=${signIn}`,
       }
     }
 
     switch (actQuery) {
-      case AppConstant.AUTH.QUERY_PARAMS.signIn:
-        setQuery(AppConstant.AUTH.QUERY_PARAMS.signIn)
+      case signIn:
+        setQuery(signIn)
         break
 
-      case AppConstant.AUTH.QUERY_PARAMS.signUp:
-        setQuery(AppConstant.AUTH.QUERY_PARAMS.signUp)
+      case signUp:
+        setQuery(signUp)
         break
 
-      case AppConstant.AUTH.QUERY_PARAMS.restore:
-        setQuery(AppConstant.AUTH.QUERY_PARAMS.restore)
+      case restore:
+        setQuery(restore)
         break
     }
   },
@@ -50,12 +53,14 @@ export const LoginService = {
 
     const { accessToken, refreshToken } = data
 
-    Cookies.set(AppConstant.COOKIE.AT_PREFIX, accessToken, {
-      expires: new Date(new Date().getTime() + AppConstant.TOKENS.AT_LIFE_TIME),
+    const { AT_LIFE_TIME, RT_LIFE_TIME } = AppConstant.TOKENS
+
+    TokenService.setToken('accessToken', accessToken, {
+      expires: new Date(new Date().getTime() + AT_LIFE_TIME),
     })
 
-    Cookies.set(AppConstant.COOKIE.RT_PREFIX, refreshToken, {
-      expires: new Date(new Date().getTime() + AppConstant.TOKENS.RT_LIFE_TIME),
+    TokenService.setToken('refreshToken', refreshToken, {
+      expires: new Date(new Date().getTime() + RT_LIFE_TIME),
     })
 
     toast.success(toastLabelKey.logged)

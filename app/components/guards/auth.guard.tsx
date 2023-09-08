@@ -1,15 +1,13 @@
 import { FC, useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
-import Cookies from 'js-cookie'
-
 import { FallbackGuard } from '@/components/guards'
+
+import { TokenService } from '@/services'
 
 import { useGetMeQuery } from '@/shared/api'
 
 import { protectedRoutes, publicRoutes } from '@/shared/data'
-
-import { AppConstant } from '@/shared/constants'
 
 import { useActions } from '@/shared/hooks'
 
@@ -29,7 +27,7 @@ export const AuthGuard: FC = () => {
   useEffect(() => {
     if (!data) return
 
-    const refreshToken = Cookies.get(AppConstant.COOKIE.RT_PREFIX)
+    const { refreshToken } = TokenService.getTokens()
 
     if (refreshToken) {
       setUserData(data)
@@ -37,7 +35,7 @@ export const AuthGuard: FC = () => {
   }, [data, setUserData])
 
   useEffect(() => {
-    const refreshToken = Cookies.get(AppConstant.COOKIE.RT_PREFIX)
+    const { refreshToken } = TokenService.getTokens()
 
     if (!refreshToken) {
       navigate('/login?act=sign_in')

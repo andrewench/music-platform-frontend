@@ -3,13 +3,11 @@ import { useTranslation } from 'react-i18next'
 import { IoLogOutOutline } from 'react-icons/io5'
 import { useNavigate } from 'react-router'
 
-import Cookies from 'js-cookie'
-
 import { Flex } from '@/components/shared'
 
-import { useLogoutMutation } from '@/shared/api'
+import { TokenService } from '@/services'
 
-import { AppConstant } from '@/shared/constants'
+import { useLogoutMutation } from '@/shared/api'
 
 import { useActions } from '@/shared/hooks'
 
@@ -29,8 +27,8 @@ export const LogoutButton: FC = () => {
 
     clearUserData()
 
-    Cookies.remove(AppConstant.COOKIE.AT_PREFIX)
-    Cookies.remove(AppConstant.COOKIE.RT_PREFIX)
+    TokenService.removeToken('accessToken')
+    TokenService.removeToken('refreshToken')
 
     navigate('/login?act=sign_in')
   }, [data, navigate, clearUserData, t])

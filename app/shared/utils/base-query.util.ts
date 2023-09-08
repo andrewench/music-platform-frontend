@@ -1,12 +1,13 @@
 import { fetchBaseQuery } from '@reduxjs/toolkit/dist/query'
-import Cookies from 'js-cookie'
+
+import { TokenService } from '@/services'
 
 import { AppConstant } from '@/shared/constants'
 
 export const baseQuery = fetchBaseQuery({
   baseUrl: AppConstant.BASE_API_PREFIX,
   prepareHeaders: headers => {
-    const accessToken = Cookies.get(AppConstant.COOKIE.AT_PREFIX)
+    const { accessToken } = TokenService.getTokens()
 
     if (accessToken) headers.set('Authorization', `Bearer ${accessToken}`)
 

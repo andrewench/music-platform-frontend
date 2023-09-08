@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
 
-import Cookies from 'js-cookie'
+import { TokenService } from '@/services'
 
 import { AppConstant } from '@/shared/constants'
 
@@ -31,7 +31,7 @@ export const authApi = createApi({
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${String(
-            Cookies.get(AppConstant.COOKIE.AT_PREFIX)
+            TokenService.getTokens().accessToken
           )}`,
         },
       }),
