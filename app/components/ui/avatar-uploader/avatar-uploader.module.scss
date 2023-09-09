@@ -1,10 +1,14 @@
 .box {
   @apply absolute left-0 top-0 h-full w-full rounded-bl-[80px] rounded-br-[14px];
 
-  &:hover {
+  &:not(.visually-hidden):hover {
     .upload.autoHide {
       @apply visible opacity-100;
     }
+  }
+
+  &.visually-hidden {
+    @apply pointer-events-none invisible hidden opacity-0;
   }
 }
 

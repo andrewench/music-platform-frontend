@@ -1,27 +1,63 @@
 .box {
-  @apply z-[60] h-[calc(100vh-100px)] w-[300px] min-w-[300px] overflow-hidden bg-mpl-white;
+  @apply relative z-[60] h-[calc(100vh-100px)] overflow-hidden bg-mpl-white;
   box-shadow: 1px 1px 0px #00000008;
+
+  &:not(.minimized) {
+    @apply w-[300px] min-w-[300px];
+  }
+
+  &:hover {
+    .toggleSidebar:not(.bottom) {
+      @apply pointer-events-auto visible;
+    }
+  }
 }
 
-.avatar {
-  @apply relative h-60 overflow-hidden rounded-bl-[80px] rounded-br-[14px];
+.minimized {
+  @apply w-[60px] min-w-[60px];
 }
 
-.image {
-  @apply block w-full;
+.toggleSidebar {
+  @apply absolute z-50 rounded-[4px];
+
+  &:not(.bottom) {
+    @apply pointer-events-none invisible left-5 top-5 border-[1px] border-mpl-grey-1/50 bg-mpl-white/20 p-1 text-mpl-white;
+
+    box-shadow: 0 0 10px #00000030;
+  }
+
+  &.bottom {
+    @apply left-[18px] bottom-5 border-[1px] border-mpl-grey-2 p-[2px] pl-[3px] text-mpl-grey-2;
+
+    & > svg {
+      @apply rotate-180;
+    }
+  }
 }
 
 .list {
-  @apply rounded-tl-[10px] rounded-tr-[10px] bg-mpl-white px-5 transition-transform duration-300 will-change-transform;
+  @apply bg-mpl-white;
 
-  &:hover {
-    @apply -translate-y-20 shadow-mpl-white;
-    box-shadow: 0 -30px 50px #ffffff30;
+  &.minimized {
+    @apply mt-12;
+  }
+
+  &:not(.minimized) {
+    @apply rounded-tl-[10px] rounded-tr-[10px] px-5 transition-transform duration-300 will-change-transform;
+
+    &:hover {
+      @apply -translate-y-20 shadow-mpl-white;
+      box-shadow: 0 -30px 50px #ffffff30;
+    }
   }
 }
 
 .username {
   @apply inline-block -translate-y-6 rounded-full bg-mpl-white px-5 py-2 text-lg font-medium text-mpl-grey-4 shadow-box;
+
+  &.visually-hidden {
+    @apply pointer-events-none invisible hidden opacity-0;
+  }
 }
 
 .nickname {
@@ -33,5 +69,7 @@
 }
 
 .menu {
-  @apply -translate-y-2;
+  &:not(.minimized) {
+    @apply -translate-y-2;
+  }
 }

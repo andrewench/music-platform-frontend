@@ -1,5 +1,13 @@
 .scrollBar {
-  @apply h-[calc(100vh-70px-100px)] w-[calc(100vw-300px)];
+  @apply h-[calc(100vh-70px-100px)];
+
+  &:not(.minimizedScrollBar) {
+    @apply w-[calc(100vw-300px)];
+  }
+
+  &.minimizedScrollBar {
+    @apply w-[calc(100vw-60px)];
+  }
 }
 
 .box {

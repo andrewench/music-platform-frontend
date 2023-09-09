@@ -14,6 +14,10 @@ body {
   }
 }
 
+.visually-hidden {
+  @apply pointer-events-none invisible hidden opacity-0;
+}
+
 .simplebar-scrollbar {
   @apply scroll-smooth will-change-transform before:bg-mpl-bd;
 }

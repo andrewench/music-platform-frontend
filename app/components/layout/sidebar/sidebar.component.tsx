@@ -1,43 +1,58 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { IoCopyOutline } from 'react-icons/io5'
+import { IoChevronBackOutline, IoCopyOutline } from 'react-icons/io5'
 
 import cn from 'clsx'
 
-import { AvatarUploader, SideBarItem } from '@/components/ui'
+import { SideBarItem } from '@/components/ui'
 
-import { Flex, Image } from '@/components/shared'
+import { Flex } from '@/components/shared'
 
-import { user } from '@/store/slices'
+import { app, user } from '@/store/slices'
 
 import { sideBarItemsList } from '@/shared/data'
 
-import { AppConstant } from '@/shared/constants'
+import { useActions, useAppSelector } from '@/shared/hooks'
 
-import { useAppSelector } from '@/shared/hooks'
+import { Avatar } from './avatar/avatar.component'
 
 import styles from './sidebar.module.scss'
 
 export const SideBar: FC = () => {
   const { t } = useTranslation()
 
+  const { sideBar } = useAppSelector(app)
+
+  const { toggleSideBar } = useActions()
+
   const { data } = useAppSelector(user)
 
   return (
-    <div className={cn(styles.box)}>
-      <div className={styles.avatar}>
-        <Image
-          src={data.avatar ?? AppConstant.DEFAULT_AVATAR_PATH}
-          alt="Avatar"
-          className={styles.image}
-        />
+    <div
+      className={cn(styles.box, {
+        [styles.minimized]: sideBar.isOpen,
+      })}
+    >
+      <button
+        onClick={() => toggleSideBar()}
+        className={cn(styles.toggleSidebar, {
+          [styles.bottom]: sideBar.isOpen,
+        })}
+      >
+        <IoChevronBackOutline size={18} />
+      </button>
 
-        <AvatarUploader />
-      </div>
+      <Avatar />
 
-      <div className={styles.list}>
+      <div
+        className={cn(styles.list, {
+          [styles.minimized]: sideBar.isOpen,
+        })}
+      >
         <div
-          className={styles.username}
+          className={cn(styles.username, {
+            'visually-hidden': sideBar.isOpen,
+          })}
         >{`${data.firstName} ${data.lastName}`}</div>
 
         {data.nickname && (
@@ -50,7 +65,11 @@ export const SideBar: FC = () => {
           </Flex>
         )}
 
-        <ul className={styles.menu}>
+        <ul
+          className={cn(styles.menu, {
+            [styles.minimized]: sideBar.isOpen,
+          })}
+        >
           {sideBarItemsList.map(({ labelKey, ...props }, idx) => (
             <SideBarItem label={t(labelKey)} {...props} key={idx} />
           ))}

@@ -5,9 +5,11 @@ import cn from 'clsx'
 
 import { Fallback } from '@/components/layout'
 
+import { app } from '@/store/slices'
+
 import { AppConstant } from '@/shared/constants'
 
-import { useDebounce } from '@/shared/hooks'
+import { useAppSelector, useDebounce } from '@/shared/hooks'
 
 import { PropsWithChildrenAndClassName } from '@/shared/types'
 
@@ -18,6 +20,8 @@ export const ViewLayout: FC<PropsWithChildrenAndClassName> = ({
   className,
 }) => {
   const [isMounted, setMounted] = useState<boolean>(false)
+
+  const { sideBar } = useAppSelector(app)
 
   const debouncedHandler = () => {
     if (!isMounted) setMounted(true)
@@ -30,7 +34,11 @@ export const ViewLayout: FC<PropsWithChildrenAndClassName> = ({
   }, [isMounted, debounced])
 
   return isMounted ? (
-    <SimpleBar className={cn(styles.scrollBar)}>
+    <SimpleBar
+      className={cn(styles.scrollBar, {
+        [styles.minimizedScrollBar]: sideBar.isOpen,
+      })}
+    >
       <div className={cn(styles.box, styles.content, className)}>
         {children}
       </div>

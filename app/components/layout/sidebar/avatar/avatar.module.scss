@@ -1,0 +1,17 @@
+.avatar {
+  @apply relative overflow-hidden;
+
+  &:not(.minimized) {
+    @apply h-60 rounded-bl-[80px] rounded-br-[14px];
+  }
+}
+
+.image {
+  @apply block object-cover;
+
+  height: inherit;
+}
+
+.minimized {
+  @apply mx-auto mt-4 h-[40px] w-[40px] rounded-full;
+}
