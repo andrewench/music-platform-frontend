@@ -37,7 +37,7 @@
 }
 
 .follow {
-  @apply self-end;
+  @apply self-end font-thin;
 
   & > svg {
     @apply mr-2 mb-[2px] inline-block;

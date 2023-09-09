@@ -21,9 +21,7 @@
   @apply absolute z-50 rounded-[4px];
 
   &:not(.bottom) {
-    @apply pointer-events-none invisible left-5 top-5 border-[1px] border-mpl-grey-1/50 bg-mpl-white/20 p-1 text-mpl-white;
-
-    box-shadow: 0 0 10px #00000030;
+    @apply pointer-events-none invisible left-5 top-5 border-[1px] border-mpl-grey-1/70 bg-mpl-white p-1 text-mpl-grey-2 shadow-box;
   }
 
   &.bottom {

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { IoCheckmarkDoneOutline, IoRadioOutline } from 'react-icons/io5'
+import { IoCheckmarkDoneOutline, IoHeartOutline } from 'react-icons/io5'
 
 import { ViewLayout } from '@/components/layout'
 
@@ -31,7 +31,7 @@ export const ArtistsView: FC = () => {
           </div>
 
           <PrimaryButton type="button" className={styles.follow}>
-            <IoRadioOutline size={18} />
+            <IoHeartOutline size={20} />
             Follow artist
           </PrimaryButton>
         </Flex>
