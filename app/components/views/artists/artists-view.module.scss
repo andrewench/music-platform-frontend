@@ -1,0 +1,57 @@
+.box {
+  @apply p-0 pb-7;
+}
+
+.banner {
+  @apply relative h-72 w-full overflow-hidden rounded-bl-[14px] rounded-br-[14px] bg-[url('/images/banner.jpg')] bg-cover after:absolute after:left-0 after:top-0 after:h-full after:w-full after:content-[''];
+
+  &:after {
+    background: linear-gradient(180deg, transparent, #00000090);
+  }
+
+  background-position-y: center;
+}
+
+.face {
+  @apply relative z-50 -mt-[66px] mb-5 px-10;
+}
+
+.avatar {
+  @apply relative z-50 box-content h-28 min-h-[7rem] w-28 min-w-[7rem] rounded-full border-[6px] border-mpl-white bg-[url('/images/avatar.jpg')] bg-cover bg-center;
+}
+
+.meta {
+  @apply w-full;
+}
+
+.usernameBox {
+  @apply mt-6;
+}
+
+.username {
+  @apply pl-3 text-2xl font-light text-mpl-white;
+}
+
+.verify {
+  @apply ml-2 inline-block text-mpl-online;
+}
+
+.follow {
+  @apply self-end;
+
+  & > svg {
+    @apply mr-2 mb-[2px] inline-block;
+  }
+}
+
+.followers {
+  @apply mt-6 ml-[13px] text-mpl-grey-4;
+}
+
+.content {
+  @apply px-7;
+}
+
+.discography {
+  @apply w-1/2 gap-4;
+}

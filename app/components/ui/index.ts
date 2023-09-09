@@ -13,6 +13,7 @@ export { ProgressIndicator } from './progress-indicator/progress-indicator.compo
 export { PlaylistItem } from './playlist-item/playlist-item.component'
 export { BackLink } from './back-link/back-link.component'
 export { LogoutButton } from './logout-button/logout-button.component'
+export { SoundtrackWithCover } from './soundtrack-with-cover/soundtrack-with-cover.component'
 
 export { AvatarUploader } from './avatar-uploader/avatar-uploader.component'
 export { AvatarUploaderField } from './avatar-uploader-field/avatar-uploader-field.component'
