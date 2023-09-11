@@ -1,0 +1,9 @@
+.box {
+  @apply mb-5 inline-flex last:mb-0;
+}
+
+.message {
+  @apply min-w-[200px] max-w-[70%] rounded-[6px] border-[1px] border-mpl-grey-1/40 bg-mpl-white p-5 text-sm;
+
+  box-shadow: 10px 10px 30px #00000003;
+}

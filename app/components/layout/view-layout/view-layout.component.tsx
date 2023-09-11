@@ -36,7 +36,7 @@ export const ViewLayout: FC<PropsWithChildrenAndClassName> = ({
   return isMounted ? (
     <SimpleBar
       className={cn(styles.scrollBar, {
-        [styles.minimizedScrollBar]: sideBar.isOpen,
+        [styles.minimizedScrollBar]: !sideBar.isOpen,
       })}
     >
       <div className={cn(styles.box, styles.content, className)}>

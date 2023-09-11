@@ -19,7 +19,7 @@ export const AvatarUploader: FC = () => {
   return (
     <div
       className={cn(styles.box, {
-        'visually-hidden': sideBar.isOpen,
+        'visually-hidden': !sideBar.isOpen,
       })}
     >
       <button

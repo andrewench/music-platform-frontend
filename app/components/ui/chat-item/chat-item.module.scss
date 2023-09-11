@@ -1,0 +1,33 @@
+.chatItem {
+  @apply relative h-[70px] bg-mpl-white py-3 px-5 transition-colors duration-150 hover:cursor-pointer hover:bg-mpl-grey-1/20;
+
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: calc(100% - 20px);
+    height: 1px;
+    background: linear-gradient(to right, #f3f3f3, transparent);
+  }
+}
+
+.username {
+  @apply text-base font-medium text-mpl-grey-4;
+}
+
+.cover {
+  @apply h-[50px] min-h-[50px] w-[50px] min-w-[50px];
+}
+
+.image {
+  @apply block rounded-full object-cover;
+}
+
+.meta {
+  @apply ml-2 overflow-hidden pt-1;
+}
+
+.message {
+  @apply overflow-hidden text-ellipsis whitespace-nowrap text-sm text-mpl-grey-3;
+}

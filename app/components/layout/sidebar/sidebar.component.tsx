@@ -30,13 +30,13 @@ export const SideBar: FC = () => {
   return (
     <div
       className={cn(styles.box, {
-        [styles.minimized]: sideBar.isOpen,
+        [styles.minimized]: !sideBar.isOpen,
       })}
     >
       <button
         onClick={() => toggleSideBar()}
         className={cn(styles.toggleSidebar, {
-          [styles.bottom]: sideBar.isOpen,
+          [styles.bottom]: !sideBar.isOpen,
         })}
       >
         <IoChevronBackOutline size={18} />
@@ -46,12 +46,12 @@ export const SideBar: FC = () => {
 
       <div
         className={cn(styles.list, {
-          [styles.minimized]: sideBar.isOpen,
+          [styles.minimized]: !sideBar.isOpen,
         })}
       >
         <div
           className={cn(styles.username, {
-            'visually-hidden': sideBar.isOpen,
+            'visually-hidden': !sideBar.isOpen,
           })}
         >{`${data.firstName} ${data.lastName}`}</div>
 
@@ -67,7 +67,7 @@ export const SideBar: FC = () => {
 
         <ul
           className={cn(styles.menu, {
-            [styles.minimized]: sideBar.isOpen,
+            [styles.minimized]: !sideBar.isOpen,
           })}
         >
           {sideBarItemsList.map(({ labelKey, ...props }, idx) => (

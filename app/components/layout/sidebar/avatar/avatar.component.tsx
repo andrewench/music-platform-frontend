@@ -22,7 +22,7 @@ export const Avatar: FC = () => {
   return (
     <div
       className={cn(styles.avatar, {
-        [styles.minimized]: sideBar.isOpen,
+        [styles.minimized]: !sideBar.isOpen,
       })}
     >
       <Image

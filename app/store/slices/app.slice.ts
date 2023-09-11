@@ -10,7 +10,7 @@ interface IInitialState {
 
 const initialState: IInitialState = {
   sideBar: {
-    isOpen: true,
+    isOpen: false,
   },
 }
 

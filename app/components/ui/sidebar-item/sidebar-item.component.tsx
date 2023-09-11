@@ -25,7 +25,7 @@ export const SideBarItem: FC<ISideBarItem> = ({ to, label, icon }) => {
 
         <p
           className={cn({
-            'visually-hidden': sideBar.isOpen,
+            'visually-hidden': !sideBar.isOpen,
           })}
         >
           {label}

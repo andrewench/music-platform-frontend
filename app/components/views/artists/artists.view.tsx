@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { IoCheckmarkDoneOutline, IoHeartOutline } from 'react-icons/io5'
 
-import { ViewLayout } from '@/components/layout'
+import { SectionBlock, ViewLayout } from '@/components/layout'
 
 import { PrimaryButton, SoundtrackWithCover } from '@/components/ui'
 
@@ -37,7 +37,7 @@ export const ArtistsView: FC = () => {
         </Flex>
       </Flex>
 
-      <div className={styles.content}>
+      <SectionBlock className={styles.content}>
         <SectionTitle>Popular soundtracks</SectionTitle>
 
         <Flex isGrid className={styles.discography}>
@@ -67,7 +67,7 @@ export const ArtistsView: FC = () => {
             name="Victory"
           />
         </Flex>
-      </div>
+      </SectionBlock>
     </ViewLayout>
   )
 }

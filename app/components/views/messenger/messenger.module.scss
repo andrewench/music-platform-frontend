@@ -1,0 +1,54 @@
+.box {
+  @apply h-[calc(100vh-70px-100px-28px-28px)] overflow-hidden scroll-smooth rounded-[6px] border-[1px] border-mpl-grey-1 bg-mpl-white;
+}
+
+.searchBarBox {
+  @apply h-[50px] border-b-[1px] border-r-[1px] border-b-mpl-grey-1/30 border-r-mpl-grey-1/50 bg-mpl-white;
+}
+
+.searchBar {
+  @apply h-full w-full px-5 text-base font-normal text-mpl-grey-4 focus:outline-none;
+}
+
+.chatsBox {
+  @apply h-[calc(100%-50px)] w-[35%] min-w-[300px] scroll-smooth border-r-[1px] border-r-mpl-grey-1/50;
+}
+
+.messengerBox {
+  &:not(.opened),
+  &:not(.closed) {
+    @apply w-full;
+  }
+
+  &.opened {
+    @apply w-[calc(100vw-300px-300px-28px-28px)];
+  }
+
+  &.closed {
+    @apply w-[calc(100vw-28px-28px)];
+  }
+}
+
+.caption {
+  @apply h-[50px] border-b-[1px] border-mpl-grey-1/50 bg-mpl-white;
+}
+
+.messenger {
+  @apply h-[calc(100%-50px-70px)] bg-[#f9f9f9] p-7;
+}
+
+.inputBox {
+  @apply h-[70px] w-full border-t-[1px] border-t-mpl-grey-1/50 bg-mpl-white py-4 px-7;
+}
+
+.input {
+  @apply w-full rounded-tl-mpl rounded-bl-mpl border-[1px] border-mpl-grey-1/50 py-2 px-5 text-sm focus:border-[2px] focus:border-mpl-accent-color focus:outline-none;
+}
+
+.submit {
+  @apply rounded-tl-[0] rounded-bl-[0] pt-[6px];
+}
+
+.username {
+  @apply font-medium text-mpl-grey-4;
+}
