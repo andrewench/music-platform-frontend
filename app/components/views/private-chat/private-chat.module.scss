@@ -1,0 +1,42 @@
+.messengerBox {
+  &:not(.opened),
+  &:not(.closed) {
+    @apply w-full;
+  }
+
+  &.opened {
+    @apply w-[calc(100vw-300px-300px-28px-28px)];
+  }
+
+  &.closed {
+    @apply w-[calc(100vw-28px-28px)];
+  }
+}
+
+.caption {
+  @apply h-[50px] border-b-[1px] border-mpl-grey-1/50 bg-mpl-white;
+}
+
+.backLink {
+  @apply pl-4 text-mpl-grey-3;
+}
+
+.messenger {
+  @apply h-[calc(100%-50px-70px)] bg-[#f9f9f9] p-7;
+}
+
+.inputBox {
+  @apply h-[70px] w-full border-t-[1px] border-t-mpl-grey-1/50 bg-mpl-white py-4 px-7;
+}
+
+.input {
+  @apply w-full rounded-tl-mpl rounded-bl-mpl border-[1px] border-mpl-grey-1/50 py-2 px-5 text-sm focus:border-[2px] focus:border-mpl-accent-color focus:outline-none;
+}
+
+.submit {
+  @apply rounded-tl-[0] rounded-bl-[0] pt-[6px];
+}
+
+.username {
+  @apply ml-auto mr-auto font-medium text-mpl-grey-4;
+}
