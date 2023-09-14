@@ -3,7 +3,7 @@
 }
 
 .heading {
-  @apply relative mb-8 text-2xl font-medium text-mpl-grey-4 after:absolute after:top-[7px] after:-right-16 after:rounded-full after:bg-mpl-red after:px-3 after:text-sm after:font-thin after:text-mpl-white after:content-[attr(data-version)];
+  @apply relative mb-8 text-2xl font-medium text-mpl-grey-4 after:absolute after:-right-16 after:top-[7px] after:rounded-full after:bg-mpl-red after:px-3 after:text-sm after:font-thin after:text-mpl-white after:content-[attr(data-version)];
 }
 
 .scrollBar {

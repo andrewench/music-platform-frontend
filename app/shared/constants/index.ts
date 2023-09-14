@@ -1,8 +1,10 @@
 import { TLoginQueries } from '../types'
 
 export const AppConstant = {
-  BASE_API_PREFIX: '/api',
   APP_NAME: 'Music Platform',
+  APP_VERSION: '0.2',
+
+  BASE_API_PREFIX: '/api',
   FAKE_LOADER_DELAY: 1000,
   DEFAULT_AVATAR_PATH: '/images/default_avatar.png',
 

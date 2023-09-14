@@ -26,15 +26,15 @@
 }
 
 .inputBox {
-  @apply h-[70px] w-full border-t-[1px] border-t-mpl-grey-1/50 bg-mpl-white py-4 px-7;
+  @apply h-[70px] w-full border-t-[1px] border-t-mpl-grey-1/50 bg-mpl-white px-7 py-4;
 }
 
 .input {
-  @apply w-full rounded-tl-mpl rounded-bl-mpl border-[1px] border-mpl-grey-1/50 py-2 px-5 text-sm focus:border-[2px] focus:border-mpl-accent-color focus:outline-none;
+  @apply w-full rounded-bl-mpl rounded-tl-mpl border-[1px] border-mpl-grey-1/50 px-5 py-2 text-sm focus:border-[2px] focus:border-mpl-accent-color focus:outline-none;
 }
 
 .submit {
-  @apply rounded-tl-[0] rounded-bl-[0] pt-[6px];
+  @apply rounded-bl-[0] rounded-tl-[0] pt-[6px];
 }
 
 .username {

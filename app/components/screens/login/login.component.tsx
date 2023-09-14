@@ -5,8 +5,6 @@ import SimpleBar from 'simplebar-react'
 
 import cn from 'clsx'
 
-import { version as appVersion } from '@@/package.json'
-
 import { PageLayout } from '@/components/layout'
 
 import { Flex } from '@/components/shared'
@@ -54,7 +52,10 @@ export const Login: FC = () => {
         <SimpleBar className={cn(styles.scrollBar, styles.block)}>
           <Flex isCentered className={styles.box}>
             <Flex isCentered direction="column">
-              <h1 className={styles.heading} data-version={appVersion}>
+              <h1
+                className={styles.heading}
+                data-version={AppConstant.APP_VERSION}
+              >
                 {AppConstant.APP_NAME}
               </h1>
 

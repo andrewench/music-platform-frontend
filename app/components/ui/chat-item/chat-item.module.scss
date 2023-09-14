@@ -1,5 +1,5 @@
 .chatItem {
-  @apply relative h-[70px] bg-mpl-white py-3 px-5 transition-colors duration-150 hover:cursor-pointer hover:bg-mpl-grey-1/20;
+  @apply relative h-[70px] bg-mpl-white px-5 py-3 transition-colors duration-150 hover:cursor-pointer hover:bg-mpl-grey-1/20;
 
   &:not(:last-child)::after {
     content: '';

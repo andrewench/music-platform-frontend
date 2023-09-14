@@ -40,12 +40,12 @@
   @apply self-end font-thin;
 
   & > svg {
-    @apply mr-2 mb-[2px] inline-block;
+    @apply mb-[2px] mr-2 inline-block;
   }
 }
 
 .followers {
-  @apply mt-6 ml-[13px] text-mpl-grey-4;
+  @apply ml-[13px] mt-6 text-mpl-grey-4;
 }
 
 .content {
