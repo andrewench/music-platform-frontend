@@ -23,8 +23,7 @@
       "@/shared/patterns": ["shared/patterns"],
       "@/shared/utils": ["shared/utils"],
       "@/shared/types": ["shared/types"],
-      "@/*": ["./*"],
-      "@@/*": ["../*"]
+      "@/*": ["./*"]
     }
   }
 }
