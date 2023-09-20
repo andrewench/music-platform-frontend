@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import { TRootState } from '@/shared/types'
-
 interface IInitialState {
   sideBar: {
     isOpen: boolean
@@ -25,5 +23,3 @@ const appSlice = createSlice({
 })
 
 export const { reducer: appReducer, actions: appActions } = appSlice
-
-export const app = (state: TRootState) => state.app

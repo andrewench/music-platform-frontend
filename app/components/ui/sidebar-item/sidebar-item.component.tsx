@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom'
 
 import cn from 'clsx'
 
-import { app } from '@/store/slices'
-
-import { useAppSelector } from '@/shared/hooks'
+import { useMultipleSelector } from '@/shared/hooks'
 
 import styles from './sidebar-item.module.scss'
 
@@ -16,7 +14,9 @@ interface ISideBarItem {
 }
 
 export const SideBarItem: FC<ISideBarItem> = ({ to, label, icon }) => {
-  const { sideBar } = useAppSelector(app)
+  const {
+    app: { sideBar },
+  } = useMultipleSelector()
 
   return (
     <li>

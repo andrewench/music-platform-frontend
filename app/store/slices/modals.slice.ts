@@ -1,7 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
-import { TRootState } from '@/shared/types'
-
 interface IInitialState {
   avatarUploader: {
     isOpen: boolean
@@ -55,5 +53,3 @@ const modalsSlice = createSlice({
 })
 
 export const { reducer: modalsReducer, actions: modalsActions } = modalsSlice
-
-export const modals = (state: TRootState) => state.modals
