@@ -1,3 +1,17 @@
 .box {
   @apply w-52 gap-3;
 }
+
+.icon {
+  @apply text-[#3c3c3c];
+
+  & > path {
+    stroke-width: 24px;
+  }
+}
+
+.muteIcon {
+  @apply text-[#3c3c3c];
+
+  stroke-width: 1px;
+}

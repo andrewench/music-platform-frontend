@@ -2,18 +2,22 @@ import { RefObject, useCallback, useEffect, useState } from 'react'
 
 interface IUseSlider {
   percent: number
+  maxWidth: number
   refs: {
     wrap: RefObject<HTMLDivElement>
   }
+  forceUpdateFlag?: boolean
 }
 
-export const useSlider = ({ percent, refs }: IUseSlider) => {
+export const useSlider = ({
+  percent,
+  maxWidth,
+  refs,
+  forceUpdateFlag,
+}: IUseSlider) => {
   const [isDrag, setDrag] = useState<boolean>(false)
   const [mouseXPos, setMouseXPos] = useState<number>(0)
-
-  const [draggerXPos, setDraggerXPos] = useState<number>(() => {
-    return percent
-  })
+  const [draggerXPos, setDraggerXPos] = useState<number>(percent)
 
   const getOffsetXPos = useCallback(() => {
     if (!refs.wrap.current) return
@@ -22,6 +26,8 @@ export const useSlider = ({ percent, refs }: IUseSlider) => {
   }, [mouseXPos, refs.wrap])
 
   const mouseDownHandler = useCallback(() => {
+    if (forceUpdateFlag) return
+
     if (!refs.wrap.current) return
 
     if (!isDrag) {
@@ -33,13 +39,20 @@ export const useSlider = ({ percent, refs }: IUseSlider) => {
 
       setDrag(true)
     }
-  }, [getOffsetXPos, isDrag, refs.wrap])
+  }, [forceUpdateFlag, getOffsetXPos, isDrag, refs.wrap])
 
   const mouseUpHandler = useCallback(() => {
+    if (forceUpdateFlag) return
+
     if (!refs.wrap.current) return
 
     if (isDrag) setDrag(false)
-  }, [isDrag, refs.wrap])
+  }, [forceUpdateFlag, isDrag, refs.wrap])
+
+  useEffect(() => {
+    setDraggerXPos(percent)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [forceUpdateFlag])
 
   useEffect(() => {
     const wrapRef = refs.wrap.current
@@ -65,10 +78,14 @@ export const useSlider = ({ percent, refs }: IUseSlider) => {
 
     document.addEventListener('mousemove', mouseMoveHandler)
 
+    if (forceUpdateFlag) {
+      document.removeEventListener('mousemove', mouseMoveHandler)
+    }
+
     return () => {
       document.removeEventListener('mousemove', mouseMoveHandler)
     }
-  }, [getOffsetXPos, isDrag, mouseXPos, refs.wrap])
+  }, [forceUpdateFlag, getOffsetXPos, isDrag, mouseXPos, refs.wrap])
 
   useEffect(() => {
     if (isDrag) {
@@ -97,5 +114,6 @@ export const useSlider = ({ percent, refs }: IUseSlider) => {
     mouseUpHandler,
     isDrag,
     draggerXPos,
+    progressPercent: Math.floor((draggerXPos / maxWidth) * 100),
   }
 }
