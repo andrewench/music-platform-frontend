@@ -13,7 +13,6 @@
       "@/components/guards": ["components/guards"],
       "@/store": ["store"],
       "@/services": ["services"],
-      "@/shared/data": ["shared/data"],
       "@/store/slices": ["store/slices"],
       "@/shared/api": ["shared/api"],
       "@/shared/hooks": ["shared/hooks"],

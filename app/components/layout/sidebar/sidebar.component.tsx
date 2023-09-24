@@ -8,11 +8,11 @@ import { SideBarItem } from '@/components/ui'
 
 import { Flex } from '@/components/shared'
 
-import { sideBarItemsList } from '@/shared/data'
-
 import { useActions, useMultipleSelector } from '@/shared/hooks'
 
 import { Avatar } from './avatar/avatar.component'
+
+import { sideBarItemsList } from './sidebar-items.data'
 
 import styles from './sidebar.module.scss'
 

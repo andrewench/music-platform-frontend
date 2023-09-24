@@ -9,7 +9,10 @@ import { BackLink, PrimaryButton, SecondaryButton } from '@/components/ui'
 
 import { Flex, Image, PlaylistStat } from '@/components/shared'
 
-import { SoundtracksList, SoundtracksListCaptionKeys } from '@/shared/data'
+import {
+  SoundtracksList,
+  SoundtracksListCaptionKeys,
+} from './soundtracks-list.data'
 
 import styles from './single-playlist.module.scss'
 

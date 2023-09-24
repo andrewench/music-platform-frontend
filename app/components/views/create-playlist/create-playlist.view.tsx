@@ -18,6 +18,8 @@ import { useConfiguredForm, useSubmitHandler } from '@/shared/hooks'
 
 import { ICreatePlaylistFields } from '@/shared/types'
 
+import { CreatePlaylistFieldsList } from './create-playlist-fields.data'
+
 import styles from './create-playlist.module.scss'
 
 export const CreatePlaylistView: FC = () => {
@@ -46,32 +48,20 @@ export const CreatePlaylistView: FC = () => {
           onSubmit={onSubmit}
           className={styles.form}
         >
-          <TextField<ICreatePlaylistFields>
-            label={t('sections.playlist.create.name')}
-            type="text"
-            minLength={30}
-            fieldState="name"
-            register={methods.register}
-          />
+          {CreatePlaylistFieldsList.map(({ labelKey, ...props }, idx) => (
+            <TextField
+              label={t(labelKey)}
+              minLength={30}
+              register={methods.register}
+              {...props}
+              key={idx}
+            />
+          ))}
 
-          <TextField<ICreatePlaylistFields>
-            label={t('sections.playlist.create.description')}
-            type="text"
-            minLength={30}
-            fieldState="description"
-            register={methods.register}
-            multiLine
+          <CheckboxField
+            label={t('sections.playlist.create.private')}
+            onChange={() => {}}
           />
-
-          <TextField<ICreatePlaylistFields>
-            label={t('sections.playlist.create.genre')}
-            type="text"
-            minLength={30}
-            fieldState="genre"
-            register={methods.register}
-          />
-
-          <CheckboxField label={t('sections.playlist.create.private')} />
 
           <PrimaryButton type="submit">{t('common.save')}</PrimaryButton>
         </FormLayout>

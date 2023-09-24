@@ -1,4 +1,4 @@
-import { FC, useId, useState } from 'react'
+import { ChangeEvent, FC, useId, useState } from 'react'
 import { IoCheckmarkOutline } from 'react-icons/io5'
 
 import cn from 'clsx'
@@ -10,9 +10,10 @@ import styles from './checkbox-field.module.scss'
 
 interface ICheckboxField {
   label: string
+  onChange?: (event?: ChangeEvent<HTMLInputElement>) => void
 }
 
-export const CheckboxField: FC<ICheckboxField> = ({ label }) => {
+export const CheckboxField: FC<ICheckboxField> = ({ label, onChange }) => {
   const [checked, setChecked] = useState<boolean>(false)
 
   const labelId = useId()
@@ -49,6 +50,7 @@ export const CheckboxField: FC<ICheckboxField> = ({ label }) => {
         id={labelId}
         type="checkbox"
         checked={checked}
+        onChange={onChange}
         className={styles.defaultCheckbox}
       />
 

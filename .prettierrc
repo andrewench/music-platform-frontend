@@ -24,7 +24,6 @@
     "^@/services",
     "^@/store/slices",
     "^@/shared/api",
-    "^@/shared/data",
     "^@/shared/schemes",
     "^@/shared/presets",
     "^@/shared/constants",
@@ -34,8 +33,8 @@
     "^@/shared/types",
     "^(.*.component)$",
     "^(.*.interface)$",
+    "^(.*.data)$",
     "^(.*.type)$",
-    "^(.*.package.json)$",
     "^@/",
     "^@/assets/styles/*",
     "^(.*.module.scss)$"

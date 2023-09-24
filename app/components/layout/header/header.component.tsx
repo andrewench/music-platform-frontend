@@ -5,9 +5,9 @@ import { HeaderLink } from '@/components/ui'
 
 import { Flex } from '@/components/shared'
 
-import { headerLinksList } from '@/shared/data'
-
 import { HeaderDropList } from './header-drop-list/header-drop-list.component'
+
+import { headerLinksList } from './header-links.data'
 
 import styles from './header.module.scss'
 

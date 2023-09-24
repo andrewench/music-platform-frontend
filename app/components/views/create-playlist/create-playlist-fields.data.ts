@@ -1,8 +1,10 @@
+import { TTextFieldRole } from '@/components/ui/text-field/text-field.interface'
+
 import { ICreatePlaylistFields } from '@/shared/types'
 
 interface ICreatePlaylistFieldsList {
   labelKey: string
-  type: string
+  type: TTextFieldRole
   fieldState: keyof ICreatePlaylistFields
 }
 

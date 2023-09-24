@@ -3,8 +3,6 @@ import { toast } from 'react-hot-toast'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 
-import { SignUpFieldsList } from './signup-form.data'
-
 import { FormLayout } from '@/components/layout'
 
 import { FormSubmit, PasswordField, TextField } from '@/components/ui'
@@ -27,6 +25,8 @@ import {
   TSignUpFields,
   TSignUpFormFields,
 } from '@/shared/types'
+
+import { SignUpFieldsList } from './signup-form.data'
 
 import styles from './signup-form.module.scss'
 

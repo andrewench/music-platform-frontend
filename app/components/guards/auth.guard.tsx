@@ -1,13 +1,16 @@
 import { FC, useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
+import {
+  protectedRoutes,
+  publicRoutes,
+} from '@/components/providers/router-provider/router.data'
+
 import { FallbackGuard } from '@/components/guards'
 
 import { TokenService } from '@/services'
 
 import { useGetMeQuery } from '@/shared/api'
-
-import { protectedRoutes, publicRoutes } from '@/shared/data'
 
 import { useActions } from '@/shared/hooks'
 
