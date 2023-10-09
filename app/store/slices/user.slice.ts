@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
-import { IUser } from '@/shared/types'
+import { IUser, TRootState } from '@/shared/types'
 
 interface IInitialState {
   data: IUser
@@ -24,3 +24,5 @@ const userSlice = createSlice({
 })
 
 export const { reducer: userReducer, actions: userActions } = userSlice
+
+export const user = (state: TRootState) => state.user

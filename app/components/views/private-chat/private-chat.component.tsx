@@ -9,14 +9,14 @@ import { MessageItem, PrimaryButton } from '@/components/ui'
 
 import { Flex } from '@/components/shared'
 
-import { useMultipleSelector } from '@/shared/hooks'
+import { app } from '@/store/slices'
+
+import { useAppSelector } from '@/shared/hooks'
 
 import styles from './private-chat.module.scss'
 
 export const PrivateChat: FC = () => {
-  const {
-    app: { sideBar },
-  } = useMultipleSelector()
+  const { sideBar } = useAppSelector(app)
 
   return (
     <div

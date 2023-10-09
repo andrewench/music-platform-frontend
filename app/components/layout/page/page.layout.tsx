@@ -6,18 +6,18 @@ import { AnimatePresence } from 'framer-motion'
 
 import { AvatarUploaderModal } from '@/components/layout'
 
+import { modals } from '@/store/slices'
+
 import { AppConstant } from '@/shared/constants'
 
-import { useMultipleSelector } from '@/shared/hooks'
+import { useAppSelector } from '@/shared/hooks'
 
 import { TPageLayout } from './page.interface'
 
 import styles from './page.module.scss'
 
 export const PageLayout: FC<TPageLayout> = ({ title, children, className }) => {
-  const {
-    modals: { avatarUploader },
-  } = useMultipleSelector()
+  const { avatarUploader } = useAppSelector(modals)
 
   useEffect(() => {
     const titleElement = document.getElementsByTagName('title')[0]

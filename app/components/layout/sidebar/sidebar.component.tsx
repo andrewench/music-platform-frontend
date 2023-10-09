@@ -8,7 +8,9 @@ import { SideBarItem } from '@/components/ui'
 
 import { Flex } from '@/components/shared'
 
-import { useActions, useMultipleSelector } from '@/shared/hooks'
+import { app, user } from '@/store/slices'
+
+import { useActions, useAppSelector } from '@/shared/hooks'
 
 import { Avatar } from './avatar/avatar.component'
 
@@ -19,10 +21,8 @@ import styles from './sidebar.module.scss'
 export const SideBar: FC = () => {
   const { t } = useTranslation()
 
-  const {
-    app: { sideBar },
-    user: { data },
-  } = useMultipleSelector()
+  const { sideBar } = useAppSelector(app)
+  const { data } = useAppSelector(user)
 
   const { toggleSideBar } = useActions()
 

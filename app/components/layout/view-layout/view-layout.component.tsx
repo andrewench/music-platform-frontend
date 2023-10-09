@@ -5,9 +5,11 @@ import cn from 'clsx'
 
 import { Fallback } from '@/components/layout'
 
+import { app } from '@/store/slices'
+
 import { AppConstant } from '@/shared/constants'
 
-import { useDebounce, useMultipleSelector } from '@/shared/hooks'
+import { useAppSelector, useDebounce } from '@/shared/hooks'
 
 import { PropsWithChildrenAndClassName } from '@/shared/types'
 
@@ -19,9 +21,7 @@ export const ViewLayout: FC<PropsWithChildrenAndClassName> = ({
 }) => {
   const [isMounted, setMounted] = useState<boolean>(false)
 
-  const {
-    app: { sideBar },
-  } = useMultipleSelector()
+  const { sideBar } = useAppSelector(app)
 
   const debouncedHandler = () => {
     if (!isMounted) setMounted(true)

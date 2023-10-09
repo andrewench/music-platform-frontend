@@ -13,13 +13,11 @@ import {
 
 import { Flex } from '@/components/shared'
 
+import { user } from '@/store/slices'
+
 import { useUploadAvatarMutation, userApi } from '@/shared/api'
 
-import {
-  useActions,
-  useMultipleSelector,
-  useSubmitHandler,
-} from '@/shared/hooks'
+import { useActions, useAppSelector, useSubmitHandler } from '@/shared/hooks'
 
 import styles from './avatar-uploader-modal.module.scss'
 
@@ -28,9 +26,7 @@ export const AvatarUploaderModal: FC = () => {
 
   const formRef = useRef<HTMLFormElement>(null)
 
-  const {
-    user: { data: userData },
-  } = useMultipleSelector()
+  const { data: userData } = useAppSelector(user)
 
   const methods = useForm<{ picture: File }>({
     mode: 'onChange',

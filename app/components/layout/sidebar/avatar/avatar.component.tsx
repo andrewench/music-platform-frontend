@@ -6,17 +6,17 @@ import { AvatarUploader } from '@/components/ui'
 
 import { Image } from '@/components/shared'
 
+import { app, user } from '@/store/slices'
+
 import { AppConstant } from '@/shared/constants'
 
-import { useMultipleSelector } from '@/shared/hooks'
+import { useAppSelector } from '@/shared/hooks'
 
 import styles from './avatar.module.scss'
 
 export const Avatar: FC = () => {
-  const {
-    user: { data },
-    app: { sideBar },
-  } = useMultipleSelector()
+  const { data } = useAppSelector(user)
+  const { sideBar } = useAppSelector(app)
 
   return (
     <div

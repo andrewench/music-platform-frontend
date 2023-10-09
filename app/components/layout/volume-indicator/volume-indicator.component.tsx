@@ -10,7 +10,9 @@ import { ProgressIndicator } from '@/components/ui'
 
 import { Flex } from '@/components/shared'
 
-import { useActions, useMultipleSelector } from '@/shared/hooks'
+import { app } from '@/store/slices'
+
+import { useActions, useAppSelector } from '@/shared/hooks'
 
 import styles from './volume-indicator.module.scss'
 
@@ -34,9 +36,7 @@ const RenderedVolumeIcon: FC<{
 export const VolumeIndicator: FC = () => {
   const [progress, setProgress] = useState<number>(0)
 
-  const {
-    app: { audioPlayer },
-  } = useMultipleSelector()
+  const { audioPlayer } = useAppSelector(app)
 
   const { setVolume, toggleMutedVolume } = useActions()
 

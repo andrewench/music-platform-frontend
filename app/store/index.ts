@@ -4,8 +4,6 @@ import { appReducer, modalsReducer, userReducer } from '@/store/slices'
 
 import { authApi, userApi } from '@/shared/api'
 
-import { TRootState } from '@/shared/types'
-
 const combinedReducers = combineReducers({
   user: userReducer,
   modals: modalsReducer,
@@ -19,5 +17,3 @@ export const store = configureStore({
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware().concat(userApi.middleware, authApi.middleware),
 })
-
-export const selectedStore = (state: TRootState) => state
