@@ -1,6 +1,6 @@
 import { TLoginQueries } from '../types'
 
-export const AppConstant = {
+export const Constants = {
   APP_NAME: 'Music Platform',
   APP_VERSION: '0.2',
 

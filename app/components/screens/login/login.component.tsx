@@ -11,7 +11,7 @@ import { Flex } from '@/components/shared'
 
 import { LoginService } from '@/services'
 
-import { AppConstant } from '@/shared/constants'
+import { Constants } from '@/shared/constants'
 
 import { FormRenderer } from './form-renderer.component'
 
@@ -20,7 +20,7 @@ import styles from './login.module.scss'
 export const Login: FC = () => {
   const [redirectedUrl, setRedirectedUrl] = useState<string>('')
   const [loginQuery, setLoginQuery] = useState(
-    AppConstant.AUTH.QUERY_PARAMS.signIn
+    Constants.AUTH.QUERY_PARAMS.signIn
   )
 
   const [searchParams] = useSearchParams()
@@ -54,9 +54,9 @@ export const Login: FC = () => {
             <Flex isCentered direction="column">
               <h1
                 className={styles.heading}
-                data-version={AppConstant.APP_VERSION}
+                data-version={Constants.APP_VERSION}
               >
-                {AppConstant.APP_NAME}
+                {Constants.APP_NAME}
               </h1>
 
               <FormRenderer query={loginQuery} />

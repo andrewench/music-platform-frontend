@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
 
 import { TokenService } from '@/services'
 
-import { AppConstant } from '@/shared/constants'
+import { Constants } from '@/shared/constants'
 
 import { createRequestApi } from '@/shared/utils'
 
@@ -15,7 +15,7 @@ import {
 
 export const authApi = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: AppConstant.BASE_API_PREFIX,
+    baseUrl: Constants.BASE_API_PREFIX,
   }),
   endpoints: ({ mutation }) => ({
     login: mutation<TAuthSuccessResponse, TSignInFields>(

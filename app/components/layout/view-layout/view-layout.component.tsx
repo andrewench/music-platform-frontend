@@ -7,7 +7,7 @@ import { Fallback } from '@/components/layout'
 
 import { app } from '@/store/slices'
 
-import { AppConstant } from '@/shared/constants'
+import { Constants } from '@/shared/constants'
 
 import { useAppSelector, useDebounce } from '@/shared/hooks'
 
@@ -27,7 +27,7 @@ export const ViewLayout: FC<PropsWithChildrenAndClassName> = ({
     if (!isMounted) setMounted(true)
   }
 
-  const debounced = useDebounce(debouncedHandler, AppConstant.FAKE_LOADER_DELAY)
+  const debounced = useDebounce(debouncedHandler, Constants.FAKE_LOADER_DELAY)
 
   useEffect(() => {
     debounced()

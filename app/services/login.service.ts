@@ -4,7 +4,7 @@ import { URLSearchParams } from 'url'
 
 import { TokenService } from '@/services'
 
-import { AppConstant } from '@/shared/constants'
+import { Constants } from '@/shared/constants'
 
 import {
   StateAction,
@@ -21,7 +21,7 @@ export const LoginService = {
   ) => {
     const actQuery = query.get('act') as TLoginQueries
 
-    const { signIn, signUp, restore } = AppConstant.AUTH.QUERY_PARAMS
+    const { signIn, signUp, restore } = Constants.AUTH.QUERY_PARAMS
 
     if (!actQuery) {
       return {
@@ -53,7 +53,7 @@ export const LoginService = {
 
     const { accessToken, refreshToken } = data
 
-    const { AT_LIFE_TIME, RT_LIFE_TIME } = AppConstant.TOKENS
+    const { AT_LIFE_TIME, RT_LIFE_TIME } = Constants.TOKENS
 
     TokenService.setToken('accessToken', accessToken, {
       expires: new Date(new Date().getTime() + AT_LIFE_TIME),

@@ -7,7 +7,7 @@ import { Mutex } from 'async-mutex'
 
 import { TokenService } from '@/services'
 
-import { AppConstant } from '@/shared/constants'
+import { Constants } from '@/shared/constants'
 
 import { baseQuery } from '@/shared/utils'
 
@@ -47,7 +47,7 @@ export const customFetcher: BaseQueryFn<
           const { accessToken, refreshToken } =
             refreshResponse.data as TAuthSuccessResponse
 
-          const { AT_LIFE_TIME, RT_LIFE_TIME } = AppConstant.TOKENS
+          const { AT_LIFE_TIME, RT_LIFE_TIME } = Constants.TOKENS
 
           TokenService.setToken('accessToken', accessToken, {
             expires: new Date(new Date().getTime() + AT_LIFE_TIME),

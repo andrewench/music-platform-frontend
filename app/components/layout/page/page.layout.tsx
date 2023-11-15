@@ -8,7 +8,7 @@ import { AvatarUploaderModal } from '@/components/layout'
 
 import { modals } from '@/store/slices'
 
-import { AppConstant } from '@/shared/constants'
+import { Constants } from '@/shared/constants'
 
 import { useAppSelector } from '@/shared/hooks'
 
@@ -22,7 +22,7 @@ export const PageLayout: FC<TPageLayout> = ({ title, children, className }) => {
   useEffect(() => {
     const titleElement = document.getElementsByTagName('title')[0]
 
-    titleElement.innerText = `${AppConstant.APP_NAME} | ${title}`
+    titleElement.innerText = `${Constants.APP_NAME} | ${title}`
   }, [title])
 
   return (
@@ -32,7 +32,7 @@ export const PageLayout: FC<TPageLayout> = ({ title, children, className }) => {
       <Toaster
         position="top-right"
         toastOptions={{
-          duration: AppConstant.TOAST.LIFE_TIME,
+          duration: Constants.TOAST.LIFE_TIME,
           className: styles.normal,
           success: {
             className: styles.success,

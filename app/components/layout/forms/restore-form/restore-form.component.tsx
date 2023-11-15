@@ -9,7 +9,7 @@ import { FormHelper } from '@/components/shared'
 
 import { RestoreFieldsSchema } from '@/shared/schemes'
 
-import { AppConstant } from '@/shared/constants'
+import { Constants } from '@/shared/constants'
 
 import { useConfiguredForm, useSubmitHandler } from '@/shared/hooks'
 
@@ -41,7 +41,7 @@ export const RestoreForm: FC = () => {
       <FormHelper<TLoginRoutes>
         label={t('helpers.accountExists')}
         link={{
-          href: `/login?act=${AppConstant.AUTH.QUERY_PARAMS.signIn}`,
+          href: `/login?act=${Constants.AUTH.QUERY_PARAMS.signIn}`,
           label: `${t('common.signIn')}.`,
         }}
       />

@@ -8,7 +8,7 @@ import { Image } from '@/components/shared'
 
 import { app, user } from '@/store/slices'
 
-import { AppConstant } from '@/shared/constants'
+import { Constants } from '@/shared/constants'
 
 import { useAppSelector } from '@/shared/hooks'
 
@@ -25,7 +25,7 @@ export const Avatar: FC = () => {
       })}
     >
       <Image
-        src={data.avatar ?? AppConstant.DEFAULT_AVATAR_PATH}
+        src={data.avatar ?? Constants.DEFAULT_AVATAR_PATH}
         alt="Avatar"
         className={styles.image}
       />

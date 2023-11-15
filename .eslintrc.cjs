@@ -51,6 +51,9 @@ module.exports = {
       },
     ],
     'import/no-extraneous-dependencies': 'off',
+    'import/no-cycle': 'error',
+
+    'jsx-a11y/control-has-associated-label': 'off',
 
     'react/jsx-filename-extension': 'off',
     'react/no-array-index-key': 'off',

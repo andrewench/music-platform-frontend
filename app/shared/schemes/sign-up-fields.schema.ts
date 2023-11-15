@@ -1,10 +1,10 @@
 import { ObjectSchema, object, ref, string } from 'yup'
 
+import { Constants } from '@/shared/constants'
+
 import { TSignUpFormFields } from '@/shared/types'
 
-import { AppConstant } from '../constants'
-
-const patterns = AppConstant.PATTERNS
+const patterns = Constants.PATTERNS
 
 export const SignUpFieldsSchema: ObjectSchema<TSignUpFormFields> = object({
   firstName: string()

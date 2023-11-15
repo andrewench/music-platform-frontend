@@ -15,7 +15,7 @@ import { useLoginMutation } from '@/shared/api'
 
 import { SignInFieldsSchema } from '@/shared/schemes'
 
-import { AppConstant } from '@/shared/constants'
+import { Constants } from '@/shared/constants'
 
 import { useConfiguredForm, useSubmitHandler } from '@/shared/hooks'
 
@@ -83,7 +83,7 @@ export const LoginForm: FC = () => {
         label={t('helpers.accountNotExists')}
         link={{
           label: `${t('common.signUp')}.`,
-          href: `/login?act=${AppConstant.AUTH.QUERY_PARAMS.signUp}`,
+          href: `/login?act=${Constants.AUTH.QUERY_PARAMS.signUp}`,
         }}
       />
 
@@ -91,7 +91,7 @@ export const LoginForm: FC = () => {
         label={t('helpers.forgotPassword')}
         link={{
           label: `${t('common.restore')}.`,
-          href: `/login?act=${AppConstant.AUTH.QUERY_PARAMS.restore}`,
+          href: `/login?act=${Constants.AUTH.QUERY_PARAMS.restore}`,
         }}
       />
     </>

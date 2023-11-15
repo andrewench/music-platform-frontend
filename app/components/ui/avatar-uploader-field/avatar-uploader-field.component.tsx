@@ -13,7 +13,7 @@ import { IoCloseCircleOutline } from 'react-icons/io5'
 
 import { Flex } from '@/components/shared'
 
-import { AppConstant } from '@/shared/constants'
+import { Constants } from '@/shared/constants'
 
 import { StateAction } from '@/shared/types'
 
@@ -50,7 +50,7 @@ export const AvatarUploaderField: FC<IAvatarUploaderField> = ({
     if (!input) return
     if (!input.files) return
 
-    if (input.files[0].size >= AppConstant.FILES.IMAGE.MAX_SIZE) {
+    if (input.files[0].size >= Constants.FILES.IMAGE.MAX_SIZE) {
       setError('picture', {
         message: `The image should not exceed 5mb`,
       })

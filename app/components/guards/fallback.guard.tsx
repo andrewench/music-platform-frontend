@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 
 import { Fallback } from '@/components/layout'
 
-import { AppConstant } from '@/shared/constants'
+import { Constants } from '@/shared/constants'
 
 import { useDebounce } from '@/shared/hooks'
 
@@ -16,7 +16,7 @@ export const FallbackGuard: FC = () => {
 
   const showDebounceFallback = useDebounce(
     mountDebounce,
-    AppConstant.FAKE_LOADER_DELAY
+    Constants.FAKE_LOADER_DELAY
   )
 
   useEffect(() => {
