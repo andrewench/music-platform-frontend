@@ -1,6 +1,6 @@
+import { LogOut } from 'lucide-react'
 import { FC, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { IoLogOutOutline } from 'react-icons/io5'
 import { useNavigate } from 'react-router'
 
 import { Flex } from '@/components/shared'
@@ -40,7 +40,7 @@ export const LogoutButton: FC = () => {
       className={styles.button}
     >
       <Flex align="center" className={styles.box}>
-        <IoLogOutOutline size={22} />
+        <LogOut size={20} strokeWidth={1.5} />
         <span>{t('sections.header.dropList.logout')}</span>
       </Flex>
     </button>

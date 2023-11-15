@@ -1,5 +1,5 @@
+import { CheckCheck, Heart } from 'lucide-react'
 import { FC } from 'react'
-import { IoCheckmarkDoneOutline, IoHeartOutline } from 'react-icons/io5'
 
 import { SectionBlock, ViewLayout } from '@/components/layout'
 
@@ -23,7 +23,7 @@ export const ArtistsView: FC = () => {
               <p className={styles.username}>Edward Johnson</p>
 
               <span className={styles.verify}>
-                <IoCheckmarkDoneOutline size={20} />
+                <CheckCheck size={20} strokeWidth={1.5} />
               </span>
             </Flex>
 
@@ -31,7 +31,7 @@ export const ArtistsView: FC = () => {
           </div>
 
           <PrimaryButton type="button" className={styles.follow}>
-            <IoHeartOutline size={20} />
+            <Heart size={18} strokeWidth={1.5} />
             Follow artist
           </PrimaryButton>
         </Flex>

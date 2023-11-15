@@ -1,5 +1,5 @@
+import { ArrowLeft, Send } from 'lucide-react'
 import { FC } from 'react'
-import { IoArrowBackOutline, IoPaperPlaneSharp } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 import SimpleBar from 'simplebar-react'
 
@@ -27,7 +27,7 @@ export const PrivateChat: FC = () => {
     >
       <Flex align="center" content="start" className={styles.caption}>
         <Link to="/messenger" className={styles.backLink}>
-          <IoArrowBackOutline size={20} />
+          <ArrowLeft size={22} strokeWidth={1.5} />
         </Link>
 
         <p className={styles.username}>Ann Roberts</p>
@@ -54,7 +54,7 @@ export const PrivateChat: FC = () => {
         <input placeholder="Enter something..." className={styles.input} />
 
         <PrimaryButton type="button" className={styles.submit}>
-          <IoPaperPlaneSharp size={16} />
+          <Send size={18} strokeWidth={1.5} />
         </PrimaryButton>
       </Flex>
     </div>

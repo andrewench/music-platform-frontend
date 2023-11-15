@@ -1,5 +1,5 @@
+import { Menu } from 'lucide-react'
 import { FC, useState } from 'react'
-import { IoMenuOutline } from 'react-icons/io5'
 
 import { AnimatePresence } from 'framer-motion'
 
@@ -32,7 +32,7 @@ export const HeaderDropList: FC = () => {
           variant="outlined"
           className={styles.toggle}
         >
-          <IoMenuOutline size={20} />
+          <Menu size={19} strokeWidth={1.5} />
         </StyledButton>
       </div>
 

@@ -1,3 +1,4 @@
+import { X } from 'lucide-react'
 import {
   FC,
   RefObject,
@@ -9,7 +10,6 @@ import {
 } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
-import { IoCloseCircleOutline } from 'react-icons/io5'
 
 import { Flex } from '@/components/shared'
 
@@ -104,7 +104,7 @@ export const AvatarUploaderField: FC<IAvatarUploaderField> = ({
               detachSelectedImage()
             }}
           >
-            <IoCloseCircleOutline size={22} />
+            <X size={20} strokeWidth={1.5} />
           </button>
         </Flex>
       )}

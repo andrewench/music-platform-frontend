@@ -1,5 +1,5 @@
+import { ArrowLeft } from 'lucide-react'
 import { FC } from 'react'
-import { IoArrowBackOutline } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 
 import styles from './back-link.module.scss'
@@ -12,7 +12,7 @@ interface IBackLink {
 export const BackLink: FC<IBackLink> = ({ to, label }) => {
   return (
     <Link to={to} className={styles.link}>
-      <IoArrowBackOutline size={20} />
+      <ArrowLeft size={20} strokeWidth={1.5} />
       {label}
     </Link>
   )

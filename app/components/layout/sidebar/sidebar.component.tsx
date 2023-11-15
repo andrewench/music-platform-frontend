@@ -1,6 +1,6 @@
+import { ChevronLeft, Copy } from 'lucide-react'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { IoChevronBackOutline, IoCopyOutline } from 'react-icons/io5'
 
 import cn from 'clsx'
 
@@ -38,7 +38,7 @@ export const SideBar: FC = () => {
           [styles.bottom]: !sideBar.isOpen,
         })}
       >
-        <IoChevronBackOutline size={18} />
+        <ChevronLeft size={18} strokeWidth={1.5} />
       </button>
 
       <Avatar />
@@ -59,7 +59,7 @@ export const SideBar: FC = () => {
             <p>@{data.nickname}</p>
 
             <button>
-              <IoCopyOutline size={14} className={styles.icon} />
+              <Copy size={14} strokeWidth={1.5} className={styles.icon} />
             </button>
           </Flex>
         )}

@@ -1,6 +1,6 @@
+import { Sun } from 'lucide-react'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { IoSunnyOutline } from 'react-icons/io5'
 
 import { Flex } from '@/components/shared'
 
@@ -12,7 +12,7 @@ export const ThemeButton: FC = () => {
   return (
     <button className={styles.button}>
       <Flex align="center" className={styles.box}>
-        <IoSunnyOutline size={21} />
+        <Sun size={20} strokeWidth={1.5} />
         <span>{t('sections.header.dropList.theme')}</span>
       </Flex>
     </button>

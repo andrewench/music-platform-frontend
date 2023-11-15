@@ -1,5 +1,5 @@
+import { Check } from 'lucide-react'
 import { ChangeEvent, FC, useId, useState } from 'react'
-import { IoCheckmarkOutline } from 'react-icons/io5'
 
 import cn from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -40,7 +40,7 @@ export const CheckboxField: FC<ICheckboxField> = ({ label, onChange }) => {
                 opacity: 0,
               }}
             >
-              <IoCheckmarkOutline size={20} className={styles.icon} />
+              <Check size={20} strokeWidth={1.5} className={styles.icon} />
             </motion.div>
           )}
         </AnimatePresence>

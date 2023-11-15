@@ -1,10 +1,5 @@
+import { Volume1, Volume2, VolumeX } from 'lucide-react'
 import { FC, useEffect, useState } from 'react'
-import { FiVolumeX } from 'react-icons/fi'
-import {
-  IoVolumeHighOutline,
-  IoVolumeLowOutline,
-  IoVolumeMediumOutline,
-} from 'react-icons/io5'
 
 import { ProgressIndicator } from '@/components/ui'
 
@@ -20,16 +15,13 @@ const RenderedVolumeIcon: FC<{
   progress: number
   isMuted: boolean
 }> = ({ progress, isMuted }) => {
-  if (!isMuted && progress >= 75)
-    return <IoVolumeHighOutline size={24} className={styles.icon} />
-
-  if (!isMuted && progress > 35)
-    return <IoVolumeMediumOutline size={24} className={styles.icon} />
+  if (!isMuted && progress >= 50)
+    return <Volume2 size={20} strokeWidth={1.5} className={styles.icon} />
 
   return isMuted ? (
-    <FiVolumeX size={24} className={styles.muteIcon} />
+    <VolumeX size={20} strokeWidth={1.5} className={styles.icon} />
   ) : (
-    <IoVolumeLowOutline size={24} className={styles.icon} />
+    <Volume1 size={20} strokeWidth={1.5} className={styles.icon} />
   )
 }
 

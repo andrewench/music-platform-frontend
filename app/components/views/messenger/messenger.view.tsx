@@ -1,5 +1,5 @@
+import { MessageSquare } from 'lucide-react'
 import { FC, Suspense } from 'react'
-import { IoChatboxOutline } from 'react-icons/io5'
 import { lazily } from 'react-lazily'
 import { useSearchParams } from 'react-router-dom'
 import SimpleBar from 'simplebar-react'
@@ -54,7 +54,7 @@ export const MessengerView: FC = () => {
         ) : (
           <FallbackView
             label="Select a dialog to start chatting"
-            icon={<IoChatboxOutline size={26} />}
+            icon={<MessageSquare size={26} strokeWidth={1.5} />}
           />
         )}
       </Flex>

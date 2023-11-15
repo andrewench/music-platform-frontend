@@ -1,5 +1,5 @@
+import { Headphones, Heart } from 'lucide-react'
 import { FC } from 'react'
-import { IoHeadsetOutline, IoHeartOutline } from 'react-icons/io5'
 
 import cn from 'clsx'
 
@@ -22,12 +22,12 @@ export const PlaylistStat: FC<PropsWithClassName<IPlaylistStat>> = ({
   return (
     <Flex className={cn(styles.box, className)}>
       <Flex align="center">
-        <IoHeadsetOutline size={16} className={styles.icon} />
+        <Headphones size={16} strokeWidth={1.5} className={styles.icon} />
         <span>{listeners}</span>
       </Flex>
 
       <Flex align="center">
-        <IoHeartOutline size={18} className={styles.icon} />
+        <Heart size={16} strokeWidth={1.5} className={styles.icon} />
         <span>{likes}</span>
       </Flex>
     </Flex>

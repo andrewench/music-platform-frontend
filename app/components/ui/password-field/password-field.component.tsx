@@ -1,6 +1,6 @@
+import { Eye, EyeOff } from 'lucide-react'
 import { useState } from 'react'
 import { FieldValues } from 'react-hook-form'
-import { IoEyeOffOutline, IoEyeOutline } from 'react-icons/io5'
 
 import cn from 'clsx'
 
@@ -31,7 +31,11 @@ export const PasswordField = <T extends FieldValues>({
           setPasswordType(prev => !prev)
         }}
       >
-        {isPasswordType ? <IoEyeOffOutline /> : <IoEyeOutline />}
+        {isPasswordType ? (
+          <EyeOff size={16} strokeWidth={1.5} />
+        ) : (
+          <Eye size={16} strokeWidth={1.5} />
+        )}
       </button>
     </div>
   )

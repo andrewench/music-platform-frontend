@@ -1,5 +1,5 @@
+import { ImagePlus } from 'lucide-react'
 import { FC } from 'react'
-import { IoImageOutline } from 'react-icons/io5'
 
 import cn from 'clsx'
 
@@ -32,7 +32,7 @@ export const AvatarUploader: FC = () => {
           [styles.autoHide]: Boolean(data.avatar),
         })}
       >
-        <IoImageOutline size={18} className={styles.uploadIcon} />
+        <ImagePlus size={16} strokeWidth={1.5} className={styles.uploadIcon} />
       </button>
     </div>
   )

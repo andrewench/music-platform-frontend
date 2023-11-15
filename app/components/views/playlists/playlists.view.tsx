@@ -1,6 +1,6 @@
+import { Plus } from 'lucide-react'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { IoAddOutline } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 
 import { SectionBlock, ViewLayout } from '@/components/layout'
@@ -24,7 +24,8 @@ export const PlaylistsView: FC = () => {
 
           <SecondaryButton type="button" className={styles.createPlaylist}>
             <Flex align="center" className={styles.box}>
-              <IoAddOutline size={21} />
+              <Plus size={20} strokeWidth={1.5} />
+
               <Link to="/playlists?act=create">
                 {t('sections.playlist.create.title')}
               </Link>

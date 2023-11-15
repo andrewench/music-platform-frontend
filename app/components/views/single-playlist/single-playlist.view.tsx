@@ -1,6 +1,6 @@
+import { MoreHorizontal } from 'lucide-react'
 import { FC, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { IoEllipsisHorizontalOutline } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 
 import { SectionBlock, Table, ViewLayout } from '@/components/layout'
@@ -68,7 +68,7 @@ export const SinglePlaylistView: FC = () => {
               <PrimaryButton type="button">Add to playlist</PrimaryButton>
 
               <SecondaryButton type="button">
-                <IoEllipsisHorizontalOutline size={18} />
+                <MoreHorizontal size={20} strokeWidth={1.5} />
               </SecondaryButton>
             </Flex>
           </div>
