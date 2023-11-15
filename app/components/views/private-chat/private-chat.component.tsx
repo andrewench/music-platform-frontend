@@ -5,13 +5,15 @@ import SimpleBar from 'simplebar-react'
 
 import cn from 'clsx'
 
-import { MessageItem, PrimaryButton } from '@/components/ui'
+import { MessageItem } from '@/components/ui'
 
 import { Flex } from '@/components/shared'
 
 import { app } from '@/store/slices'
 
 import { useAppSelector } from '@/shared/hooks'
+
+import { PrimaryButton } from '../../ui/primary-button/primary-button.component'
 
 import styles from './private-chat.module.scss'
 

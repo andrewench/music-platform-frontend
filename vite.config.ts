@@ -9,7 +9,8 @@ export default defineConfig(() => {
   return {
     plugins: [react(), tsPaths()],
     build: {
-      outDir: 'build',
+      outDir: '__build__',
+      target: 'esnext',
     },
     server: {
       proxy: {
