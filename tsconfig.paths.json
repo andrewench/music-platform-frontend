@@ -19,7 +19,6 @@
       "@/shared/schemes": ["shared/schemes"],
       "@/shared/presets": ["shared/presets"],
       "@/shared/constants": ["shared/constants"],
-      "@/shared/patterns": ["shared/patterns"],
       "@/shared/utils": ["shared/utils"],
       "@/shared/types": ["shared/types"],
       "@/*": ["./*"]

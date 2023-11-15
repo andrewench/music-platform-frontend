@@ -35,4 +35,13 @@ export const AppConstant = {
     AT_PREFIX: 'at',
     RT_PREFIX: 'rt',
   },
+
+  PATTERNS: {
+    FIRST_NAME: /\b[^0-9^\s]{2,24}\b/,
+    LAST_NAME: /\b[^0-9^\s]{2,30}\b/,
+    LOGIN: /[\w\\_?\d*]+/,
+    EMAIL: /^([a-zA-Z0-9_\-\\.]+)@([a-zA-Z0-9_\-\\.]+)\.([a-zA-Z]{2,5})$/,
+    PASSWORD:
+      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,32}$/,
+  },
 }
