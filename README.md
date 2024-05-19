@@ -9,13 +9,13 @@ git clone https://github.com/andrewench/music-platform-frontend.git
 
 cd music-platform-frontend
 
-yarn install
+npm run install
 ```
 
 ## Run
 
 ```sh
-yarn dev
+npm run dev
 ```
 
 ## Docker

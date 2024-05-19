@@ -85,7 +85,7 @@
   },
   "lint-staged": {
     "*{.ts,.tsx}": [
-      "yarn lint",
+      "npm run lint",
       "git add"
     ]
   }
