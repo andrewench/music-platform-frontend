@@ -1,5 +1,1 @@
 export { MainProvider } from './main.provider'
-export { Router } from './router-provider/router.provider'
-export type { TAppRoutes } from './router-provider/router.type'
-export { StoreProvider } from './store.provider'
-export { TranslateProvider } from './translate.provider'

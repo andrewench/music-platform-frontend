@@ -15,11 +15,11 @@ export default defineConfig(() => {
     server: {
       proxy: {
         '/api': {
-          target: env.SERVER_HOST,
+          target: env.VITE_BACKEND_HOST,
           changeOrigin: true,
         },
         '/uploads/images': {
-          target: env.SERVER_HOST,
+          target: env.VITE_BACKEND_HOST,
           changeOrigin: true,
         },
       },
@@ -28,7 +28,7 @@ export default defineConfig(() => {
       },
       host: true,
       strictPort: true,
-      port: parseInt(env.PORT),
+      port: parseInt(env.VITE_FRONTEND_PORT),
     },
   }
 })

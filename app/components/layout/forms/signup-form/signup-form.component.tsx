@@ -1,7 +1,10 @@
-import { FC, useEffect } from 'react'
+import { useMutation } from '@tanstack/react-query'
+import { FC } from 'react'
 import { toast } from 'react-hot-toast'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
+
+import { AxiosResponse } from 'axios'
 
 import { FormLayout } from '@/components/layout'
 
@@ -9,24 +12,17 @@ import { FormSubmit, PasswordField, TextField } from '@/components/ui'
 
 import { FormHelper } from '@/components/shared'
 
-import { LoginService } from '@/services'
-
-import { useSignUpMutation } from '@/shared/api'
-
 import { SignUpFieldsSchema } from '@/shared/schemes'
 
 import { Constants } from '@/shared/constants'
 
 import { useConfiguredForm, useSubmitHandler } from '@/shared/hooks'
 
-import {
-  TErrorResponse,
-  TLoginRoutes,
-  TSignUpFields,
-  TSignUpFormFields,
-} from '@/shared/types'
+import { TLoginRoutes, TSignUpFields, TSignUpFormFields } from '@/shared/types'
 
 import { SignUpFieldsList } from './signup-form.data'
+
+import { axiosInstance } from '@/config/axios.instance'
 
 import styles from './signup-form.module.scss'
 
@@ -36,33 +32,40 @@ export const SignUpForm: FC = () => {
 
   const navigate = useNavigate()
 
-  const [signUp, { data, error, isLoading }] = useSignUpMutation()
+  const signUpMutation = useMutation({
+    mutationFn: async (payload: TSignUpFields) => {
+      const response = await axiosInstance.put<
+        unknown,
+        AxiosResponse<{ status: string }>,
+        TSignUpFields
+      >('/auth/signup', payload)
 
-  const onSubmit = useSubmitHandler<TSignUpFields>(credentials => {
-    signUp(credentials)
+      return response.data
+    },
+    onSuccess: () => {
+      toast.success('Successfully')
+
+      const promise = new Promise<void>(resolve => {
+        setTimeout(() => {
+          resolve()
+        }, 1 * 1000)
+      })
+
+      toast.promise(promise, {
+        loading: 'Redirecting...',
+        success: () => {
+          navigate('/playlists')
+
+          return ''
+        },
+        error: () => '',
+      })
+    },
   })
 
-  useEffect(() => {
-    LoginService.authSuccess(
-      data,
-      {
-        logged: t('server.success.registered'),
-        redirect: t('server.success.redirect'),
-        unknown: t('server.error.unknown'),
-      },
-      () => {
-        navigate('/playlists')
-      }
-    )
-  }, [data, navigate, t])
-
-  useEffect(() => {
-    if (!error) return
-
-    const { data } = error as TErrorResponse
-
-    if (data.error) toast.error(t(`server.error.${data.error}`))
-  }, [error, t, methods])
+  const onSubmit = useSubmitHandler<TSignUpFields>(credentials => {
+    signUpMutation.mutate(credentials)
+  })
 
   return (
     <>
@@ -88,7 +91,9 @@ export const SignUpForm: FC = () => {
           )
         })}
 
-        <FormSubmit isFetching={isLoading}>{t('common.signUp')}</FormSubmit>
+        <FormSubmit isFetching={signUpMutation.isPending}>
+          {t('common.signUp')}
+        </FormSubmit>
       </FormLayout>
 
       <FormHelper<TLoginRoutes>

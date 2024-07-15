@@ -1,4 +1,5 @@
-import { FC, useEffect, useRef, useState } from 'react'
+import { useMutation } from '@tanstack/react-query'
+import { useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-hot-toast'
 import { useTranslation } from 'react-i18next'
@@ -13,20 +14,16 @@ import {
 
 import { Flex } from '@/components/shared'
 
-import { user } from '@/store/slices'
+import { useActions, useSubmitHandler } from '@/shared/hooks'
 
-import { useUploadAvatarMutation, userApi } from '@/shared/api'
-
-import { useActions, useAppSelector, useSubmitHandler } from '@/shared/hooks'
+import { axiosInstance } from '@/config/axios.instance'
 
 import styles from './avatar-uploader-modal.module.scss'
 
-export const AvatarUploaderModal: FC = () => {
+export const AvatarUploaderModal = () => {
   const [canUpload, setCanUpload] = useState<boolean>(false)
 
   const formRef = useRef<HTMLFormElement>(null)
-
-  const { data: userData } = useAppSelector(user)
 
   const methods = useForm<{ picture: File }>({
     mode: 'onChange',
@@ -36,7 +33,15 @@ export const AvatarUploaderModal: FC = () => {
 
   const { t } = useTranslation()
 
-  const [uploadAvatar, { data }] = useUploadAvatarMutation()
+  const uploadAvatarMutation = useMutation({
+    mutationFn: async (body: FormData) =>
+      (await axiosInstance.post('/user/avatar', body)).data,
+    onSuccess: () => {
+      closeModalWindow('avatarUploader')
+
+      toast.success(t('modals.avatar.successUpload'))
+    },
+  })
 
   const onSubmit = useSubmitHandler<{ picture: File }>(async file => {
     if (!formRef.current) return
@@ -44,22 +49,12 @@ export const AvatarUploaderModal: FC = () => {
     const formData = new FormData()
 
     formData.append('file', file.picture)
-    formData.append('userId', String(userData.id))
 
-    uploadAvatar(formData)
+    // id - 1 for test
+    formData.append('userId', String(1))
+
+    uploadAvatarMutation.mutate(formData)
   })
-
-  useEffect(() => {
-    if (!data) return
-
-    if (data.isUploaded) {
-      closeModalWindow('avatarUploader')
-
-      toast.success(t('modals.avatar.successUpload'))
-
-      userApi.util.invalidateTags(['User'])
-    }
-  }, [closeModalWindow, data, t])
 
   return (
     <ModalWindow title={t('modals.avatar.title')}>

@@ -1,4 +1,5 @@
-import { FC, useEffect, useState } from 'react'
+import { useQuery } from '@tanstack/react-query'
+import { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 import {
@@ -8,51 +9,30 @@ import {
 
 import { FallbackGuard } from '@/components/guards'
 
-import { TokenService } from '@/services'
+import { axiosInstance } from '@/config/axios.instance'
 
-import { useGetMeQuery } from '@/shared/api'
-
-import { useActions } from '@/shared/hooks'
-
-export const AuthGuard: FC = () => {
-  const [skip, setSkip] = useState<boolean>(true)
-
-  const { setUserData } = useActions()
-
+export const AuthGuard = () => {
   const navigate = useNavigate()
 
   const { pathname } = useLocation()
 
-  const { data } = useGetMeQuery(null, {
-    skip,
+  const whoAmIQuery = useQuery({
+    queryKey: ['whoami'],
+    queryFn: async () => (await axiosInstance.get('/user/me')).data,
+    refetchOnWindowFocus: false,
+    enabled: protectedRoutes.includes(pathname),
   })
 
   useEffect(() => {
-    if (!data) return
+    if (!whoAmIQuery.data) return
 
-    const { refreshToken } = TokenService.getTokens()
-
-    if (refreshToken) {
-      setUserData(data)
+    if (
+      publicRoutes.includes(pathname) ||
+      !protectedRoutes.includes(pathname)
+    ) {
+      navigate('/playlists')
     }
-  }, [data, setUserData])
-
-  useEffect(() => {
-    const { refreshToken } = TokenService.getTokens()
-
-    if (!refreshToken) {
-      navigate('/login?act=sign_in')
-    } else {
-      if (skip) setSkip(false)
-
-      if (
-        publicRoutes.includes(pathname) ||
-        !protectedRoutes.includes(pathname)
-      ) {
-        navigate('/playlists')
-      }
-    }
-  }, [navigate, pathname, skip])
+  }, [navigate, pathname, whoAmIQuery.data])
 
   return <FallbackGuard />
 }

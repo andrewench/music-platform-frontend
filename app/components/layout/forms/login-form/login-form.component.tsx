@@ -1,7 +1,9 @@
-import { FC, useEffect } from 'react'
+import { useMutation } from '@tanstack/react-query'
 import { toast } from 'react-hot-toast'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
+
+import { AxiosResponse } from 'axios'
 
 import { FormLayout } from '@/components/layout'
 
@@ -9,53 +11,58 @@ import { FormSubmit, PasswordField, TextField } from '@/components/ui'
 
 import { FormHelper } from '@/components/shared'
 
-import { LoginService } from '@/services'
-
-import { useLoginMutation } from '@/shared/api'
-
 import { SignInFieldsSchema } from '@/shared/schemes'
 
 import { Constants } from '@/shared/constants'
 
 import { useConfiguredForm, useSubmitHandler } from '@/shared/hooks'
 
-import { TErrorResponse, TLoginRoutes, TSignInFields } from '@/shared/types'
+import { TLoginRoutes, TSignInFields } from '@/shared/types'
+
+import { axiosInstance } from '@/config/axios.instance'
 
 import styles from './login-form.module.scss'
 
-export const LoginForm: FC = () => {
+export const LoginForm = () => {
   const methods = useConfiguredForm<TSignInFields>(SignInFieldsSchema)
   const { t } = useTranslation()
 
   const navigate = useNavigate()
 
-  const [loginUser, { data, error, isLoading }] = useLoginMutation()
+  const loginMutation = useMutation({
+    mutationFn: async (payload: TSignInFields) => {
+      const response = await axiosInstance.post<
+        unknown,
+        AxiosResponse<{ status: string }>,
+        TSignInFields
+      >('/auth/login', payload)
 
-  const onSubmit = useSubmitHandler<TSignInFields>(credentials => {
-    loginUser(credentials)
+      return response.data
+    },
+    onSuccess: () => {
+      toast.success('Login Successfully')
+
+      const promise = new Promise<void>(resolve => {
+        setTimeout(() => {
+          resolve()
+        }, 1 * 1000)
+      })
+
+      toast.promise(promise, {
+        loading: 'Redirecting...',
+        success: () => {
+          navigate('/playlists')
+
+          return ''
+        },
+        error: () => 'asdfds',
+      })
+    },
   })
 
-  useEffect(() => {
-    LoginService.authSuccess(
-      data,
-      {
-        logged: t('server.success.loggedIn'),
-        redirect: t('server.success.redirect'),
-        unknown: t('server.error.unknown'),
-      },
-      () => {
-        navigate('/playlists')
-      }
-    )
-  }, [data, navigate, t])
-
-  useEffect(() => {
-    if (!error) return
-
-    const { data } = error as TErrorResponse
-
-    if (data.error) toast.error(t(`server.error.${data.error}`))
-  }, [error, t])
+  const onSubmit = useSubmitHandler<TSignInFields>(credentials => {
+    loginMutation.mutate(credentials)
+  })
 
   return (
     <>
@@ -74,7 +81,10 @@ export const LoginForm: FC = () => {
           register={methods.register}
         />
 
-        <FormSubmit isFetching={isLoading} className={styles.submit}>
+        <FormSubmit
+          isFetching={loginMutation.isPending}
+          className={styles.submit}
+        >
           {t('common.signIn')}
         </FormSubmit>
       </FormLayout>

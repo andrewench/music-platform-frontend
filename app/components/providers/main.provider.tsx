@@ -1,18 +1,21 @@
-import { FC, StrictMode } from 'react'
+import { StrictMode } from 'react'
+import { Provider } from 'react-redux'
 
-import {
-  Router,
-  StoreProvider,
-  TranslateProvider,
-} from '@/components/providers'
+import { Router } from './router-provider/router.provider'
+import { StoreProvider } from './store.provider'
+import { TranslateProvider } from './translate.provider'
 
-export const MainProvider: FC = () => {
+import { store } from '@/store'
+
+export const MainProvider = () => {
   return (
     <StrictMode>
       <StoreProvider>
-        <TranslateProvider>
-          <Router />
-        </TranslateProvider>
+        <Provider store={store}>
+          <TranslateProvider>
+            <Router />
+          </TranslateProvider>
+        </Provider>
       </StoreProvider>
     </StrictMode>
   )

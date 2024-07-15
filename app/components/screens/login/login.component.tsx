@@ -1,4 +1,4 @@
-import { FC, useEffect, useLayoutEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import SimpleBar from 'simplebar-react'
@@ -17,7 +17,7 @@ import { FormRenderer } from './form-renderer.component'
 
 import styles from './login.module.scss'
 
-export const Login: FC = () => {
+export const Login = () => {
   const [redirectedUrl, setRedirectedUrl] = useState<string>('')
   const [loginQuery, setLoginQuery] = useState(
     Constants.AUTH.QUERY_PARAMS.signIn
