@@ -1,8 +1,8 @@
 import { FC, ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import cn from 'clsx'
-import { app } from '@/store/slices'
-import { useAppSelector } from '@/shared/hooks'
+import { useAtom } from 'jotai'
+import { preferencesAtom } from '@/store'
 import styles from './sidebar-item.module.scss'
 
 interface ISideBarItem {
@@ -12,7 +12,7 @@ interface ISideBarItem {
 }
 
 export const SideBarItem: FC<ISideBarItem> = ({ to, label, icon }) => {
-  const { sideBar } = useAppSelector(app)
+  const [preferences] = useAtom(preferencesAtom)
 
   return (
     <li>
@@ -21,7 +21,7 @@ export const SideBarItem: FC<ISideBarItem> = ({ to, label, icon }) => {
 
         <p
           className={cn({
-            'visually-hidden': !sideBar.isOpen,
+            'visually-hidden': !preferences.sideBar.open,
           })}
         >
           {label}

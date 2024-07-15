@@ -1,17 +1,44 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { appReducer, modalsReducer, userReducer } from '@/store/slices'
-import { authApi, userApi } from '@/shared/api'
+import { atom, createStore } from 'jotai'
+import { IUser } from '@/shared/types'
 
-const combinedReducers = combineReducers({
-  user: userReducer,
-  modals: modalsReducer,
-  app: appReducer,
-  [userApi.reducerPath]: userApi.reducer,
-  [authApi.reducerPath]: authApi.reducer,
+export const store = createStore()
+
+export const userAtom = atom<{ profile: IUser }>({
+  profile: {} as IUser,
 })
 
-export const store = configureStore({
-  reducer: combinedReducers,
-  middleware: getDefaultMiddleware =>
-    getDefaultMiddleware().concat(userApi.middleware, authApi.middleware),
+interface IPreferences {
+  sideBar: {
+    open: boolean
+  }
+}
+
+export const preferencesAtom = atom<IPreferences>({
+  sideBar: {
+    open: true,
+  },
+})
+
+interface IAudioPlayer {
+  volume: number
+  keepVolume: number
+  isMuted: boolean
+}
+
+export const audioPlayerAtom = atom<IAudioPlayer>({
+  volume: 100,
+  keepVolume: 0,
+  isMuted: false,
+})
+
+interface IModal {
+  avatar: {
+    open: boolean
+  }
+}
+
+export const modalsAtom = atom<IModal>({
+  avatar: {
+    open: false,
+  },
 })

@@ -3,6 +3,7 @@ import { useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-hot-toast'
 import { useTranslation } from 'react-i18next'
+import { useAtom } from 'jotai'
 import { FormLayout, ModalWindow } from '@/components/layout'
 import {
   AvatarUploaderField,
@@ -10,12 +11,15 @@ import {
   SecondaryButton,
 } from '@/components/ui'
 import { Flex } from '@/components/shared'
-import { useActions, useSubmitHandler } from '@/shared/hooks'
+import { modalsAtom, userAtom } from '@/store'
+import { useSubmitHandler } from '@/shared/hooks'
 import { axiosInstance } from '@/config/axios.instance'
 import styles from './avatar-uploader-modal.module.scss'
 
 export const AvatarUploaderModal = () => {
   const [canUpload, setCanUpload] = useState<boolean>(false)
+  const [userData] = useAtom(userAtom)
+  const [modals, setModals] = useAtom(modalsAtom)
 
   const formRef = useRef<HTMLFormElement>(null)
 
@@ -23,15 +27,22 @@ export const AvatarUploaderModal = () => {
     mode: 'onChange',
   })
 
-  const { closeModalWindow } = useActions()
-
   const { t } = useTranslation()
+
+  const closeModalHandler = () => {
+    setModals({
+      ...modals,
+      avatar: {
+        open: false,
+      },
+    })
+  }
 
   const uploadAvatarMutation = useMutation({
     mutationFn: async (body: FormData) =>
       (await axiosInstance.post('/user/avatar', body)).data,
     onSuccess: () => {
-      closeModalWindow('avatarUploader')
+      closeModalHandler()
 
       toast.success(t('modals.avatar.successUpload'))
     },
@@ -43,15 +54,13 @@ export const AvatarUploaderModal = () => {
     const formData = new FormData()
 
     formData.append('file', file.picture)
-
-    // id - 1 for test
-    formData.append('userId', String(1))
+    formData.append('userId', String(userData.profile.id))
 
     uploadAvatarMutation.mutate(formData)
   })
 
   return (
-    <ModalWindow title={t('modals.avatar.title')}>
+    <ModalWindow title={t('modals.avatar.title')} modalName="avatar">
       <FormLayout<{ picture: File }>
         methods={methods}
         onSubmit={onSubmit}
@@ -70,10 +79,7 @@ export const AvatarUploaderModal = () => {
             {t('modals.avatar.positive')}
           </PrimaryButton>
 
-          <SecondaryButton
-            type="button"
-            onClick={() => closeModalWindow('avatarUploader')}
-          >
+          <SecondaryButton type="button" onClick={closeModalHandler}>
             {t('modals.avatar.negative')}
           </SecondaryButton>
         </Flex>

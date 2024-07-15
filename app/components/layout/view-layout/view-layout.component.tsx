@@ -1,10 +1,11 @@
 import { FC, useEffect, useState } from 'react'
 import SimpleBar from 'simplebar-react'
 import cn from 'clsx'
+import { useAtom } from 'jotai'
 import { Fallback } from '@/components/layout'
-import { app } from '@/store/slices'
+import { preferencesAtom } from '@/store'
 import { Constants } from '@/shared/constants'
-import { useAppSelector, useDebounce } from '@/shared/hooks'
+import { useDebounce } from '@/shared/hooks'
 import { PropsWithChildrenAndClassName } from '@/shared/types'
 import styles from './view-layout.module.scss'
 
@@ -13,8 +14,7 @@ export const ViewLayout: FC<PropsWithChildrenAndClassName> = ({
   className,
 }) => {
   const [isMounted, setMounted] = useState<boolean>(false)
-
-  const { sideBar } = useAppSelector(app)
+  const [preferences] = useAtom(preferencesAtom)
 
   const debouncedHandler = () => {
     if (!isMounted) setMounted(true)
@@ -29,7 +29,7 @@ export const ViewLayout: FC<PropsWithChildrenAndClassName> = ({
   return isMounted ? (
     <SimpleBar
       className={cn(styles.scrollBar, {
-        [styles.minimizedScrollBar]: !sideBar.isOpen,
+        [styles.minimizedScrollBar]: !preferences.sideBar.open,
       })}
     >
       <div className={cn(styles.box, styles.content, className)}>

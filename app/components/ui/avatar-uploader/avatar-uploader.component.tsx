@@ -1,31 +1,33 @@
 import { ImagePlus } from 'lucide-react'
-import { FC } from 'react'
 import cn from 'clsx'
-import { app, user } from '@/store/slices'
-import { useActions, useAppSelector } from '@/shared/hooks'
+import { useAtom } from 'jotai'
+import { modalsAtom, preferencesAtom, userAtom } from '@/store'
 import styles from './avatar-uploader.module.scss'
 
-export const AvatarUploader: FC = () => {
-  const { data } = useAppSelector(user)
-  const { sideBar } = useAppSelector(app)
+export const AvatarUploader = () => {
+  const [preferences] = useAtom(preferencesAtom)
+  const [modals, setModals] = useAtom(modalsAtom)
+  const [userData] = useAtom(userAtom)
 
-  const { toggleModal } = useActions()
+  const openModalHandler = () => {
+    setModals({
+      ...modals,
+      avatar: {
+        open: true,
+      },
+    })
+  }
 
   return (
     <div
       className={cn(styles.box, {
-        'visually-hidden': !sideBar.isOpen,
+        'visually-hidden': !preferences.sideBar.open,
       })}
     >
       <button
-        onClick={() =>
-          toggleModal({
-            name: 'avatarUploader',
-            value: true,
-          })
-        }
+        onClick={openModalHandler}
         className={cn(styles.upload, {
-          [styles.autoHide]: Boolean(data.avatar),
+          [styles.autoHide]: Boolean(userData.profile.avatar),
         })}
       >
         <ImagePlus size={16} strokeWidth={1.5} className={styles.uploadIcon} />

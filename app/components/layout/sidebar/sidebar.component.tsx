@@ -2,10 +2,10 @@ import { ChevronLeft, Copy } from 'lucide-react'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import cn from 'clsx'
+import { useAtom } from 'jotai'
 import { SideBarItem } from '@/components/ui'
 import { Flex } from '@/components/shared'
-import { app, user } from '@/store/slices'
-import { useActions, useAppSelector } from '@/shared/hooks'
+import { preferencesAtom, userAtom } from '@/store'
 import { Avatar } from './avatar/avatar.component'
 import { sideBarItemsList } from './sidebar-items.data'
 import styles from './sidebar.module.scss'
@@ -13,21 +13,28 @@ import styles from './sidebar.module.scss'
 export const SideBar: FC = () => {
   const { t } = useTranslation()
 
-  const { sideBar } = useAppSelector(app)
-  const { data } = useAppSelector(user)
+  const [userData] = useAtom(userAtom)
+  const [preferences, setPreferences] = useAtom(preferencesAtom)
 
-  const { toggleSideBar } = useActions()
+  const isSideBarOpen = preferences.sideBar.open
 
   return (
     <div
       className={cn(styles.box, {
-        [styles.minimized]: !sideBar.isOpen,
+        [styles.minimized]: !isSideBarOpen,
       })}
     >
       <button
-        onClick={() => toggleSideBar()}
+        onClick={() => {
+          setPreferences({
+            ...preferences,
+            sideBar: {
+              open: !isSideBarOpen,
+            },
+          })
+        }}
         className={cn(styles.toggleSidebar, {
-          [styles.bottom]: !sideBar.isOpen,
+          [styles.bottom]: !isSideBarOpen,
         })}
       >
         <ChevronLeft size={18} strokeWidth={1.5} />
@@ -37,18 +44,18 @@ export const SideBar: FC = () => {
 
       <div
         className={cn(styles.list, {
-          [styles.minimized]: !sideBar.isOpen,
+          [styles.minimized]: !isSideBarOpen,
         })}
       >
         <div
           className={cn(styles.username, {
-            'visually-hidden': !sideBar.isOpen,
+            'visually-hidden': !isSideBarOpen,
           })}
-        >{`${data.firstName} ${data.lastName}`}</div>
+        >{`${userData.profile.firstName} ${userData.profile.lastName}`}</div>
 
-        {data.nickname && (
+        {userData.profile.nickname && (
           <Flex align="center" className={styles.nickname}>
-            <p>@{data.nickname}</p>
+            <p>@{userData.profile.nickname}</p>
 
             <button>
               <Copy size={14} strokeWidth={1.5} className={styles.icon} />
@@ -58,7 +65,7 @@ export const SideBar: FC = () => {
 
         <ul
           className={cn(styles.menu, {
-            [styles.minimized]: !sideBar.isOpen,
+            [styles.minimized]: !isSideBarOpen,
           })}
         >
           {sideBarItemsList.map(({ labelKey, ...props }, idx) => (

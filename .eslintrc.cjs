@@ -31,7 +31,13 @@ module.exports = {
     'arrow-body-style': 'off',
     'default-case': 'off',
     'consistent-return': 'off',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': [
+      'warn',
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
+    ],
     'no-shadow': 'off',
     'no-param-reassign': ['error', { props: false }],
     'import/prefer-default-export': 'off',
@@ -77,7 +83,13 @@ module.exports = {
     '@typescript-eslint/comma-dangle': 'off',
     '@typescript-eslint/semi': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
+    ],
     '@typescript-eslint/member-delimiter-style': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/consistent-type-definitions': 'off',

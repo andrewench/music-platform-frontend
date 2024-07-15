@@ -1,27 +1,26 @@
 import { FC } from 'react'
 import cn from 'clsx'
+import { useAtom } from 'jotai'
 import { AvatarUploader } from '@/components/ui'
 import { Image } from '@/components/shared'
-import { app, user } from '@/store/slices'
+import { preferencesAtom, userAtom } from '@/store'
 import { Constants } from '@/shared/constants'
-import { useAppSelector } from '@/shared/hooks'
 import styles from './avatar.module.scss'
 
 export const Avatar: FC = () => {
-  const { data } = useAppSelector(user)
-  const { sideBar } = useAppSelector(app)
+  const [userData] = useAtom(userAtom)
+  const [preferences] = useAtom(preferencesAtom)
+
+  const avatarPath = userData.profile.avatar ?? Constants.DEFAULT_AVATAR_PATH
+  const altImage = `${userData.profile.firstName} ${userData.profile.lastName}`
 
   return (
     <div
       className={cn(styles.avatar, {
-        [styles.minimized]: !sideBar.isOpen,
+        [styles.minimized]: !preferences.sideBar.open,
       })}
     >
-      <Image
-        src={data.avatar ?? Constants.DEFAULT_AVATAR_PATH}
-        alt="Avatar"
-        className={styles.image}
-      />
+      <Image src={avatarPath} alt={altImage} className={styles.image} />
 
       <AvatarUploader />
     </div>

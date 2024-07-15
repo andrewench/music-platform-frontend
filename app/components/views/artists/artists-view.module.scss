@@ -5,11 +5,11 @@
 .banner {
   @apply relative h-72 w-full overflow-hidden rounded-bl-[14px] rounded-br-[14px] bg-[url('/images/banner.jpg')] bg-cover after:absolute after:left-0 after:top-0 after:h-full after:w-full after:content-[''];
 
+  background-position-y: center;
+
   &:after {
     background: linear-gradient(180deg, transparent, #00000090);
   }
-
-  background-position-y: center;
 }
 
 .face {

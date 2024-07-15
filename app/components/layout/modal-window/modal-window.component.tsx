@@ -1,27 +1,36 @@
 import { FC, useRef } from 'react'
 import cn from 'clsx'
 import { motion } from 'framer-motion'
+import { useAtom } from 'jotai'
 import { Heading } from '@/components/shared'
-import { useActions, useOutside } from '@/shared/hooks'
+import { modalsAtom } from '@/store'
+import { useOutside } from '@/shared/hooks'
 import { PropsWithChildrenAndClassName } from '@/shared/types'
 import styles from './modal-window.module.scss'
 
 interface IModalWindow {
   title: string
+  modalName: string
 }
 
 export const ModalWindow: FC<PropsWithChildrenAndClassName<IModalWindow>> = ({
   title,
+  modalName,
   className,
   children,
 }) => {
   const wrapModalRef = useRef<HTMLDivElement>(null)
   const modalRef = useRef<HTMLDivElement>(null)
 
-  const { closeModalWindow } = useActions()
+  const [modals, setModals] = useAtom(modalsAtom)
 
   useOutside(wrapModalRef, modalRef, () => {
-    closeModalWindow('avatarUploader')
+    setModals({
+      ...modals,
+      [modalName]: {
+        open: false,
+      },
+    })
   })
 
   return (

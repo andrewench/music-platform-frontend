@@ -2,15 +2,15 @@ import { FC, useEffect } from 'react'
 import { Toaster } from 'react-hot-toast'
 import cn from 'clsx'
 import { AnimatePresence } from 'framer-motion'
+import { useAtom } from 'jotai'
 import { AvatarUploaderModal } from '@/components/layout'
-import { modals } from '@/store/slices'
+import { modalsAtom } from '@/store'
 import { Constants } from '@/shared/constants'
-import { useAppSelector } from '@/shared/hooks'
 import { TPageLayout } from './page.interface'
 import styles from './page.module.scss'
 
 export const PageLayout: FC<TPageLayout> = ({ title, children, className }) => {
-  const { avatarUploader } = useAppSelector(modals)
+  const [modals] = useAtom(modalsAtom)
 
   useEffect(() => {
     const titleElement = document.getElementsByTagName('title')[0]
@@ -38,7 +38,7 @@ export const PageLayout: FC<TPageLayout> = ({ title, children, className }) => {
       />
 
       <AnimatePresence>
-        {avatarUploader.isOpen && <AvatarUploaderModal />}
+        {modals.avatar.open && <AvatarUploaderModal />}
       </AnimatePresence>
     </div>
   )
