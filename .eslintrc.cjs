@@ -44,7 +44,7 @@ module.exports = {
     'import/no-unresolved': [
       'error',
       {
-        ignore: ['^@'],
+        ignore: ['^@', '.css'],
       },
     ],
     'import/extensions': [

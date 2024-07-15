@@ -6,6 +6,7 @@ export default defineConfig(() => {
   const env = loadEnv('all', process.cwd(), '')
 
   return {
+    mode: env.VITE_MODE,
     plugins: [react(), tsPaths()],
     build: {
       outDir: '__build__',

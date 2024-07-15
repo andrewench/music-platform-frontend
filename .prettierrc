@@ -39,7 +39,8 @@
     "^(.*.type)$",
     "^@/",
     "^@/assets/styles/*",
-    "^(.*.module.scss)$"
+    "^(.*.module.scss)$",
+    "^(.*.css)$"
   ],
   "importOrderSeparation": false,
   "importOrderSortSpecifiers": true
