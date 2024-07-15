@@ -1,7 +1,5 @@
 import { FC } from 'react'
-
 import { Image } from '@/components/shared'
-
 import styles from './listener-face.module.scss'
 
 type TListenerFace = Record<'src' | 'alt', string>

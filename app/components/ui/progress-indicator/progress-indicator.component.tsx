@@ -1,13 +1,8 @@
 import { FC, useEffect, useRef } from 'react'
-
 import cn from 'clsx'
-
 import { useSlider } from '@/shared/hooks'
-
 import { calculateProgress } from '@/shared/utils'
-
 import { StateAction } from '@/shared/types'
-
 import styles from './progress-indicator.module.scss'
 
 interface IProgressIndicator {

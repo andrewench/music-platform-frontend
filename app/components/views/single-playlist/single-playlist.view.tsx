@@ -2,18 +2,13 @@ import { MoreHorizontal } from 'lucide-react'
 import { FC, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-
 import { SectionBlock, Table, ViewLayout } from '@/components/layout'
-
 import { BackLink, PrimaryButton, SecondaryButton } from '@/components/ui'
-
 import { Flex, Image, PlaylistStat } from '@/components/shared'
-
 import {
   SoundtracksList,
   SoundtracksListCaptionKeys,
 } from './soundtracks-list.data'
-
 import styles from './single-playlist.module.scss'
 
 export const SinglePlaylistView: FC = () => {

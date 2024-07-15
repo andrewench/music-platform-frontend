@@ -1,7 +1,5 @@
 import { fetchBaseQuery } from '@reduxjs/toolkit/dist/query'
-
 import { TokenService } from '@/services'
-
 import { Constants } from '@/shared/constants'
 
 export const baseQuery = fetchBaseQuery({

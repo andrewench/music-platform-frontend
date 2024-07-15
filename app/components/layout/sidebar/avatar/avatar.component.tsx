@@ -1,17 +1,10 @@
 import { FC } from 'react'
-
 import cn from 'clsx'
-
 import { AvatarUploader } from '@/components/ui'
-
 import { Image } from '@/components/shared'
-
 import { app, user } from '@/store/slices'
-
 import { Constants } from '@/shared/constants'
-
 import { useAppSelector } from '@/shared/hooks'
-
 import styles from './avatar.module.scss'
 
 export const Avatar: FC = () => {

@@ -1,14 +1,9 @@
 import { FC, useRef } from 'react'
-
 import cn from 'clsx'
 import { motion } from 'framer-motion'
-
 import { Heading } from '@/components/shared'
-
 import { useActions, useOutside } from '@/shared/hooks'
-
 import { PropsWithChildrenAndClassName } from '@/shared/types'
-
 import styles from './modal-window.module.scss'
 
 interface IModalWindow {

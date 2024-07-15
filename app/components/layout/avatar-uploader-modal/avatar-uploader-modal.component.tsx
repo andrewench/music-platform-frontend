@@ -3,21 +3,15 @@ import { useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-hot-toast'
 import { useTranslation } from 'react-i18next'
-
 import { FormLayout, ModalWindow } from '@/components/layout'
-
 import {
   AvatarUploaderField,
   PrimaryButton,
   SecondaryButton,
 } from '@/components/ui'
-
 import { Flex } from '@/components/shared'
-
 import { useActions, useSubmitHandler } from '@/shared/hooks'
-
 import { axiosInstance } from '@/config/axios.instance'
-
 import styles from './avatar-uploader-modal.module.scss'
 
 export const AvatarUploaderModal = () => {

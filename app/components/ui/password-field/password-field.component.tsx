@@ -1,12 +1,9 @@
 import { Eye, EyeOff } from 'lucide-react'
 import { useState } from 'react'
 import { FieldValues } from 'react-hook-form'
-
 import cn from 'clsx'
-
 import { TextField } from '@/components/ui'
 import { ITextField } from '@/components/ui/text-field/text-field.interface'
-
 import styles from './password-field.module.scss'
 
 export const PasswordField = <T extends FieldValues>({

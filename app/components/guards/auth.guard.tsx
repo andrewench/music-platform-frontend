@@ -1,14 +1,11 @@
 import { useQuery } from '@tanstack/react-query'
 import { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-
 import {
   protectedRoutes,
   publicRoutes,
 } from '@/components/providers/router-provider/router.data'
-
 import { FallbackGuard } from '@/components/guards'
-
 import { axiosInstance } from '@/config/axios.instance'
 
 export const AuthGuard = () => {

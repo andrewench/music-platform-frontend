@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-
 import styles from './form-helper.module.scss'
 
 interface IFormHelper<TLink extends string> {

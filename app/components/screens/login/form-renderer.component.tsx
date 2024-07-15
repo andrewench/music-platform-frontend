@@ -1,7 +1,5 @@
 import { FC } from 'react'
-
 import { LoginForm, RestoreForm, SignUpForm } from '@/components/layout'
-
 import { TLoginQueries } from '@/shared/types'
 
 export const FormRenderer: FC<{ query: TLoginQueries }> = ({ query }) => {

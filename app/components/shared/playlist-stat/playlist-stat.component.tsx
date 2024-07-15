@@ -1,12 +1,8 @@
 import { Headphones, Heart } from 'lucide-react'
 import { FC } from 'react'
-
 import cn from 'clsx'
-
 import { Flex } from '@/components/shared'
-
 import { PropsWithClassName } from '@/shared/types'
-
 import styles from './playlist-stat.module.scss'
 
 interface IPlaylistStat {

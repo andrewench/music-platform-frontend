@@ -1,8 +1,6 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
-
 import { Image, PlaylistStat } from '@/components/shared'
-
 import styles from './playlist-item.module.scss'
 
 interface IPlaylistItem {

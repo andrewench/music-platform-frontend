@@ -1,10 +1,7 @@
 import { FC, useEffect, useState } from 'react'
 import { Outlet } from 'react-router-dom'
-
 import { Fallback } from '@/components/layout'
-
 import { Constants } from '@/shared/constants'
-
 import { useDebounce } from '@/shared/hooks'
 
 export const FallbackGuard: FC = () => {

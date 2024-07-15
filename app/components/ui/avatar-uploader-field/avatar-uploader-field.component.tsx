@@ -10,13 +10,9 @@ import {
 } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
-
 import { Flex } from '@/components/shared'
-
 import { Constants } from '@/shared/constants'
-
 import { StateAction } from '@/shared/types'
-
 import styles from './avatar-uploader-field.module.scss'
 
 interface IAvatarUploaderField {

@@ -1,11 +1,8 @@
 import { Check } from 'lucide-react'
 import { ChangeEvent, FC, useId, useState } from 'react'
-
 import cn from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
-
 import { Flex } from '@/components/shared'
-
 import styles from './checkbox-field.module.scss'
 
 interface ICheckboxField {

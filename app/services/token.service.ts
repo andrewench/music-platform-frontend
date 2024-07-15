@@ -1,5 +1,4 @@
 import Cookies, { CookieAttributes } from 'js-cookie'
-
 import { Constants } from '@/shared/constants'
 
 type TokenType = 'accessToken' | 'refreshToken'

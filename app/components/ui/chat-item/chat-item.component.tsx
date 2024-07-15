@@ -1,8 +1,6 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
-
 import { Flex, Image } from '@/components/shared'
-
 import styles from './chat-item.module.scss'
 
 interface IChatItem {

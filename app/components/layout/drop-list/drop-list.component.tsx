@@ -1,8 +1,6 @@
 import { FC, PropsWithChildren } from 'react'
-
 import cn from 'clsx'
 import { motion } from 'framer-motion'
-
 import styles from './drop-list.module.scss'
 
 interface IDropList {

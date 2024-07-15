@@ -1,9 +1,6 @@
 import { ForwardedRef, forwardRef } from 'react'
-
 import cn from 'clsx'
-
 import { IFlex } from './flex.interface'
-
 import styles from './flex.module.scss'
 
 export const Flex = forwardRef(

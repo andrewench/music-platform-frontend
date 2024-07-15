@@ -1,10 +1,7 @@
 import { lazily } from 'react-lazily'
 import { RouteObject, createBrowserRouter } from 'react-router-dom'
-
 import { LazyComponent } from '@/components/layout'
-
 import { AuthGuard } from '@/components/guards'
-
 import { TAppRoutes } from './router.type'
 
 const {

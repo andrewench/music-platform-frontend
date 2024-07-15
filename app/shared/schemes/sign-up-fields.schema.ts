@@ -1,7 +1,5 @@
 import { ObjectSchema, object, ref, string } from 'yup'
-
 import { Constants } from '@/shared/constants'
-
 import { TSignUpFormFields } from '@/shared/types'
 
 const patterns = Constants.PATTERNS

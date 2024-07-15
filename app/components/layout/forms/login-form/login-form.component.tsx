@@ -2,25 +2,15 @@ import { useMutation } from '@tanstack/react-query'
 import { toast } from 'react-hot-toast'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-
 import { AxiosResponse } from 'axios'
-
 import { FormLayout } from '@/components/layout'
-
 import { FormSubmit, PasswordField, TextField } from '@/components/ui'
-
 import { FormHelper } from '@/components/shared'
-
 import { SignInFieldsSchema } from '@/shared/schemes'
-
 import { Constants } from '@/shared/constants'
-
 import { useConfiguredForm, useSubmitHandler } from '@/shared/hooks'
-
 import { TLoginRoutes, TSignInFields } from '@/shared/types'
-
 import { axiosInstance } from '@/config/axios.instance'
-
 import styles from './login-form.module.scss'
 
 export const LoginForm = () => {

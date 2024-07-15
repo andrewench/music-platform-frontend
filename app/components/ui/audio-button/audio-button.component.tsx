@@ -1,7 +1,5 @@
 import { FC, ReactNode } from 'react'
-
 import cn from 'clsx'
-
 import { PropsWithClassName } from '@/shared/types'
 
 interface IAudioButton {

@@ -1,7 +1,5 @@
 import { FC, ReactNode } from 'react'
-
 import { Flex } from '@/components/shared'
-
 import styles from './fallback-view.module.scss'
 
 interface IFallbackView {

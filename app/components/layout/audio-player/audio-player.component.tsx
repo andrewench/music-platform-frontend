@@ -1,11 +1,7 @@
 import { FC } from 'react'
-
 import { AudioButton, ProgressIndicator } from '@/components/ui'
-
 import { LoopIcon, PlayIcon, ShuffleIcon, SwitchIcon } from '@/components/icons'
-
 import { Flex } from '@/components/shared'
-
 import styles from './audio-player.module.scss'
 
 export const AudioPlayer: FC = () => {

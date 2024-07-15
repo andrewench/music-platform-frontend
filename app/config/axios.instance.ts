@@ -1,6 +1,5 @@
 import { Mutex } from 'async-mutex'
 import axios, { AxiosError, AxiosRequestConfig } from 'axios'
-
 import { Constants } from '@/shared/constants'
 
 const mutex = new Mutex()

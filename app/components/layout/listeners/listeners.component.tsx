@@ -1,10 +1,7 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-
 import { ListenerFace } from '@/components/ui'
-
 import { Flex } from '@/components/shared'
-
 import styles from './listeners.module.scss'
 
 export const Listeners: FC = () => {

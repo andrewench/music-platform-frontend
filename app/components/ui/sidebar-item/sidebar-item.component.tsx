@@ -1,12 +1,8 @@
 import { FC, ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-
 import cn from 'clsx'
-
 import { app } from '@/store/slices'
-
 import { useAppSelector } from '@/shared/hooks'
-
 import styles from './sidebar-item.module.scss'
 
 interface ISideBarItem {

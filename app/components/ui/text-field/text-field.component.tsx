@@ -1,15 +1,10 @@
 import { ChangeEvent, useCallback, useMemo, useState } from 'react'
 import { FieldValues, useFormContext } from 'react-hook-form'
-
 import cn from 'clsx'
-
 import { useDebounce, useRTL } from '@/shared/hooks'
-
 import { ErrorHelper } from './error-helper/error-helper.component'
 import { LengthCounter } from './length-counter/length-counter.component'
-
 import { ITextField } from './text-field.interface'
-
 import styles from './text-field.module.scss'
 
 export const TextField = <T extends FieldValues>({

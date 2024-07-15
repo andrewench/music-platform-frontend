@@ -1,9 +1,6 @@
 import { FC } from 'react'
-
 import cn from 'clsx'
-
 import { PropsWithClassName } from '@/shared/types'
-
 import styles from './heading.module.scss'
 
 interface IHeading {

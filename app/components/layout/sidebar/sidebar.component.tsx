@@ -1,21 +1,13 @@
 import { ChevronLeft, Copy } from 'lucide-react'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-
 import cn from 'clsx'
-
 import { SideBarItem } from '@/components/ui'
-
 import { Flex } from '@/components/shared'
-
 import { app, user } from '@/store/slices'
-
 import { useActions, useAppSelector } from '@/shared/hooks'
-
 import { Avatar } from './avatar/avatar.component'
-
 import { sideBarItemsList } from './sidebar-items.data'
-
 import styles from './sidebar.module.scss'
 
 export const SideBar: FC = () => {

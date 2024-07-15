@@ -1,12 +1,8 @@
 import { ImagePlus } from 'lucide-react'
 import { FC } from 'react'
-
 import cn from 'clsx'
-
 import { app, user } from '@/store/slices'
-
 import { useActions, useAppSelector } from '@/shared/hooks'
-
 import styles from './avatar-uploader.module.scss'
 
 export const AvatarUploader: FC = () => {

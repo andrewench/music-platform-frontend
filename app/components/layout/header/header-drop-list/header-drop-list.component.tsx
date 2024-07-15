@@ -1,10 +1,7 @@
 import { Menu } from 'lucide-react'
 import { FC, useState } from 'react'
-
 import { AnimatePresence } from 'framer-motion'
-
 import { DropList } from '@/components/layout'
-
 import {
   DropListItem,
   LanguageButton,
@@ -12,7 +9,6 @@ import {
   StyledButton,
   ThemeButton,
 } from '@/components/ui'
-
 import styles from './header-drop-list.module.scss'
 
 export const HeaderDropList: FC = () => {

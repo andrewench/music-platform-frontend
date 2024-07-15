@@ -1,11 +1,7 @@
 import { toast } from 'react-hot-toast'
-
 import { URLSearchParams } from 'url'
-
 import { TokenService } from '@/services'
-
 import { Constants } from '@/shared/constants'
-
 import {
   StateAction,
   TAuthSuccessResponse,

@@ -1,9 +1,7 @@
 import { Languages } from 'lucide-react'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-
 import { Flex } from '@/components/shared'
-
 import styles from './language-button.module.scss'
 
 export const LanguageButton: FC = () => {

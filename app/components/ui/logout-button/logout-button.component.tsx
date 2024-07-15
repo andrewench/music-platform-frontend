@@ -3,11 +3,8 @@ import { LogOut } from 'lucide-react'
 import { FC, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router'
-
 import { Flex } from '@/components/shared'
-
 import { axiosInstance } from '@/config/axios.instance'
-
 import styles from './logout-button.module.scss'
 
 export const LogoutButton: FC = () => {

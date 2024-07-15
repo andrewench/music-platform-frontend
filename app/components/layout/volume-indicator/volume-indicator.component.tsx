@@ -1,14 +1,9 @@
 import { Volume1, Volume2, VolumeX } from 'lucide-react'
 import { FC, useEffect, useState } from 'react'
-
 import { ProgressIndicator } from '@/components/ui'
-
 import { Flex } from '@/components/shared'
-
 import { app } from '@/store/slices'
-
 import { useActions, useAppSelector } from '@/shared/hooks'
-
 import styles from './volume-indicator.module.scss'
 
 const RenderedVolumeIcon: FC<{

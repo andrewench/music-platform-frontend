@@ -40,6 +40,6 @@
     "^@/assets/styles/*",
     "^(.*.module.scss)$"
   ],
-  "importOrderSeparation": true,
+  "importOrderSeparation": false,
   "importOrderSortSpecifiers": true
 }

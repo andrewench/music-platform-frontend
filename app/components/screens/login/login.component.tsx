@@ -2,19 +2,12 @@ import { useEffect, useLayoutEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import SimpleBar from 'simplebar-react'
-
 import cn from 'clsx'
-
 import { PageLayout } from '@/components/layout'
-
 import { Flex } from '@/components/shared'
-
 import { LoginService } from '@/services'
-
 import { Constants } from '@/shared/constants'
-
 import { FormRenderer } from './form-renderer.component'
-
 import styles from './login.module.scss'
 
 export const Login = () => {

@@ -1,8 +1,6 @@
 import { FC } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-
 import cn from 'clsx'
-
 import styles from './header-link.module.scss'
 
 interface IHeaderLink {

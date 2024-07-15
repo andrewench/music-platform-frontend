@@ -1,14 +1,9 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-
 import { HeaderLink } from '@/components/ui'
-
 import { Flex } from '@/components/shared'
-
 import { HeaderDropList } from './header-drop-list/header-drop-list.component'
-
 import { headerLinksList } from './header-links.data'
-
 import styles from './header.module.scss'
 
 export const Header: FC = () => {

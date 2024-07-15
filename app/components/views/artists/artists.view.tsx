@@ -1,12 +1,8 @@
 import { CheckCheck, Heart } from 'lucide-react'
 import { FC } from 'react'
-
 import { SectionBlock, ViewLayout } from '@/components/layout'
-
 import { PrimaryButton, SoundtrackWithCover } from '@/components/ui'
-
 import { Flex, SectionTitle } from '@/components/shared'
-
 import styles from './artists-view.module.scss'
 
 export const ArtistsView: FC = () => {

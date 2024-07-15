@@ -1,7 +1,5 @@
 import { FC } from 'react'
-
 import cn from 'clsx'
-
 import styles from './switch-icon.module.scss'
 
 type TSwitchIcon = {

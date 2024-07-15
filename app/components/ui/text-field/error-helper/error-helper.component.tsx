@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-
 import styles from './error-helper.module.scss'
 
 export const ErrorHelper: FC<{ message: string | undefined }> = ({

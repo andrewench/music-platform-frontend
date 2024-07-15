@@ -1,18 +1,11 @@
 import { FC, useEffect, useState } from 'react'
 import SimpleBar from 'simplebar-react'
-
 import cn from 'clsx'
-
 import { Fallback } from '@/components/layout'
-
 import { app } from '@/store/slices'
-
 import { Constants } from '@/shared/constants'
-
 import { useAppSelector, useDebounce } from '@/shared/hooks'
-
 import { PropsWithChildrenAndClassName } from '@/shared/types'
-
 import styles from './view-layout.module.scss'
 
 export const ViewLayout: FC<PropsWithChildrenAndClassName> = ({

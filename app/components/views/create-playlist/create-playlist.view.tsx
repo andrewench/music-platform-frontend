@@ -1,25 +1,17 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-
 import { FormLayout, SectionBlock, ViewLayout } from '@/components/layout'
-
 import {
   BackLink,
   CheckboxField,
   PrimaryButton,
   TextField,
 } from '@/components/ui'
-
 import { SectionTitle } from '@/components/shared'
-
 import { CreatePlaylistSchema } from '@/shared/schemes'
-
 import { useConfiguredForm, useSubmitHandler } from '@/shared/hooks'
-
 import { ICreatePlaylistFields } from '@/shared/types'
-
 import { CreatePlaylistFieldsList } from './create-playlist-fields.data'
-
 import styles from './create-playlist.module.scss'
 
 export const CreatePlaylistView: FC = () => {

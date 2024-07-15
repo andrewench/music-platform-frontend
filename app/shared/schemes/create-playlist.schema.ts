@@ -1,5 +1,4 @@
 import { ObjectSchema, object, string } from 'yup'
-
 import { ICreatePlaylistFields } from '@/shared/types'
 
 export const CreatePlaylistSchema: ObjectSchema<ICreatePlaylistFields> =

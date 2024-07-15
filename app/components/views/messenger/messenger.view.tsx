@@ -3,15 +3,10 @@ import { FC, Suspense } from 'react'
 import { lazily } from 'react-lazily'
 import { useSearchParams } from 'react-router-dom'
 import SimpleBar from 'simplebar-react'
-
 import { ViewLayout } from '@/components/layout'
-
 import { ChatItem } from '@/components/ui'
-
 import { Flex } from '@/components/shared'
-
 import { FallbackView } from '@/components/views'
-
 import styles from './messenger.module.scss'
 
 const { PrivateChat } = lazily(() => import('@/components/views'))

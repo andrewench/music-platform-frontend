@@ -1,5 +1,4 @@
 import { FC } from 'react'
-
 import styles from './message-item.module.scss'
 
 interface IMessageItem {

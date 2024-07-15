@@ -1,9 +1,7 @@
 import { Sun } from 'lucide-react'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-
 import { Flex } from '@/components/shared'
-
 import styles from './theme-button.module.scss'
 
 export const ThemeButton: FC = () => {

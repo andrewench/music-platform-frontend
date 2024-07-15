@@ -2,13 +2,9 @@ import { Plus } from 'lucide-react'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-
 import { SectionBlock, ViewLayout } from '@/components/layout'
-
 import { PlaylistItem, SecondaryButton } from '@/components/ui'
-
 import { Flex, SectionTitle } from '@/components/shared'
-
 import styles from './playlists-view.module.scss'
 
 export const PlaylistsView: FC = () => {

@@ -1,9 +1,6 @@
 import { FC } from 'react'
-
 import cn from 'clsx'
-
 import { IStyledButton } from './styled-button.interface'
-
 import styles from './styled-button.module.scss'
 
 export const StyledButton: FC<IStyledButton> = ({

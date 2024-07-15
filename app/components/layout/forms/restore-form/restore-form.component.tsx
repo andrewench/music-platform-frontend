@@ -1,20 +1,12 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-
 import { FormLayout } from '@/components/layout'
-
 import { FormSubmit, TextField } from '@/components/ui'
-
 import { FormHelper } from '@/components/shared'
-
 import { RestoreFieldsSchema } from '@/shared/schemes'
-
 import { Constants } from '@/shared/constants'
-
 import { useConfiguredForm, useSubmitHandler } from '@/shared/hooks'
-
 import { TLoginRoutes, TRestoreField } from '@/shared/types'
-
 import styles from './restore-form.module.scss'
 
 export const RestoreForm: FC = () => {

@@ -1,11 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
-
 import { TokenService } from '@/services'
-
 import { Constants } from '@/shared/constants'
-
 import { createRequestApi } from '@/shared/utils'
-
 import {
   TAuthRoutes,
   TAuthSuccessResponse,

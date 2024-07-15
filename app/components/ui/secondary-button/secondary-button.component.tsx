@@ -1,7 +1,5 @@
 import { FC } from 'react'
-
 import cn from 'clsx'
-
 import { StyledButton } from '@/components/ui/styled-button/styled-button.component'
 import { IMiniStyledButton } from '@/components/ui/styled-button/styled-button.interface'
 

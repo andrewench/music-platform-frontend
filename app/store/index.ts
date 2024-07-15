@@ -1,7 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-
 import { appReducer, modalsReducer, userReducer } from '@/store/slices'
-
 import { authApi, userApi } from '@/shared/api'
 
 const combinedReducers = combineReducers({

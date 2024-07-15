@@ -1,5 +1,4 @@
 import { TTextFieldRole } from '@/components/ui/text-field/text-field.interface'
-
 import { ICreatePlaylistFields } from '@/shared/types'
 
 interface ICreatePlaylistFieldsList {

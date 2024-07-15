@@ -1,8 +1,6 @@
 import { FC, PropsWithChildren } from 'react'
 import { I18nextProvider, initReactI18next } from 'react-i18next'
-
 import i18next from 'i18next'
-
 import languageList from '@/assets/languages'
 
 type TLanguageItem = Record<

@@ -1,5 +1,4 @@
 import { PropsWithChildren } from 'react'
-
 import { PropsWithClassName } from '@/shared/types'
 
 type TDirection = 'row' | 'row-reverse' | 'column' | 'column-reverse'

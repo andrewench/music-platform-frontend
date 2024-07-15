@@ -1,19 +1,12 @@
 import { FC, useEffect } from 'react'
 import { Toaster } from 'react-hot-toast'
-
 import cn from 'clsx'
 import { AnimatePresence } from 'framer-motion'
-
 import { AvatarUploaderModal } from '@/components/layout'
-
 import { modals } from '@/store/slices'
-
 import { Constants } from '@/shared/constants'
-
 import { useAppSelector } from '@/shared/hooks'
-
 import { TPageLayout } from './page.interface'
-
 import styles from './page.module.scss'
 
 export const PageLayout: FC<TPageLayout> = ({ title, children, className }) => {

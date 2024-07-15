@@ -4,13 +4,9 @@ import {
   FetchBaseQueryError,
 } from '@reduxjs/toolkit/dist/query'
 import { Mutex } from 'async-mutex'
-
 import { TokenService } from '@/services'
-
 import { Constants } from '@/shared/constants'
-
 import { baseQuery } from '@/shared/utils'
-
 import { TAuthSuccessResponse } from '@/shared/types'
 
 const mutex = new Mutex()

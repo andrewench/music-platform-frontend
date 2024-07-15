@@ -1,7 +1,5 @@
 import { FC } from 'react'
-
 import { Image } from '@/components/shared'
-
 import styles from './soundtrack-with-cover.module.scss'
 
 interface ISoundtrack {

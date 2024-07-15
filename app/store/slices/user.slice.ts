@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-
 import { IUser, TRootState } from '@/shared/types'
 
 interface IInitialState {
